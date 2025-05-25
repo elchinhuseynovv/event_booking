@@ -6,6 +6,7 @@ import Button from '../ui/Button';
 const HeroSection: React.FC = () => {
   const navigate = useNavigate();
   const heroRef = useRef<HTMLDivElement>(null);
+  const titleRef = useRef<HTMLHeadingElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -20,6 +21,12 @@ const HeroSection: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    if (titleRef.current) {
+      titleRef.current.setAttribute('data-text', titleRef.current.textContent || '');
+    }
+  }, []);
+
   return (
     <section ref={heroRef} className="relative min-h-screen flex items-center bg-hero-pattern bg-cover bg-center parallax-scroll">
       <div className="absolute inset-0 bg-gradient-to-r from-background/90 to-background/70" />
@@ -29,11 +36,11 @@ const HeroSection: React.FC = () => {
       
       <div className="container relative z-10">
         <div className="max-w-3xl">
-          <h1 className="mb-6 floating">
+          <h1 ref={titleRef} className="mb-6 glitch floating" data-text="Book the Perfect DJ & Artist for Your Next Event">
             Book the Perfect <span className="hero-text-gradient">DJ & Artist</span> for Your Next Event
           </h1>
           
-          <p className="text-xl text-neutral-300 mb-8">
+          <p className="text-xl text-neutral-300 mb-8 glass p-4">
             From intimate gatherings to festival main stages, find and book the perfect talent to make your event unforgettable.
           </p>
           
@@ -44,7 +51,7 @@ const HeroSection: React.FC = () => {
               isGlowing
               rightIcon={<ChevronRight />}
               onClick={() => navigate('/artists')}
-              className="neon-border"
+              className="gradient-border"
             >
               Explore Artists
             </Button>
@@ -54,12 +61,13 @@ const HeroSection: React.FC = () => {
               size="lg" 
               leftIcon={<PlayCircle />}
               onClick={() => window.open('#', '_blank')}
+              className="glass"
             >
               Watch Showreel
             </Button>
           </div>
           
-          <div className="mt-12 flex items-center space-x-6">
+          <div className="mt-12 flex items-center space-x-6 glass p-4 rounded-xl">
             <div className="flex -space-x-4">
               {[1, 2, 3, 4].map((num) => (
                 <img 
