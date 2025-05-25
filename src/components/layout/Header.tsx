@@ -30,7 +30,7 @@ const Header: React.FC = () => {
       <div className="container flex items-center justify-between">
         <Link to="/" className="flex items-center space-x-2" onClick={closeMenu}>
           <Music className="h-8 w-8 text-primary" />
-          <span className="text-xl font-bold">BeatBooker</span>
+          <span className="text-xl font-bold">Raw Media</span>
         </Link>
 
         {/* Desktop Navigation */}

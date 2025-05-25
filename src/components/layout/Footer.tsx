@@ -13,7 +13,7 @@ const Footer: React.FC = () => {
           <div>
             <Link to="/" className="flex items-center space-x-2 mb-6">
               <Music className="h-8 w-8 text-primary" />
-              <span className="text-xl font-bold">BeatBooker</span>
+              <span className="text-xl font-bold">Raw Media</span>
             </Link>
             <p className="text-neutral-400 mb-6">
               Connecting the world's best DJs and artists with your next unforgettable event.
