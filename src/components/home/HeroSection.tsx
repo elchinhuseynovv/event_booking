@@ -28,8 +28,21 @@ const HeroSection: React.FC = () => {
   }, []);
 
   return (
-    <section ref={heroRef} className="relative min-h-screen flex items-center bg-hero-pattern bg-cover bg-center parallax-scroll">
-      <div className="absolute inset-0 bg-gradient-to-r from-background/90 to-background/70" />
+    <section ref={heroRef} className="relative min-h-screen flex items-center">
+      {/* Background Video */}
+      <div className="absolute inset-0 overflow-hidden">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute w-full h-full object-cover"
+          poster="https://images.pexels.com/photos/1540406/pexels-photo-1540406.jpeg"
+        >
+          <source src="https://rroyrxpcceyhgixpgzrs.supabase.co/storage/v1/object/public/uidata/background_video.mp4" type="video/mp4" />
+        </video>
+        <div className="absolute inset-0 bg-black/30" />
+      </div>
       
       {/* Animated Sound Wave */}
       <div className="absolute bottom-0 left-0 right-0 sound-wave" />
