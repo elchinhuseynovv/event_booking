@@ -4,33 +4,20 @@ import { Search, Filter, ChevronDown, X } from 'lucide-react';
 import Button from '../components/ui/Button';
 import { artists } from '../data/artists';
 
-// Define types for our filters
-type Genre = string;
+type Category = 'all' | 'dj' | 'photographer';
 type Location = string;
 type SortOption = 'popularity' | 'priceAsc' | 'priceDesc' | 'rating';
 
 const ArtistsPage: React.FC = () => {
   const navigate = useNavigate();
   const [searchTerm, setSearchTerm] = useState('');
-  const [selectedGenres, setSelectedGenres] = useState<Genre[]>([]);
+  const [selectedCategory, setSelectedCategory] = useState<Category>('all');
   const [selectedLocations, setSelectedLocations] = useState<Location[]>([]);
   const [sortBy, setSortBy] = useState<SortOption>('popularity');
   const [isFiltersOpen, setIsFiltersOpen] = useState(false);
 
-  // Extract all unique genres and locations from artists data
-  const allGenres = [...new Set(artists.flatMap(artist => artist.genres))];
   const allLocations = [...new Set(artists.map(artist => artist.location))];
 
-  // Toggle a genre selection
-  const toggleGenre = (genre: Genre) => {
-    if (selectedGenres.includes(genre)) {
-      setSelectedGenres(selectedGenres.filter(g => g !== genre));
-    } else {
-      setSelectedGenres([...selectedGenres, genre]);
-    }
-  };
-
-  // Toggle a location selection
   const toggleLocation = (location: Location) => {
     if (selectedLocations.includes(location)) {
       setSelectedLocations(selectedLocations.filter(l => l !== location));
@@ -39,29 +26,24 @@ const ArtistsPage: React.FC = () => {
     }
   };
 
-  // Clear all filters
   const clearFilters = () => {
     setSearchTerm('');
-    setSelectedGenres([]);
+    setSelectedCategory('all');
     setSelectedLocations([]);
     setSortBy('popularity');
   };
 
-  // Filter and sort artists based on current selections
   const filteredArtists = artists.filter(artist => {
-    // Search term filter
     const matchesSearch = searchTerm === '' || 
       artist.name.toLowerCase().includes(searchTerm.toLowerCase());
     
-    // Genre filter
-    const matchesGenre = selectedGenres.length === 0 || 
-      artist.genres.some(genre => selectedGenres.includes(genre));
+    const matchesCategory = selectedCategory === 'all' || 
+      artist.category === selectedCategory;
     
-    // Location filter
     const matchesLocation = selectedLocations.length === 0 || 
       selectedLocations.includes(artist.location);
     
-    return matchesSearch && matchesGenre && matchesLocation;
+    return matchesSearch && matchesCategory && matchesLocation;
   }).sort((a, b) => {
     switch (sortBy) {
       case 'priceAsc':
@@ -82,7 +64,7 @@ const ArtistsPage: React.FC = () => {
         <div className="mb-12">
           <h1 className="mb-4">Find Your Perfect Artist</h1>
           <p className="text-neutral-400 text-lg">
-            Browse our curated selection of {artists.length} professional DJs and musicians
+            Browse our curated selection of professional DJs and photographers
           </p>
         </div>
 
@@ -127,16 +109,16 @@ const ArtistsPage: React.FC = () => {
               leftIcon={<Filter size={18} />}
               onClick={() => setIsFiltersOpen(!isFiltersOpen)}
             >
-              Filters {selectedGenres.length + selectedLocations.length > 0 && 
-                `(${selectedGenres.length + selectedLocations.length})`}
+              Filters {(selectedCategory !== 'all' || selectedLocations.length > 0) && 
+                `(${(selectedCategory !== 'all' ? 1 : 0) + selectedLocations.length})`}
             </Button>
           </div>
 
-          {/* Filter section (visible on mobile when open, always visible on desktop) */}
+          {/* Filter section */}
           <div className={`bg-background-light border border-neutral-700 rounded-lg p-6 mb-6 ${isFiltersOpen ? 'block' : 'hidden md:block'}`}>
             <div className="flex justify-between items-center mb-4">
               <h3 className="text-lg font-semibold">Filters</h3>
-              {(selectedGenres.length > 0 || selectedLocations.length > 0) && (
+              {(selectedCategory !== 'all' || selectedLocations.length > 0) && (
                 <button
                   className="text-neutral-400 hover:text-white text-sm flex items-center"
                   onClick={clearFilters}
@@ -147,23 +129,40 @@ const ArtistsPage: React.FC = () => {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {/* Genre filter */}
+              {/* Category filter */}
               <div>
-                <h4 className="font-medium mb-3">Genre</h4>
+                <h4 className="font-medium mb-3">Category</h4>
                 <div className="flex flex-wrap gap-2">
-                  {allGenres.map((genre) => (
-                    <button
-                      key={genre}
-                      className={`px-3 py-1 text-sm rounded-full transition-colors ${
-                        selectedGenres.includes(genre)
-                          ? 'bg-primary text-white'
-                          : 'bg-background border border-neutral-700 text-neutral-300 hover:border-primary'
-                      }`}
-                      onClick={() => toggleGenre(genre)}
-                    >
-                      {genre}
-                    </button>
-                  ))}
+                  <button
+                    className={`px-3 py-1 text-sm rounded-full transition-colors ${
+                      selectedCategory === 'all'
+                        ? 'bg-primary text-white'
+                        : 'bg-background border border-neutral-700 text-neutral-300 hover:border-primary'
+                    }`}
+                    onClick={() => setSelectedCategory('all')}
+                  >
+                    All
+                  </button>
+                  <button
+                    className={`px-3 py-1 text-sm rounded-full transition-colors ${
+                      selectedCategory === 'dj'
+                        ? 'bg-primary text-white'
+                        : 'bg-background border border-neutral-700 text-neutral-300 hover:border-primary'
+                    }`}
+                    onClick={() => setSelectedCategory('dj')}
+                  >
+                    DJs
+                  </button>
+                  <button
+                    className={`px-3 py-1 text-sm rounded-full transition-colors ${
+                      selectedCategory === 'photographer'
+                        ? 'bg-primary text-white'
+                        : 'bg-background border border-neutral-700 text-neutral-300 hover:border-primary'
+                    }`}
+                    onClick={() => setSelectedCategory('photographer')}
+                  >
+                    Photographers/Videographers
+                  </button>
                 </div>
               </div>
 
@@ -190,22 +189,19 @@ const ArtistsPage: React.FC = () => {
           </div>
 
           {/* Active filters display */}
-          {(selectedGenres.length > 0 || selectedLocations.length > 0) && (
+          {(selectedCategory !== 'all' || selectedLocations.length > 0) && (
             <div className="flex flex-wrap gap-2 mb-6">
-              {selectedGenres.map((genre) => (
-                <div
-                  key={genre}
-                  className="bg-primary/20 text-primary px-3 py-1 text-sm rounded-full flex items-center"
-                >
-                  {genre}
+              {selectedCategory !== 'all' && (
+                <div className="bg-primary/20 text-primary px-3 py-1 text-sm rounded-full flex items-center">
+                  {selectedCategory === 'dj' ? 'DJs' : 'Photographers/Videographers'}
                   <button
                     className="ml-2"
-                    onClick={() => toggleGenre(genre)}
+                    onClick={() => setSelectedCategory('all')}
                   >
                     <X size={14} />
                   </button>
                 </div>
-              ))}
+              )}
               {selectedLocations.map((location) => (
                 <div
                   key={location}
@@ -275,15 +271,10 @@ const ArtistsPage: React.FC = () => {
                   
                   <h3 className="text-xl font-bold mb-1">{artist.name}</h3>
                   
-                  <div className="flex flex-wrap gap-2 mb-2">
-                    {artist.genres.map((genre, index) => (
-                      <span 
-                        key={index} 
-                        className="text-xs font-medium bg-primary/10 text-primary px-2 py-1 rounded-full"
-                      >
-                        {genre}
-                      </span>
-                    ))}
+                  <div className="mb-2">
+                    <span className="text-xs font-medium bg-primary/10 text-primary px-2 py-1 rounded-full">
+                      {artist.category === 'dj' ? 'DJ' : 'Photographer/Videographer'}
+                    </span>
                   </div>
                   
                   <p className="text-sm text-neutral-400 mb-4">

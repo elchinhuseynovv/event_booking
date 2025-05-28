@@ -3,7 +3,7 @@ export interface Artist {
   name: string;
   image: string;
   backgroundImage?: string;
-  genres: string[];
+  category: 'dj' | 'photographer';
   price: number;
   rating: number;
   reviewCount: number;

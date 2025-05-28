@@ -50,8 +50,8 @@ const FeaturedArtists: React.FC = () => {
                     {[...Array(5)].map((_, i) => (
                       <Star 
                         key={i} 
-                        size={16} 
                         fill={i < artist.rating ? 'currentColor' : 'none'}
+                        size={16} 
                       />
                     ))}
                   </div>
@@ -63,7 +63,7 @@ const FeaturedArtists: React.FC = () => {
                 <h3 className="text-xl font-bold mb-1">{artist.name}</h3>
                 
                 <div className="flex flex-wrap gap-2 mb-4">
-                  {artist.genres.map((genre, index) => (
+                  {(artist.genres || []).map((genre, index) => (
                     <span 
                       key={index} 
                       className="text-xs font-medium bg-primary/10 text-primary px-2 py-1 rounded-full"
