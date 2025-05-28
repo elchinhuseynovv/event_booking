@@ -210,7 +210,7 @@ const BookingPage: React.FC = () => {
                         <div>
                           <h4 className="font-medium">{artist.name}</h4>
                           <p className="text-sm text-neutral-400">
-                            {artist.genres[0]}, ${artist.price}/hr
+                            {artist.genres?.[0]}, ${artist.price}/hr
                           </p>
                         </div>
                       </div>
@@ -230,7 +230,7 @@ const BookingPage: React.FC = () => {
                       <div>
                         <h4 className="text-lg font-medium">{selectedArtistData.name}</h4>
                         <div className="flex flex-wrap gap-2 mt-1">
-                          {selectedArtistData.genres?.map((genre, index) => (
+                          {selectedArtistData.genres && Array.isArray(selectedArtistData.genres) && selectedArtistData.genres.map((genre, index) => (
                             <span 
                               key={index} 
                               className="text-xs font-medium bg-primary/10 text-primary px-2 py-1 rounded-full"
