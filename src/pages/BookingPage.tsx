@@ -61,6 +61,8 @@ const BookingPage: React.FC = () => {
     // In a real app, this would submit the booking to a backend
     setIsBookingComplete(true);
   };
+
+  const selectedArtistData = artists.find(a => a.id === selectedArtist);
   
   // If booking is complete, show success message
   if (isBookingComplete) {
@@ -80,7 +82,7 @@ const BookingPage: React.FC = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-left">
                 <div>
                   <p className="text-neutral-400 text-sm">Artist</p>
-                  <p className="font-medium">{artists.find(a => a.id === selectedArtist)?.name}</p>
+                  <p className="font-medium">{selectedArtistData?.name}</p>
                 </div>
                 <div>
                   <p className="text-neutral-400 text-sm">Event Date & Time</p>
@@ -216,19 +218,19 @@ const BookingPage: React.FC = () => {
                   ))}
                 </div>
                 
-                {selectedArtist && (
+                {selectedArtistData && (
                   <div className="mt-8">
                     <h3 className="font-semibold mb-2">Selected Artist</h3>
                     <div className="bg-background p-4 rounded-lg flex items-center">
                       <img 
-                        src={artists.find(a => a.id === selectedArtist)?.image} 
+                        src={selectedArtistData.image} 
                         alt="Selected artist" 
                         className="w-16 h-16 rounded-full object-cover mr-4"
                       />
                       <div>
-                        <h4 className="text-lg font-medium">{artists.find(a => a.id === selectedArtist)?.name}</h4>
+                        <h4 className="text-lg font-medium">{selectedArtistData.name}</h4>
                         <div className="flex flex-wrap gap-2 mt-1">
-                          {artists.find(a => a.id === selectedArtist)?.genres.map((genre, index) => (
+                          {selectedArtistData.genres?.map((genre, index) => (
                             <span 
                               key={index} 
                               className="text-xs font-medium bg-primary/10 text-primary px-2 py-1 rounded-full"

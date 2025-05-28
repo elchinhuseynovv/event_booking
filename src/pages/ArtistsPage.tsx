@@ -1,19 +1,17 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Search, Filter, ChevronDown, X } from 'lucide-react';
+import { Search, Filter, X } from 'lucide-react';
 import Button from '../components/ui/Button';
 import { artists } from '../data/artists';
 
 type Category = 'all' | 'dj' | 'photographer';
 type Location = string;
-type SortOption = 'popularity' | 'priceAsc' | 'priceDesc' | 'rating';
 
 const ArtistsPage: React.FC = () => {
   const navigate = useNavigate();
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<Category>('all');
   const [selectedLocations, setSelectedLocations] = useState<Location[]>([]);
-  const [sortBy, setSortBy] = useState<SortOption>('popularity');
   const [isFiltersOpen, setIsFiltersOpen] = useState(false);
 
   const allLocations = [...new Set(artists.map(artist => artist.location))];
@@ -30,7 +28,6 @@ const ArtistsPage: React.FC = () => {
     setSearchTerm('');
     setSelectedCategory('all');
     setSelectedLocations([]);
-    setSortBy('popularity');
   };
 
   const filteredArtists = artists.filter(artist => {
@@ -44,19 +41,10 @@ const ArtistsPage: React.FC = () => {
       selectedLocations.includes(artist.location);
     
     return matchesSearch && matchesCategory && matchesLocation;
-  }).sort((a, b) => {
-    switch (sortBy) {
-      case 'priceAsc':
-        return a.price - b.price;
-      case 'priceDesc':
-        return b.price - a.price;
-      case 'rating':
-        return b.rating - a.rating;
-      case 'popularity':
-      default:
-        return b.bookings - a.bookings;
-    }
   });
+
+  const djArtists = filteredArtists.filter(artist => artist.category === 'dj');
+  const photographerArtists = filteredArtists.filter(artist => artist.category === 'photographer');
 
   return (
     <div className="pt-24 pb-16">
@@ -83,23 +71,6 @@ const ArtistsPage: React.FC = () => {
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
               />
-            </div>
-
-            {/* Sort dropdown */}
-            <div className="relative min-w-[200px]">
-              <select
-                className="appearance-none block w-full p-4 pr-10 bg-background-light border border-neutral-700 rounded-lg focus:ring-primary focus:border-primary"
-                value={sortBy}
-                onChange={(e) => setSortBy(e.target.value as SortOption)}
-              >
-                <option value="popularity">Sort by: Popularity</option>
-                <option value="rating">Sort by: Rating</option>
-                <option value="priceAsc">Sort by: Price (Low to High)</option>
-                <option value="priceDesc">Sort by: Price (High to Low)</option>
-              </select>
-              <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
-                <ChevronDown className="w-5 h-5 text-neutral-400" />
-              </div>
             </div>
 
             {/* Filter button (mobile) */}
@@ -227,79 +198,38 @@ const ArtistsPage: React.FC = () => {
           </p>
         </div>
 
-        {/* Artists grid */}
+        {/* Artists sections */}
         {filteredArtists.length > 0 ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {filteredArtists.map((artist) => (
-              <div 
-                key={artist.id} 
-                className="card group cursor-pointer"
-                onClick={() => navigate(`/artists/${artist.id}`)}
-              >
-                <div className="relative overflow-hidden">
-                  <img 
-                    src={artist.image} 
-                    alt={artist.name} 
-                    className="w-full aspect-square object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                  {artist.featured && (
-                    <div className="absolute top-4 right-4 bg-secondary text-white text-xs font-semibold px-2 py-1 rounded-full">
-                      Featured
-                    </div>
-                  )}
-                </div>
-                
-                <div className="p-6">
-                  <div className="flex items-center mb-2">
-                    <div className="flex text-warning">
-                      {[...Array(5)].map((_, i) => (
-                        <svg
-                          key={i}
-                          className={`w-4 h-4 ${
-                            i < artist.rating ? 'fill-current' : 'stroke-current fill-none'
-                          }`}
-                          viewBox="0 0 24 24"
-                        >
-                          <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-                        </svg>
-                      ))}
-                    </div>
-                    <span className="text-sm text-neutral-400 ml-2">
-                      ({artist.reviewCount})
-                    </span>
-                  </div>
-                  
-                  <h3 className="text-xl font-bold mb-1">{artist.name}</h3>
-                  
-                  <div className="mb-2">
-                    <span className="text-xs font-medium bg-primary/10 text-primary px-2 py-1 rounded-full">
-                      {artist.category === 'dj' ? 'DJ' : 'Photographer/Videographer'}
-                    </span>
-                  </div>
-                  
-                  <p className="text-sm text-neutral-400 mb-4">
-                    {artist.location}
-                  </p>
-                  
-                  <div className="flex justify-between items-center">
-                    <div>
-                      <p className="text-sm text-neutral-400">Starting from</p>
-                      <p className="text-lg font-semibold text-primary">${artist.price}/hr</p>
-                    </div>
-                    <Button 
-                      variant="outline" 
-                      size="sm"
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        navigate(`/booking?artist=${artist.id}`);
-                      }}
-                    >
-                      Book Now
-                    </Button>
-                  </div>
+          <div className="space-y-16">
+            {/* DJs Section */}
+            {(selectedCategory === 'all' || selectedCategory === 'dj') && djArtists.length > 0 && (
+              <div>
+                <h2 className="text-4xl font-bold mb-8 pb-4 border-b-2 border-primary/30">
+                  DJs
+                  <span className="text-neutral-400 text-2xl ml-4">({djArtists.length})</span>
+                </h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                  {djArtists.map((artist) => (
+                    <ArtistCard key={artist.id} artist={artist} navigate={navigate} />
+                  ))}
                 </div>
               </div>
-            ))}
+            )}
+
+            {/* Photographers Section */}
+            {(selectedCategory === 'all' || selectedCategory === 'photographer') && photographerArtists.length > 0 && (
+              <div>
+                <h2 className="text-4xl font-bold mb-8 pb-4 border-b-2 border-secondary/30">
+                  Photographers & Videographers
+                  <span className="text-neutral-400 text-2xl ml-4">({photographerArtists.length})</span>
+                </h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                  {photographerArtists.map((artist) => (
+                    <ArtistCard key={artist.id} artist={artist} navigate={navigate} />
+                  ))}
+                </div>
+              </div>
+            )}
           </div>
         ) : (
           <div className="text-center py-16">
@@ -317,5 +247,61 @@ const ArtistsPage: React.FC = () => {
     </div>
   );
 };
+
+interface ArtistCardProps {
+  artist: any;
+  navigate: (path: string) => void;
+}
+
+const ArtistCard: React.FC<ArtistCardProps> = ({ artist, navigate }) => (
+  <div 
+    className="card group cursor-pointer"
+    onClick={() => navigate(`/artists/${artist.id}`)}
+  >
+    <div className="relative overflow-hidden">
+      <img 
+        src={artist.image} 
+        alt={artist.name} 
+        className="w-full aspect-square object-cover group-hover:scale-105 transition-transform duration-500"
+      />
+      {artist.featured && (
+        <div className="absolute top-4 right-4 bg-secondary text-white text-xs font-semibold px-2 py-1 rounded-full">
+          Featured
+        </div>
+      )}
+    </div>
+    
+    <div className="p-6">
+      <h3 className="text-xl font-bold mb-2">{artist.name}</h3>
+      
+      <div className="mb-2">
+        <span className="text-sm font-medium bg-primary/10 text-primary px-2 py-1 rounded-full">
+          {artist.category === 'dj' ? 'DJ' : 'Photographer/Videographer'}
+        </span>
+      </div>
+      
+      <p className="text-sm text-neutral-400 mb-4">
+        {artist.location}
+      </p>
+      
+      <div className="flex justify-between items-center">
+        <div>
+          <p className="text-sm text-neutral-400">Starting from</p>
+          <p className="text-lg font-semibold text-primary">${artist.price}/hr</p>
+        </div>
+        <Button 
+          variant="outline" 
+          size="sm"
+          onClick={(e) => {
+            e.stopPropagation();
+            navigate(`/booking?artist=${artist.id}`);
+          }}
+        >
+          Book Now
+        </Button>
+      </div>
+    </div>
+  </div>
+);
 
 export default ArtistsPage;
