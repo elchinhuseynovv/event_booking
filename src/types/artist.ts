@@ -12,4 +12,5 @@ export interface Artist {
   experience: number;
   bookings: number;
   biography?: string;
+  genres: string[];
 }
