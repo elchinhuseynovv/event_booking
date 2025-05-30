@@ -4,8 +4,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Inter', 'sans-serif'],
-        eurostile: ['Eurostile Extended', 'sans-serif'],
+        sans: ['HandelGothic', 'Inter', 'sans-serif'],
+        eurostile: ['HandelGothic', 'sans-serif'],
       },
       colors: {
         background: '#000000',

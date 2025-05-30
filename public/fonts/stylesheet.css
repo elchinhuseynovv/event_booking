@@ -1,8 +1,8 @@
 @font-face {
-    font-family: 'Eurostile Extended';
-    src: url('EurostileExtended-Black.woff2') format('woff2'),
-        url('EurostileExtended-Black.woff') format('woff');
-    font-weight: bold;
+    font-family: 'HandelGothic';
+    src: url('HandelGothic-Regular.woff2') format('woff2'),
+        url('HandelGothic-Regular.woff') format('woff');
+    font-weight: normal;
     font-style: normal;
     font-display: swap;
 }
