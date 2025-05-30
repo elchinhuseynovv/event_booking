@@ -1,13 +1,15 @@
 import React from 'react';
+import { useNavigate, Link } from 'react-router-dom';
 import HeroSection from '../components/home/HeroSection';
 import FeaturedArtists from '../components/home/FeaturedArtists';
 import HowItWorks from '../components/home/HowItWorks';
 import Testimonials from '../components/home/Testimonials';
 import { Music, Calendar, Users, Award } from 'lucide-react';
-import { Link } from 'react-router-dom';
 import Button from '../components/ui/Button';
 
 const HomePage: React.FC = () => {
+  const navigate = useNavigate();
+
   return (
     <div>
       <HeroSection />
@@ -60,7 +62,7 @@ const HomePage: React.FC = () => {
               variant="primary" 
               size="lg" 
               isGlowing
-              onClick={() => {}}
+              onClick={() => navigate('/booking')}
             >
               Book an Artist Now
             </Button>
