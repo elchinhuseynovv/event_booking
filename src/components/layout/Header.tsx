@@ -46,7 +46,7 @@ const Header: React.FC = () => {
           <img 
             src="https://rroyrxpcceyhgixpgzrs.supabase.co/storage/v1/object/sign/logos/logo.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5X2NjYjYyNGVjLWJhZmEtNDBlZC05ZjUxLTQ0NThkZWQ0MWQwMCJ9.eyJ1cmwiOiJsb2dvcy9sb2dvLnBuZyIsImlhdCI6MTc0ODE4NzcyMSwiZXhwIjoxNzc5NzIzNzIxfQ.Z_bbLG4_mZoVbm1n7bM0pAQv0SwO06GL7n1TrZ8LZfI"
             alt="Raw Media Logo"
-            className="h-20 transition-all duration-300 group-hover:scale-110 group-hover:brightness-125 filter drop-shadow-[0_0_8px_rgba(72,52,184,0.5)]"
+            className="h-24 transition-all duration-300 group-hover:scale-110 group-hover:brightness-125 filter drop-shadow-[0_0_8px_rgba(72,52,184,0.5)]"
           />
         </Link>
 

@@ -48,8 +48,8 @@ const Footer: React.FC = () => {
               <li>United States</li>
               <li className="flex items-center space-x-2">
                 <Mail size={16} className="text-primary" />
-                <a href="mailto:info@beatbooker.com" className="hover:text-primary transition-colors">
-                  info@beatbooker.com
+                <a href="mailto:info@rawmedia.com" className="hover:text-primary transition-colors">
+                  info@rawmedia.com
                 </a>
               </li>
               <li className="flex items-center space-x-2">
@@ -87,7 +87,7 @@ const Footer: React.FC = () => {
 
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-neutral-800 text-neutral-500 text-sm flex flex-col md:flex-row justify-between items-center">
-          <p>© {currentYear} BeatBooker. All rights reserved.</p>
+          <p>© {currentYear} Raw Media. All rights reserved.</p>
           <p className="mt-2 md:mt-0">
             Designed with <span className="text-secondary">♥</span> for music lovers
           </p>

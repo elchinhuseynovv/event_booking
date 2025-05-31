@@ -7,7 +7,7 @@ const AboutPage: React.FC = () => {
       <div className="container">
         {/* Hero Section */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h1 className="mb-6">About BeatBooker</h1>
+          <h1 className="mb-6">About Raw Media</h1>
           <p className="text-xl text-neutral-300">
             We connect exceptional musical talent with unforgettable events, making the process of finding and booking your perfect DJ simple and stress-free.
           </p>
@@ -18,13 +18,13 @@ const AboutPage: React.FC = () => {
           <div>
             <h2 className="mb-6">Our Story</h2>
             <p className="text-neutral-300 mb-4">
-              Founded in 2020 by a team of music industry professionals and tech innovators, BeatBooker was born from a simple observation: finding and booking quality musical talent was unnecessarily complicated.
+              Founded in 2020 by a team of music industry professionals and tech innovators, Raw Media was born from a simple observation: finding and booking quality musical talent was unnecessarily complicated.
             </p>
             <p className="text-neutral-300 mb-4">
               We set out to create a platform that would streamline the booking process while ensuring top-tier talent for events of all sizes. From intimate gatherings to festival main stages, our mission is to make world-class musical experiences accessible to everyone.
             </p>
             <p className="text-neutral-300">
-              Today, BeatBooker is the leading platform for DJ and artist bookings, trusted by clients around the world to deliver unforgettable musical moments for their special events.
+              Today, Raw Media is the leading platform for DJ and artist bookings, trusted by clients around the world to deliver unforgettable musical moments for their special events.
             </p>
           </div>
           <div className="relative">
@@ -72,7 +72,7 @@ const AboutPage: React.FC = () => {
           <div className="text-center mb-12">
             <h2 className="mb-4">Our Values</h2>
             <p className="text-neutral-300 max-w-3xl mx-auto">
-              These core principles guide everything we do at BeatBooker
+              These core principles guide everything we do at Raw Media
             </p>
           </div>
           
@@ -115,7 +115,7 @@ const AboutPage: React.FC = () => {
           <div className="text-center mb-12">
             <h2 className="mb-4">Meet Our Team</h2>
             <p className="text-neutral-300 max-w-3xl mx-auto">
-              The passionate people behind BeatBooker
+              The passionate people behind Raw Media
             </p>
           </div>
           
@@ -176,17 +176,17 @@ const AboutPage: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
-                quote: "BeatBooker made finding the perfect DJ for our wedding so easy. The talent was incredible and our guests couldn't stop talking about the music!",
+                quote: "Raw Media made finding the perfect DJ for our wedding so easy. The talent was incredible and our guests couldn't stop talking about the music!",
                 name: "Emma & Jason",
                 event: "Wedding"
               },
               {
-                quote: "As an event planner, I rely on BeatBooker for all my clients' music needs. Their artists are professional, reliable, and always deliver an amazing experience.",
+                quote: "As an event planner, I rely on Raw Media for all my clients' music needs. Their artists are professional, reliable, and always deliver an amazing experience.",
                 name: "Michael Torres",
                 event: "Corporate Events Manager"
               },
               {
-                quote: "The booking process was seamless and the DJ we hired through BeatBooker absolutely made our club night. We'll definitely be using them again for future events.",
+                quote: "The booking process was seamless and the DJ we hired through Raw Media absolutely made our club night. We'll definitely be using them again for future events.",
                 name: "Nightlife Entertainment",
                 event: "Club Owner"
               }

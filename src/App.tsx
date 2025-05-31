@@ -8,6 +8,8 @@ import ArtistProfilePage from './pages/ArtistProfilePage';
 import BookingPage from './pages/BookingPage';
 import AboutPage from './pages/AboutPage';
 import ContactPage from './pages/ContactPage';
+import TermsPage from './pages/TermsPage';
+import PrivacyPage from './pages/PrivacyPage';
 
 function App() {
   return (
@@ -23,6 +25,8 @@ function App() {
             <Route path="/booking" element={<BookingPage />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/contact" element={<ContactPage />} />
+            <Route path="/terms" element={<TermsPage />} />
+            <Route path="/privacy" element={<PrivacyPage />} />
           </Routes>
         </main>
         <Footer />
@@ -31,4 +35,4 @@ function App() {
   );
 }
 
-export default App;
+export default App
