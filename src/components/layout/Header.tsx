@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
+import { useLogo } from '../../hooks/useLogo';
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
+  const { logo, loading: logoLoading } = useLogo();
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   const closeMenu = () => setIsMenuOpen(false);
@@ -31,6 +33,14 @@ const Header: React.FC = () => {
     }, 300);
   };
 
+  // Text-based logo component as fallback
+  const TextLogo = () => (
+    <div className="text-2xl font-bold text-white tracking-wider">
+      <span className="text-primary">RAW</span>
+      <span className="ml-1">MEDIA</span>
+    </div>
+  );
+
   return (
     <header 
       className={`fixed w-full z-50 transition-all duration-300 ${
@@ -43,11 +53,36 @@ const Header: React.FC = () => {
           className="flex items-center space-x-2 group" 
           onClick={closeMenu}
         >
-          <img 
-            src="https://rroyrxpcceyhgixpgzrs.supabase.co/storage/v1/object/sign/logos/logo.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5X2NjYjYyNGVjLWJhZmEtNDBlZC05ZjUxLTQ0NThkZWQ0MWQwMCJ9.eyJ1cmwiOiJsb2dvcy9sb2dvLnBuZyIsImlhdCI6MTc0ODE4NzcyMSwiZXhwIjoxNzc5NzIzNzIxfQ.Z_bbLG4_mZoVbm1n7bM0pAQv0SwO06GL7n1TrZ8LZfI"
-            alt="Raw Media Logo"
-            className="h-24 transition-all duration-300 group-hover:scale-110 group-hover:brightness-125 filter drop-shadow-[0_0_8px_rgba(72,52,184,0.5)]"
-          />
+          {!logoLoading && logo?.url ? (
+            <img 
+              src={logo.url}
+              alt={logo.alt_text || "Raw Media Logo"}
+              className="h-24 transition-all duration-300 group-hover:scale-110 group-hover:brightness-125 filter drop-shadow-[0_0_8px_rgba(72,52,184,0.5)]"
+              onError={(e) => {
+                console.warn('Logo image failed to load, switching to text logo');
+                // Hide the broken image and show text logo instead
+                e.currentTarget.style.display = 'none';
+                const textLogo = e.currentTarget.nextElementSibling as HTMLElement;
+                if (textLogo) {
+                  textLogo.style.display = 'block';
+                }
+              }}
+            />
+          ) : null}
+          
+          {/* Text logo - shown when loading, no logo available, or image fails */}
+          <div 
+            className={`transition-all duration-300 group-hover:scale-110 ${
+              logoLoading || !logo?.url ? 'block' : 'hidden'
+            }`}
+            style={{ display: logoLoading || !logo?.url ? 'block' : 'none' }}
+          >
+            {logoLoading ? (
+              <div className="h-8 w-32 bg-neutral-700 animate-pulse rounded"></div>
+            ) : (
+              <TextLogo />
+            )}
+          </div>
         </Link>
 
         {/* Desktop Navigation */}

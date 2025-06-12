@@ -7,80 +7,121 @@ const TermsPage: React.FC = () => {
         <h1 className="mb-8">Terms and Conditions</h1>
         
         <div className="prose prose-invert">
+          <div className="mb-8">
+            <p className="text-lg font-semibold text-primary mb-4">Effective Date: 12.06.2025</p>
+            <p className="text-neutral-300 mb-6">
+              Welcome to raw-media.co, the official website of BridgeFound. Established in 2025, BridgeFound is a multidisciplinary artist management and creative direction agency based in Warsaw, Poland. Our journey began in 2022, and over the years, we've evolved into a nexus where artistry meets strategy, fostering authentic connections between artists and audiences.
+            </p>
+            <div className="border-t border-neutral-700 my-8"></div>
+          </div>
+
           <section className="mb-8">
-            <h2 className="text-2xl font-bold mb-4">1. Introduction</h2>
+            <h2 className="text-2xl font-bold mb-4">1. Use of Website</h2>
             <p className="text-neutral-300 mb-4">
-              Welcome to Raw Media. By accessing and using our website and services, you agree to be bound by these Terms and Conditions. If you do not agree with any part of these terms, please do not use our services.
+              By accessing and using raw-media.co, you agree to comply with and be bound by the following terms and conditions:
             </p>
+            <div className="mb-4">
+              <h3 className="text-xl font-semibold mb-2">Purpose:</h3>
+              <p className="text-neutral-300 mb-4">
+                This website serves as a platform to showcase our services, represent our artists, and facilitate inquiries regarding bookings and collaborations.
+              </p>
+            </div>
+            <div className="mb-4">
+              <h3 className="text-xl font-semibold mb-2">Prohibited Actions:</h3>
+              <p className="text-neutral-300 mb-2">Users are prohibited from:</p>
+              <ul className="list-disc list-inside text-neutral-300 space-y-2 ml-4">
+                <li>Using the website for unlawful purposes.</li>
+                <li>Attempting unauthorized access to our systems or data.</li>
+                <li>Engaging in any activity that disrupts or interferes with the website's functionality.</li>
+              </ul>
+            </div>
+            <div className="border-t border-neutral-700 my-8"></div>
           </section>
 
           <section className="mb-8">
-            <h2 className="text-2xl font-bold mb-4">2. Definitions</h2>
-            <ul className="list-disc list-inside text-neutral-300 space-y-2">
-              <li>"Service" refers to the Raw Media platform and website</li>
-              <li>"User" refers to anyone who uses our service</li>
-              <li>"Artist" refers to performers listed on our platform</li>
-              <li>"Client" refers to those booking artists through our platform</li>
-            </ul>
-          </section>
-
-          <section className="mb-8">
-            <h2 className="text-2xl font-bold mb-4">3. User Accounts</h2>
+            <h2 className="text-2xl font-bold mb-4">2. Intellectual Property</h2>
             <p className="text-neutral-300 mb-4">
-              Users must provide accurate and complete information when creating an account. You are responsible for maintaining the confidentiality of your account credentials and for all activities under your account.
+              All content on raw-media.co, including but not limited to text, graphics, logos, images, and software, is the property of BridgeFound or its content suppliers and is protected by international copyright laws.
             </p>
+            <div className="mb-4">
+              <h3 className="text-xl font-semibold mb-2">Usage Restrictions:</h3>
+              <p className="text-neutral-300 mb-4">
+                Unauthorized use, reproduction, or distribution of any content is strictly prohibited.
+              </p>
+            </div>
+            <div className="mb-4">
+              <h3 className="text-xl font-semibold mb-2">Artist Representation:</h3>
+              <p className="text-neutral-300 mb-4">
+                Artists featured on this site are under exclusive management agreements with BridgeFound. Direct outreach to these artists outside of our official channels is not permitted and may result in legal action.
+              </p>
+            </div>
+            <div className="border-t border-neutral-700 my-8"></div>
           </section>
 
           <section className="mb-8">
-            <h2 className="text-2xl font-bold mb-4">4. Booking Terms</h2>
+            <h2 className="text-2xl font-bold mb-4">3. Artist Representation & Bookings</h2>
             <p className="text-neutral-300 mb-4">
-              All bookings made through Raw Media are subject to:
+              BridgeFound operates as an intermediary between artists and clients, ensuring seamless collaboration and mutual benefit.
             </p>
-            <ul className="list-disc list-inside text-neutral-300 space-y-2">
-              <li>Availability of the artist</li>
-              <li>Payment of the agreed fee</li>
-              <li>Acceptance of the artist's specific terms</li>
-              <li>Our booking policies and procedures</li>
-            </ul>
+            <div className="mb-4">
+              <h3 className="text-xl font-semibold mb-2">Booking Process:</h3>
+              <p className="text-neutral-300 mb-4">
+                All booking requests should be submitted through our official contact channels. Each engagement is subject to a formal agreement outlining terms, responsibilities, and compensation.
+              </p>
+            </div>
+            <div className="mb-4">
+              <h3 className="text-xl font-semibold mb-2">Exclusivity:</h3>
+              <p className="text-neutral-300 mb-4">
+                Our artists are represented exclusively by BridgeFound. Any attempts to bypass our agency for direct engagements violate our terms and may lead to legal consequences.
+              </p>
+            </div>
+            <div className="border-t border-neutral-700 my-8"></div>
           </section>
 
           <section className="mb-8">
-            <h2 className="text-2xl font-bold mb-4">5. Payments and Fees</h2>
+            <h2 className="text-2xl font-bold mb-4">4. External Links</h2>
             <p className="text-neutral-300 mb-4">
-              All payments must be made through our secure payment system. We charge a service fee for facilitating bookings. Cancellation fees may apply as per our cancellation policy.
+              raw-media.co may contain links to external websites. We are not responsible for the content or privacy practices of these sites. We encourage users to read the privacy policies of any external sites they visit.
             </p>
+            <div className="border-t border-neutral-700 my-8"></div>
           </section>
 
           <section className="mb-8">
-            <h2 className="text-2xl font-bold mb-4">6. Intellectual Property</h2>
+            <h2 className="text-2xl font-bold mb-4">5. Disclaimers</h2>
+            <div className="mb-4">
+              <h3 className="text-xl font-semibold mb-2">Accuracy:</h3>
+              <p className="text-neutral-300 mb-4">
+                While we strive for accuracy, we do not warrant that all content on the website is complete or current.
+              </p>
+            </div>
+            <div className="mb-4">
+              <h3 className="text-xl font-semibold mb-2">Liability:</h3>
+              <p className="text-neutral-300 mb-4">
+                BridgeFound is not liable for any damages arising from the use or inability to use the website or its content.
+              </p>
+            </div>
+            <div className="border-t border-neutral-700 my-8"></div>
+          </section>
+
+          <section className="mb-8">
+            <h2 className="text-2xl font-bold mb-4">6. Changes to This Policy</h2>
             <p className="text-neutral-300 mb-4">
-              All content on Raw Media, including but not limited to text, graphics, logos, and software, is our property and is protected by intellectual property laws.
+              We may update our Terms of Use and Privacy Policy from time to time. Any changes will be posted on this page with an updated effective date.
             </p>
+            <div className="border-t border-neutral-700 my-8"></div>
           </section>
 
           <section className="mb-8">
-            <h2 className="text-2xl font-bold mb-4">7. Limitation of Liability</h2>
+            <h2 className="text-2xl font-bold mb-4">7. Contact Us</h2>
             <p className="text-neutral-300 mb-4">
-              Raw Media is not liable for any indirect, incidental, special, or consequential damages arising from the use of our services or any disputes between users and artists.
+              For any questions or concerns regarding these terms or our services, please contact:
             </p>
-          </section>
-
-          <section className="mb-8">
-            <h2 className="text-2xl font-bold mb-4">8. Changes to Terms</h2>
-            <p className="text-neutral-300 mb-4">
-              We reserve the right to modify these terms at any time. Users will be notified of significant changes, and continued use of our service constitutes acceptance of the modified terms.
-            </p>
-          </section>
-
-          <section className="mb-8">
-            <h2 className="text-2xl font-bold mb-4">9. Contact Information</h2>
-            <p className="text-neutral-300">
-              For questions about these Terms and Conditions, please contact us at:
-              <br />
-              Email: legal@rawmedia.com
-              <br />
-              Address: 123 Music Street, Los Angeles, CA 90001
-            </p>
+            <div className="bg-background-light p-6 rounded-lg">
+              <p className="text-neutral-300 mb-2"><strong>BridgeFound</strong></p>
+              <p className="text-neutral-300 mb-2">Email: raw.mediagency@gmail.com</p>
+              <p className="text-neutral-300 mb-2">Instagram: @raw_visualstudio</p>
+              <p className="text-neutral-300">Warsaw, Poland</p>
+            </div>
           </section>
         </div>
       </div>

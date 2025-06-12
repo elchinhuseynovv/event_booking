@@ -18,13 +18,16 @@ const AboutPage: React.FC = () => {
           <div>
             <h2 className="mb-6">Our Story</h2>
             <p className="text-neutral-300 mb-4">
-              Founded in 2020 by a team of music industry professionals and tech innovators, Raw Media was born from a simple observation: finding and booking quality musical talent was unnecessarily complicated.
+              Raw Media is a multidisciplinary artist management and creative direction agency based in Warsaw, Poland. Founded in 2025, our journey began in 2022 with a vision to bridge the gap between emerging artists and global audiences.
             </p>
             <p className="text-neutral-300 mb-4">
-              We set out to create a platform that would streamline the booking process while ensuring top-tier talent for events of all sizes. From intimate gatherings to festival main stages, our mission is to make world-class musical experiences accessible to everyone.
+              At Raw Media, we believe in the power of authentic narratives and meaningful connections. Our mission is to cultivate artistry that resonates, transcending boundaries and fostering a dynamic cultural dialogue. We collaborate with visionaries across music, visual arts, and cultural expression, guiding them through their creative journeys with integrity and purpose.
+            </p>
+            <p className="text-neutral-300 mb-4">
+              Our approach is holistic, combining strategic planning with a deep understanding of the artistic process. We are committed to ensuring our talents thrive both personally and professionally, navigating the ever-evolving landscape of the creative industry.
             </p>
             <p className="text-neutral-300">
-              Today, Raw Media is the leading platform for DJ and artist bookings, trusted by clients around the world to deliver unforgettable musical moments for their special events.
+              Join us as we continue to build bridges between art and audience, tradition and innovation, passion and purpose.
             </p>
           </div>
           <div className="relative">
@@ -128,10 +131,10 @@ const AboutPage: React.FC = () => {
                 bio: "Former DJ and music producer with 15 years in the industry."
               },
               {
-                name: "David Chen",
-                title: "Chief Technology Officer",
-                image: "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-                bio: "Tech visionary with experience at leading music platforms."
+                name: "Elchin Huseynov",
+                title: "Web Developer",
+                image: "https://rroyrxpcceyhgixpgzrs.supabase.co/storage/v1/object/sign/workers/elchinhuseynovprofile.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV82N2JkYWYxNi03YzRhLTQ3ZmUtYTE1NS1mZjcxOTE2ZTdiMGQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJ3b3JrZXJzL2VsY2hpbmh1c2V5bm92cHJvZmlsZS5qcGciLCJpYXQiOjE3NDk3MTcyNTgsImV4cCI6MjE4MTcxNzI1OH0.IixIU7mwqyiBwZKD5EYOELW_ZbqK9aNHl6cPiyC6VmA",
+                bio: "Skilled web developer passionate about creating innovative digital experiences and user-friendly interfaces."
               },
               {
                 name: "Maria Rodriguez",

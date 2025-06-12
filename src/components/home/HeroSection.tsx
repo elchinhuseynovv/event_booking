@@ -2,11 +2,13 @@ import React, { useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ChevronRight, PlayCircle } from 'lucide-react';
 import Button from '../ui/Button';
+import { useWebsiteConfig } from '../../hooks/useWebsiteConfig';
 
 const HeroSection: React.FC = () => {
   const navigate = useNavigate();
   const heroRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
+  const { config } = useWebsiteConfig();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -27,6 +29,11 @@ const HeroSection: React.FC = () => {
     }
   }, []);
 
+  // Get background video URL from database or fallback
+  const getBackgroundVideoUrl = () => {
+    return config?.background_video || 'https://rroyrxpcceyhgixpgzrs.supabase.co/storage/v1/object/public/uidata/background_video.mp4';
+  };
+
   return (
     <section ref={heroRef} className="relative min-h-screen flex items-center">
       {/* Background Video */}
@@ -39,7 +46,7 @@ const HeroSection: React.FC = () => {
           className="absolute w-full h-full object-cover"
           poster="https://images.pexels.com/photos/1540406/pexels-photo-1540406.jpeg"
         >
-          <source src="https://rroyrxpcceyhgixpgzrs.supabase.co/storage/v1/object/public/uidata/background_video.mp4" type="video/mp4" />
+          <source src={getBackgroundVideoUrl()} type="video/mp4" />
         </video>
         <div className="absolute inset-0 bg-black/30" />
       </div>
