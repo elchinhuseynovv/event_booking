@@ -13,6 +13,7 @@ const ArtistsPage: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState<Category>('all');
   const [selectedLocations, setSelectedLocations] = useState<Location[]>([]);
   const [isFiltersOpen, setIsFiltersOpen] = useState(false);
+  const [hoveredArtist, setHoveredArtist] = useState<string | null>(null);
 
   const allLocations = [...new Set(artists.map(artist => artist.location))];
 
@@ -47,17 +48,18 @@ const ArtistsPage: React.FC = () => {
   const photographerArtists = filteredArtists.filter(artist => artist.category === 'photographer');
 
   return (
-    <div className="pt-24 pb-16">
+    <div className="character-select-page">
       <div className="container">
-        <div className="mb-12">
-          <h1 className="mb-4">Find Your Perfect Artist</h1>
-          <p className="text-neutral-400 text-lg">
-            Browse our curated selection of professional DJs and photographers
+        {/* Hero Section */}
+        <div className="character-select-header">
+          <h1 className="character-select-title">SELECT YOUR ARTIST</h1>
+          <p className="character-select-subtitle">
+            Choose from our roster of elite talent
           </p>
         </div>
 
         {/* Search and filter section */}
-        <div className="mb-12">
+        <div className="character-select-controls">
           <div className="flex flex-col md:flex-row gap-4 mb-6">
             {/* Search input */}
             <div className="relative flex-grow">
@@ -66,7 +68,7 @@ const ArtistsPage: React.FC = () => {
               </div>
               <input
                 type="text"
-                className="block w-full p-4 pl-10 bg-background-light border border-neutral-700 rounded-lg focus:ring-primary focus:border-primary"
+                className="character-select-search"
                 placeholder="Search artists by name..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
@@ -76,7 +78,7 @@ const ArtistsPage: React.FC = () => {
             {/* Filter button (mobile) */}
             <Button
               variant="outline"
-              className="md:hidden"
+              className="md:hidden character-select-filter-btn"
               leftIcon={<Filter size={18} />}
               onClick={() => setIsFiltersOpen(!isFiltersOpen)}
             >
@@ -86,12 +88,12 @@ const ArtistsPage: React.FC = () => {
           </div>
 
           {/* Filter section */}
-          <div className={`bg-background-light border border-neutral-700 rounded-lg p-6 mb-6 ${isFiltersOpen ? 'block' : 'hidden md:block'}`}>
+          <div className={`character-select-filters ${isFiltersOpen ? 'block' : 'hidden md:block'}`}>
             <div className="flex justify-between items-center mb-4">
-              <h3 className="text-lg font-semibold">Filters</h3>
+              <h3 className="text-lg font-semibold text-[#E8E6E3]">FILTERS</h3>
               {(selectedCategory !== 'all' || selectedLocations.length > 0) && (
                 <button
-                  className="text-neutral-400 hover:text-white text-sm flex items-center"
+                  className="text-neutral-400 hover:text-[#E8E6E3] text-sm flex items-center"
                   onClick={clearFilters}
                 >
                   <X size={16} className="mr-1" /> Clear All
@@ -102,56 +104,48 @@ const ArtistsPage: React.FC = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {/* Category filter */}
               <div>
-                <h4 className="font-medium mb-3">Category</h4>
+                <h4 className="font-medium mb-3 text-[#E8E6E3]">CATEGORY</h4>
                 <div className="flex flex-wrap gap-2">
                   <button
-                    className={`px-3 py-1 text-sm rounded-full transition-colors ${
-                      selectedCategory === 'all'
-                        ? 'bg-primary text-white'
-                        : 'bg-background border border-neutral-700 text-neutral-300 hover:border-primary'
+                    className={`character-select-filter-tag ${
+                      selectedCategory === 'all' ? 'active' : ''
                     }`}
                     onClick={() => setSelectedCategory('all')}
                   >
-                    All
+                    ALL
                   </button>
                   <button
-                    className={`px-3 py-1 text-sm rounded-full transition-colors ${
-                      selectedCategory === 'dj'
-                        ? 'bg-primary text-white'
-                        : 'bg-background border border-neutral-700 text-neutral-300 hover:border-primary'
+                    className={`character-select-filter-tag ${
+                      selectedCategory === 'dj' ? 'active' : ''
                     }`}
                     onClick={() => setSelectedCategory('dj')}
                   >
-                    DJs
+                    DJS
                   </button>
                   <button
-                    className={`px-3 py-1 text-sm rounded-full transition-colors ${
-                      selectedCategory === 'photographer'
-                        ? 'bg-primary text-white'
-                        : 'bg-background border border-neutral-700 text-neutral-300 hover:border-primary'
+                    className={`character-select-filter-tag ${
+                      selectedCategory === 'photographer' ? 'active' : ''
                     }`}
                     onClick={() => setSelectedCategory('photographer')}
                   >
-                    Photographers/Videographers
+                    PHOTOGRAPHERS
                   </button>
                 </div>
               </div>
 
               {/* Location filter */}
               <div>
-                <h4 className="font-medium mb-3">Location</h4>
+                <h4 className="font-medium mb-3 text-[#E8E6E3]">LOCATION</h4>
                 <div className="flex flex-wrap gap-2">
                   {allLocations.map((location) => (
                     <button
                       key={location}
-                      className={`px-3 py-1 text-sm rounded-full transition-colors ${
-                        selectedLocations.includes(location)
-                          ? 'bg-secondary text-white'
-                          : 'bg-background border border-neutral-700 text-neutral-300 hover:border-secondary'
+                      className={`character-select-filter-tag ${
+                        selectedLocations.includes(location) ? 'active' : ''
                       }`}
                       onClick={() => toggleLocation(location)}
                     >
-                      {location}
+                      {location.toUpperCase()}
                     </button>
                   ))}
                 </div>
@@ -163,8 +157,8 @@ const ArtistsPage: React.FC = () => {
           {(selectedCategory !== 'all' || selectedLocations.length > 0) && (
             <div className="flex flex-wrap gap-2 mb-6">
               {selectedCategory !== 'all' && (
-                <div className="bg-primary/20 text-primary px-3 py-1 text-sm rounded-full flex items-center">
-                  {selectedCategory === 'dj' ? 'DJs' : 'Photographers/Videographers'}
+                <div className="character-select-active-filter">
+                  {selectedCategory === 'dj' ? 'DJS' : 'PHOTOGRAPHERS'}
                   <button
                     className="ml-2"
                     onClick={() => setSelectedCategory('all')}
@@ -176,9 +170,9 @@ const ArtistsPage: React.FC = () => {
               {selectedLocations.map((location) => (
                 <div
                   key={location}
-                  className="bg-secondary/20 text-secondary px-3 py-1 text-sm rounded-full flex items-center"
+                  className="character-select-active-filter"
                 >
-                  {location}
+                  {location.toUpperCase()}
                   <button
                     className="ml-2"
                     onClick={() => toggleLocation(location)}
@@ -192,25 +186,32 @@ const ArtistsPage: React.FC = () => {
         </div>
 
         {/* Results count */}
-        <div className="mb-6">
-          <p className="text-neutral-400">
-            Showing {filteredArtists.length} {filteredArtists.length === 1 ? 'artist' : 'artists'}
+        <div className="character-select-results-count">
+          <p className="text-[#A8A6A1]">
+            {filteredArtists.length} {filteredArtists.length === 1 ? 'ARTIST' : 'ARTISTS'} AVAILABLE
           </p>
         </div>
 
         {/* Artists sections */}
         {filteredArtists.length > 0 ? (
-          <div className="space-y-16">
+          <div className="character-select-sections">
             {/* DJs Section */}
             {(selectedCategory === 'all' || selectedCategory === 'dj') && djArtists.length > 0 && (
-              <div>
-                <h2 className="text-4xl font-bold mb-8 pb-4 border-b-2 border-primary/30">
-                  DJs
-                  <span className="text-neutral-400 text-2xl ml-4">({djArtists.length})</span>
+              <div className="character-select-section">
+                <h2 className="character-select-section-title">
+                  DJS
+                  <span className="character-select-section-count">({djArtists.length})</span>
                 </h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                <div className="character-select-grid">
                   {djArtists.map((artist) => (
-                    <ArtistCard key={artist.id} artist={artist} navigate={navigate} />
+                    <CharacterSelectCard 
+                      key={artist.id} 
+                      artist={artist} 
+                      navigate={navigate}
+                      isHovered={hoveredArtist === artist.id}
+                      onHover={() => setHoveredArtist(artist.id)}
+                      onLeave={() => setHoveredArtist(null)}
+                    />
                   ))}
                 </div>
               </div>
@@ -218,28 +219,35 @@ const ArtistsPage: React.FC = () => {
 
             {/* Photographers Section */}
             {(selectedCategory === 'all' || selectedCategory === 'photographer') && photographerArtists.length > 0 && (
-              <div>
-                <h2 className="text-4xl font-bold mb-8 pb-4 border-b-2 border-secondary/30">
-                  Photographers & Videographers
-                  <span className="text-neutral-400 text-2xl ml-4">({photographerArtists.length})</span>
+              <div className="character-select-section">
+                <h2 className="character-select-section-title">
+                  PHOTOGRAPHERS & VIDEOGRAPHERS
+                  <span className="character-select-section-count">({photographerArtists.length})</span>
                 </h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                <div className="character-select-grid">
                   {photographerArtists.map((artist) => (
-                    <ArtistCard key={artist.id} artist={artist} navigate={navigate} />
+                    <CharacterSelectCard 
+                      key={artist.id} 
+                      artist={artist} 
+                      navigate={navigate}
+                      isHovered={hoveredArtist === artist.id}
+                      onHover={() => setHoveredArtist(artist.id)}
+                      onLeave={() => setHoveredArtist(null)}
+                    />
                   ))}
                 </div>
               </div>
             )}
           </div>
         ) : (
-          <div className="text-center py-16">
-            <div className="text-5xl mb-4">🎵</div>
-            <h3 className="text-2xl font-bold mb-2">No artists found</h3>
-            <p className="text-neutral-400 mb-6">
+          <div className="character-select-empty">
+            <div className="text-6xl mb-4 opacity-50">🎵</div>
+            <h3 className="text-2xl font-bold mb-2 text-[#E8E6E3]">NO ARTISTS FOUND</h3>
+            <p className="text-[#A8A6A1] mb-6">
               Try adjusting your filters or search terms
             </p>
             <Button variant="primary" onClick={clearFilters}>
-              Clear All Filters
+              CLEAR ALL FILTERS
             </Button>
           </div>
         )}
@@ -248,58 +256,53 @@ const ArtistsPage: React.FC = () => {
   );
 };
 
-interface ArtistCardProps {
+interface CharacterSelectCardProps {
   artist: any;
   navigate: (path: string) => void;
+  isHovered: boolean;
+  onHover: () => void;
+  onLeave: () => void;
 }
 
-const ArtistCard: React.FC<ArtistCardProps> = ({ artist, navigate }) => (
+const CharacterSelectCard: React.FC<CharacterSelectCardProps> = ({ 
+  artist, 
+  navigate, 
+  isHovered, 
+  onHover, 
+  onLeave 
+}) => (
   <div 
-    className="card group cursor-pointer"
+    className={`character-select-card ${isHovered ? 'selected' : ''}`}
     onClick={() => navigate(`/artists/${artist.id}`)}
+    onMouseEnter={onHover}
+    onMouseLeave={onLeave}
   >
-    <div className="relative overflow-hidden">
+    <div className="character-select-portrait-container">
       <img 
         src={artist.image} 
         alt={artist.name} 
-        className="w-full aspect-square object-cover group-hover:scale-105 transition-transform duration-500"
+        className="character-select-portrait"
       />
       {artist.featured && (
-        <div className="absolute top-4 right-4 bg-secondary text-white text-xs font-semibold px-2 py-1 rounded-full">
-          Featured
+        <div className="character-select-featured-badge">
+          FEATURED
         </div>
       )}
+      <div className="character-select-overlay">
+        <div className="character-select-overlay-content">
+          <div className="character-select-category">
+            {artist.category === 'dj' ? 'DJ' : 'PHOTOGRAPHER'}
+          </div>
+          <div className="character-select-price">
+            ${artist.price}/HR
+          </div>
+        </div>
+      </div>
     </div>
     
-    <div className="p-6">
-      <h3 className="text-xl font-bold mb-2">{artist.name}</h3>
-      
-      <div className="mb-2">
-        <span className="text-sm font-medium bg-primary/10 text-primary px-2 py-1 rounded-full">
-          {artist.category === 'dj' ? 'DJ' : 'Photographer/Videographer'}
-        </span>
-      </div>
-      
-      <p className="text-sm text-neutral-400 mb-4">
-        {artist.location}
-      </p>
-      
-      <div className="flex justify-between items-center">
-        <div>
-          <p className="text-sm text-neutral-400">Starting from</p>
-          <p className="text-lg font-semibold text-primary">${artist.price}/hr</p>
-        </div>
-        <Button 
-          variant="outline" 
-          size="sm"
-          onClick={(e) => {
-            e.stopPropagation();
-            navigate(`/booking?artist=${artist.id}`);
-          }}
-        >
-          Book Now
-        </Button>
-      </div>
+    <div className="character-select-info">
+      <h3 className="character-select-name">{artist.name.toUpperCase()}</h3>
+      <div className="character-select-location">{artist.location.toUpperCase()}</div>
     </div>
   </div>
 );

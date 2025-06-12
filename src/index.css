@@ -101,6 +101,235 @@
     @apply bg-clip-text text-transparent bg-gradient-to-r from-primary via-secondary to-accent;
   }
 
+  /* Character Select Screen Styles */
+  .character-select-page {
+    @apply pt-24 pb-16 min-h-screen;
+    background: #1E1F1A;
+    background-image: 
+      radial-gradient(circle at 20% 20%, rgba(255,255,255,0.02) 0%, transparent 50%),
+      radial-gradient(circle at 80% 80%, rgba(255,255,255,0.01) 0%, transparent 50%),
+      linear-gradient(180deg, #1E1F1A 0%, #1A1B16 100%);
+  }
+
+  .character-select-header {
+    @apply text-center mb-16;
+  }
+
+  .character-select-title {
+    @apply text-5xl md:text-7xl font-black tracking-wider mb-4;
+    color: #E8E6E3;
+    font-family: 'Orbitron', sans-serif;
+    text-shadow: 0 0 20px rgba(232, 230, 227, 0.3);
+    letter-spacing: 0.1em;
+  }
+
+  .character-select-subtitle {
+    @apply text-xl md:text-2xl font-medium tracking-wide;
+    color: #A8A6A1;
+    font-family: 'Orbitron', sans-serif;
+  }
+
+  .character-select-controls {
+    @apply mb-12;
+  }
+
+  .character-select-search {
+    @apply w-full p-4 pl-10 rounded-lg border-2 border-transparent focus:border-[#E8E6E3] transition-all duration-300;
+    background: rgba(40, 42, 35, 0.8);
+    color: #E8E6E3;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+  }
+
+  .character-select-search::placeholder {
+    color: #6B6D65;
+  }
+
+  .character-select-search:focus {
+    outline: none;
+    box-shadow: 0 0 20px rgba(232, 230, 227, 0.2);
+  }
+
+  .character-select-filter-btn {
+    @apply border-2 border-[#4A4D42] text-[#E8E6E3] hover:border-[#E8E6E3] hover:bg-[#E8E6E3] hover:text-[#1E1F1A];
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+  }
+
+  .character-select-filters {
+    @apply rounded-xl p-6 mb-6;
+    background: rgba(40, 42, 35, 0.6);
+    border: 1px solid rgba(232, 230, 227, 0.1);
+    backdrop-filter: blur(10px);
+  }
+
+  .character-select-filter-tag {
+    @apply px-4 py-2 text-sm rounded-lg transition-all duration-300 border-2;
+    background: rgba(40, 42, 35, 0.8);
+    border-color: #4A4D42;
+    color: #A8A6A1;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+  }
+
+  .character-select-filter-tag:hover {
+    border-color: #E8E6E3;
+    color: #E8E6E3;
+    transform: translateY(-1px);
+  }
+
+  .character-select-filter-tag.active {
+    background: #E8E6E3;
+    border-color: #E8E6E3;
+    color: #1E1F1A;
+    box-shadow: 0 0 15px rgba(232, 230, 227, 0.3);
+  }
+
+  .character-select-active-filter {
+    @apply flex items-center px-3 py-1 text-sm rounded-full;
+    background: rgba(232, 230, 227, 0.2);
+    color: #E8E6E3;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+  }
+
+  .character-select-results-count {
+    @apply mb-8 text-center;
+  }
+
+  .character-select-sections {
+    @apply space-y-20;
+  }
+
+  .character-select-section {
+    @apply space-y-8;
+  }
+
+  .character-select-section-title {
+    @apply text-4xl md:text-5xl font-black tracking-wider text-center pb-4;
+    color: #E8E6E3;
+    font-family: 'Orbitron', sans-serif;
+    letter-spacing: 0.1em;
+    border-bottom: 2px solid rgba(232, 230, 227, 0.2);
+    text-shadow: 0 0 15px rgba(232, 230, 227, 0.2);
+  }
+
+  .character-select-section-count {
+    @apply text-2xl ml-4;
+    color: #A8A6A1;
+  }
+
+  .character-select-grid {
+    @apply grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6 md:gap-8;
+    padding: 2rem 0;
+  }
+
+  .character-select-card {
+    @apply cursor-pointer transition-all duration-300;
+    transform-style: preserve-3d;
+  }
+
+  .character-select-card:hover,
+  .character-select-card.selected {
+    transform: translateY(-8px) scale(1.05);
+  }
+
+  .character-select-portrait-container {
+    @apply relative aspect-square rounded-lg overflow-hidden mb-4;
+    background: rgba(40, 42, 35, 0.8);
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+  }
+
+  .character-select-card:hover .character-select-portrait-container,
+  .character-select-card.selected .character-select-portrait-container {
+    border-color: #E8E6E3;
+    box-shadow: 
+      0 0 25px rgba(232, 230, 227, 0.4),
+      inset 0 0 20px rgba(232, 230, 227, 0.1);
+  }
+
+  .character-select-portrait {
+    @apply w-full h-full object-cover transition-all duration-500;
+    filter: grayscale(0.3) contrast(1.1);
+  }
+
+  .character-select-card:hover .character-select-portrait,
+  .character-select-card.selected .character-select-portrait {
+    filter: grayscale(0) contrast(1.2) brightness(1.1);
+    transform: scale(1.1);
+  }
+
+  .character-select-featured-badge {
+    @apply absolute top-2 right-2 px-2 py-1 text-xs font-bold rounded;
+    background: #E8E6E3;
+    color: #1E1F1A;
+    font-family: 'Orbitron', sans-serif;
+    letter-spacing: 0.05em;
+  }
+
+  .character-select-overlay {
+    @apply absolute inset-0 flex items-end justify-between p-3 opacity-0 transition-all duration-300;
+    background: linear-gradient(to top, rgba(30, 31, 26, 0.9) 0%, transparent 60%);
+  }
+
+  .character-select-card:hover .character-select-overlay,
+  .character-select-card.selected .character-select-overlay {
+    opacity: 1;
+  }
+
+  .character-select-overlay-content {
+    @apply flex justify-between items-end w-full;
+  }
+
+  .character-select-category {
+    @apply text-xs font-bold px-2 py-1 rounded;
+    background: rgba(232, 230, 227, 0.2);
+    color: #E8E6E3;
+    font-family: 'Orbitron', sans-serif;
+    letter-spacing: 0.05em;
+  }
+
+  .character-select-price {
+    @apply text-sm font-bold;
+    color: #E8E6E3;
+    font-family: 'Orbitron', sans-serif;
+    letter-spacing: 0.05em;
+  }
+
+  .character-select-info {
+    @apply text-center;
+  }
+
+  .character-select-name {
+    @apply text-lg font-bold mb-1 transition-all duration-300;
+    color: #E8E6E3;
+    font-family: 'Orbitron', sans-serif;
+    letter-spacing: 0.05em;
+  }
+
+  .character-select-card:hover .character-select-name,
+  .character-select-card.selected .character-select-name {
+    color: #FFFFFF;
+    text-shadow: 0 0 10px rgba(232, 230, 227, 0.5);
+  }
+
+  .character-select-location {
+    @apply text-sm;
+    color: #A8A6A1;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+  }
+
+  .character-select-empty {
+    @apply text-center py-20;
+  }
+
   /* Metallic Hero Section Styles */
   .hero-metallic {
     position: relative;
