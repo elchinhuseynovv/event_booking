@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
+import ParticleBackground from './components/ui/ParticleBackground';
 import HomePage from './pages/HomePage';
 import ArtistsPage from './pages/ArtistsPage';
 import ArtistProfilePage from './pages/ArtistProfilePage';
@@ -15,9 +16,10 @@ function App() {
   return (
     <Router>
       <div className="flex flex-col min-h-screen relative">
+        <ParticleBackground />
         <div className="chromatic-bg"></div>
         <Header />
-        <main className="flex-grow">
+        <main className="flex-grow relative z-10">
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/artists" element={<ArtistsPage />} />

@@ -50,14 +50,15 @@ const Header: React.FC = () => {
       <div className="container flex items-center justify-between">
         <Link 
           to="/" 
-          className="flex items-center space-x-2 group" 
+          className="flex items-center group" 
           onClick={closeMenu}
         >
           {!logoLoading && logo?.url ? (
             <img 
               src={logo.url}
               alt={logo.alt_text || "Raw Media Logo"}
-              className="h-24 transition-all duration-300 group-hover:scale-110 group-hover:brightness-125 filter drop-shadow-[0_0_8px_rgba(72,52,184,0.5)]"
+              className="h-20 md:h-24 transition-all duration-300 group-hover:scale-110 group-hover:brightness-125 filter drop-shadow-[0_0_8px_rgba(72,52,184,0.5)] object-contain"
+              style={{ marginLeft: '0', marginRight: 'auto' }}
               onError={(e) => {
                 console.warn('Logo image failed to load, switching to text logo');
                 // Hide the broken image and show text logo instead
