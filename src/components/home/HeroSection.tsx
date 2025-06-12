@@ -35,8 +35,8 @@ const HeroSection: React.FC = () => {
   };
 
   return (
-    <section ref={heroRef} className="relative min-h-screen flex items-center">
-      {/* Background Video */}
+    <section ref={heroRef} className="relative min-h-screen flex items-center hero-metallic">
+      {/* Background Video with Metallic Overlay */}
       <div className="absolute inset-0 overflow-hidden">
         <video
           autoPlay
@@ -48,19 +48,23 @@ const HeroSection: React.FC = () => {
         >
           <source src={getBackgroundVideoUrl()} type="video/mp4" />
         </video>
-        <div className="absolute inset-0 bg-black/30" />
+        {/* Dark metallic overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-zinc-900/90 via-neutral-800/85 to-stone-900/90" />
+        {/* Subtle metallic texture overlay */}
+        <div className="absolute inset-0 metallic-texture opacity-20" />
       </div>
       
-      {/* Animated Sound Wave */}
-      <div className="absolute bottom-0 left-0 right-0 sound-wave" />
+      {/* Animated Sound Wave - Metallic Style */}
+      <div className="absolute bottom-0 left-0 right-0 metallic-sound-wave" />
       
       <div className="container relative z-10">
         <div className="max-w-3xl">
+          {/* Keep original headline styling exactly as is */}
           <h1 ref={titleRef} className="mb-6 glitch floating" data-text="Book the Perfect DJ & Artist for Your Next Event">
             Book the Perfect <span className="hero-text-gradient">DJ & Artist</span> for Your Next Event
           </h1>
           
-          <p className="text-xl text-neutral-300 mb-8 glass p-4">
+          <p className="text-xl text-zinc-300 mb-8 metallic-glass p-4 font-bold tracking-wide">
             From intimate gatherings to festival main stages, find and book the perfect talent to make your event unforgettable.
           </p>
           
@@ -71,9 +75,9 @@ const HeroSection: React.FC = () => {
               isGlowing
               rightIcon={<ChevronRight />}
               onClick={() => navigate('/artists')}
-              className="gradient-border"
+              className="metallic-gradient-border font-bold tracking-wider"
             >
-              Explore Artists
+              EXPLORE ARTISTS
             </Button>
             
             <Button 
@@ -81,26 +85,26 @@ const HeroSection: React.FC = () => {
               size="lg" 
               leftIcon={<PlayCircle />}
               onClick={() => window.open('#', '_blank')}
-              className="glass"
+              className="metallic-glass-outline font-bold tracking-wider"
             >
-              Watch Showreel
+              WATCH SHOWREEL
             </Button>
           </div>
           
-          <div className="mt-12 flex items-center space-x-6 glass p-4 rounded-xl">
+          <div className="mt-12 flex items-center space-x-6 metallic-glass-dark p-4 rounded-xl border border-zinc-700/50">
             <div className="flex -space-x-4">
               {[1, 2, 3, 4].map((num) => (
                 <img 
                   key={num}
                   src={`https://images.pexels.com/photos/167636/pexels-photo-167636.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1`} 
                   alt="DJ performing" 
-                  className="w-12 h-12 rounded-full border-2 border-background object-cover"
+                  className="w-12 h-12 rounded-full border-2 border-zinc-600 object-cover ring-2 ring-zinc-800"
                 />
               ))}
             </div>
             <div>
-              <div className="text-primary font-bold">500+ Artists</div>
-              <div className="text-neutral-400 text-sm">Ready to make your event special</div>
+              <div className="text-zinc-200 font-bold text-lg tracking-wide">500+ ARTISTS</div>
+              <div className="text-zinc-400 text-sm font-medium tracking-wide">Ready to make your event special</div>
             </div>
           </div>
         </div>
