@@ -10,7 +10,7 @@ export default {
       },
       colors: {
         background: '#000000',
-        'background-light': '#0A0A0A',
+        'background-light': '#0F0F0F', // Much darker
         // Monochromatic primary colors - matte light gray
         primary: {
           DEFAULT: '#A0A0A0',
@@ -93,16 +93,16 @@ export default {
         warning: '#A0A0A0',
         error: '#888888',
         neutral: {
-          50: '#1A1A1A',
-          100: '#262626',
-          200: '#333333',
-          300: '#404040',
-          400: '#4D4D4D',
-          500: '#666666',
-          600: '#808080',
-          700: '#999999',
-          800: '#B3B3B3',
-          900: '#CCCCCC',
+          50: '#0A0A0A', // Much darker
+          100: '#151515', // Much darker
+          200: '#202020', // Much darker
+          300: '#2A2A2A', // Much darker
+          400: '#353535', // Much darker
+          500: '#404040', // Much darker
+          600: '#555555', // Much darker
+          700: '#6A6A6A', // Much darker
+          800: '#808080', // Much darker
+          900: '#999999', // Much darker
         },
       },
       animation: {
@@ -145,16 +145,16 @@ export default {
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'hero-pattern': 'linear-gradient(to right, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.7)), url("/src/assets/hero-bg.jpg")',
-        'metallic-gradient': 'linear-gradient(135deg, #3f3f46 0%, #52525b 50%, #3f3f46 100%)',
+        'metallic-gradient': 'linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 50%, #1a1a1a 100%)', // Much darker
         'metallic-texture': `
-          radial-gradient(circle at 25% 25%, rgba(255,255,255,0.1) 0%, transparent 50%),
-          radial-gradient(circle at 75% 75%, rgba(255,255,255,0.05) 0%, transparent 50%),
-          linear-gradient(45deg, transparent 40%, rgba(255,255,255,0.03) 50%, transparent 60%)
+          radial-gradient(circle at 25% 25%, rgba(255,255,255,0.05) 0%, transparent 50%),
+          radial-gradient(circle at 75% 75%, rgba(255,255,255,0.02) 0%, transparent 50%),
+          linear-gradient(45deg, transparent 40%, rgba(255,255,255,0.01) 50%, transparent 60%)
         `,
       },
       boxShadow: {
-        'metallic': '0 4px 20px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1)',
-        'metallic-lg': '0 8px 32px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.05)',
+        'metallic': '0 4px 20px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.05)', // Darker shadows
+        'metallic-lg': '0 8px 32px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.03)', // Darker shadows
       },
     },
   },
