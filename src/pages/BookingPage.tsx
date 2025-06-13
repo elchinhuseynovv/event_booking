@@ -129,7 +129,7 @@ const BookingPage: React.FC = () => {
   return (
     <div className="pt-24 pb-16 min-h-screen">
       <div className="container">
-        <h1 className="text-center mb-2">Book Your Perfect DJ</h1>
+        <h1 className="text-center mb-2">Book Your Perfect Artist</h1>
         <p className="text-center text-neutral-400 text-lg mb-12">
           Fill out the form below to request a booking for your event
         </p>

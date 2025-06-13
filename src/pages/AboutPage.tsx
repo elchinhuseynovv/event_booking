@@ -9,7 +9,7 @@ const AboutPage: React.FC = () => {
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h1 className="mb-6">About Raw Media</h1>
           <p className="text-xl text-neutral-300">
-            We connect exceptional musical talent with unforgettable events, making the process of finding and booking your perfect DJ simple and stress-free.
+            We connect exceptional musical talent with unforgettable events, making the process of finding and booking your perfect artist simple and stress-free.
           </p>
         </div>
         
@@ -35,7 +35,7 @@ const AboutPage: React.FC = () => {
             <div className="absolute -bottom-8 -right-8 w-64 h-64 bg-secondary/20 rounded-full filter blur-3xl"></div>
             <img 
               src="https://images.pexels.com/photos/1763075/pexels-photo-1763075.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
-              alt="DJ performing" 
+              alt="Artist performing" 
               className="rounded-2xl w-full relative z-10"
             />
           </div>
@@ -128,7 +128,7 @@ const AboutPage: React.FC = () => {
                 name: "Sarah Johnson",
                 title: "Founder & CEO",
                 image: "https://images.pexels.com/photos/3310695/pexels-photo-3310695.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-                bio: "Former DJ and music producer with 15 years in the industry."
+                bio: "Former artist and music producer with 15 years in the industry."
               },
               {
                 name: "Elchin Huseynov",
@@ -179,7 +179,7 @@ const AboutPage: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
-                quote: "Raw Media made finding the perfect DJ for our wedding so easy. The talent was incredible and our guests couldn't stop talking about the music!",
+                quote: "Raw Media made finding the perfect artist for our wedding so easy. The talent was incredible and our guests couldn't stop talking about the music!",
                 name: "Emma & Jason",
                 event: "Wedding"
               },
@@ -189,7 +189,7 @@ const AboutPage: React.FC = () => {
                 event: "Corporate Events Manager"
               },
               {
-                quote: "The booking process was seamless and the DJ we hired through Raw Media absolutely made our club night. We'll definitely be using them again for future events.",
+                quote: "The booking process was seamless and the artist we hired through Raw Media absolutely made our club night. We'll definitely be using them again for future events.",
                 name: "Nightlife Entertainment",
                 event: "Club Owner"
               }
@@ -210,7 +210,7 @@ const AboutPage: React.FC = () => {
         
         {/* CTA Section */}
         <div className="text-center bg-background-light rounded-2xl p-12">
-          <h2 className="mb-6">Ready to Find Your Perfect DJ?</h2>
+          <h2 className="mb-6">Ready to Find Your Perfect Artist?</h2>
           <p className="text-xl text-neutral-300 mb-8 max-w-2xl mx-auto">
             Browse our curated selection of top musical talent and book with confidence.
           </p>

@@ -16,7 +16,7 @@ const Footer: React.FC = () => {
               <span className="text-xl font-bold">Raw Media</span>
             </Link>
             <p className="text-neutral-400 mb-6">
-              Connecting the world's best DJs and artists with your next unforgettable event.
+              Connecting the world's best artists with your next unforgettable event.
             </p>
             <div className="flex space-x-4">
               <SocialIcon icon={<Facebook size={20} />} href="https://facebook.com" />
