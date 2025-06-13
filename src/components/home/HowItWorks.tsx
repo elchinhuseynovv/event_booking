@@ -6,19 +6,19 @@ const steps = [
     icon: <Search className="h-12 w-12" />,
     title: 'Find Your Perfect Artist',
     description: 'Browse our curated selection of professional DJs and musicians, filter by genre, price, and availability.',
-    color: 'primary',
+    color: 'neutral-600',
   },
   {
     icon: <Calendar className="h-12 w-12" />,
     title: 'Book Your Date',
     description: 'Select your event date and time, provide details about your venue, and confirm your booking instantly.',
-    color: 'secondary',
+    color: 'neutral-600',
   },
   {
     icon: <Music className="h-12 w-12" />,
     title: 'Enjoy The Show',
     description: 'Sit back and enjoy as your chosen artist delivers an unforgettable performance for you and your guests.',
-    color: 'accent',
+    color: 'neutral-600',
   },
 ];
 
@@ -45,17 +45,13 @@ const HowItWorks: React.FC = () => {
               )}
               
               {/* Step number */}
-              <div className="absolute -top-5 -left-5 w-10 h-10 rounded-full bg-background flex items-center justify-center text-lg font-bold border-2 border-current z-10" style={{ color: `var(--tw-colors-${step.color})` }}>
+              <div className="absolute -top-5 -left-5 w-10 h-10 rounded-full bg-background flex items-center justify-center text-lg font-bold border-2 border-neutral-600 text-neutral-300 z-10">
                 {index + 1}
               </div>
               
               {/* Icon */}
               <div 
-                className="w-24 h-24 mx-auto rounded-full flex items-center justify-center mb-6 transition-all duration-300"
-                style={{ 
-                  color: `var(--tw-colors-${step.color})`,
-                  backgroundColor: `var(--tw-colors-${step.color}-500/10)` 
-                }}
+                className="w-24 h-24 mx-auto rounded-full flex items-center justify-center mb-6 transition-all duration-300 bg-neutral-700 text-neutral-300"
               >
                 {step.icon}
               </div>

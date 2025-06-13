@@ -70,8 +70,8 @@ const BookingPage: React.FC = () => {
       <div className="pt-24 pb-16 min-h-screen">
         <div className="container max-w-3xl mx-auto">
           <div className="bg-background-light rounded-xl p-8 text-center">
-            <div className="w-20 h-20 bg-success/20 rounded-full flex items-center justify-center mx-auto mb-6">
-              <Check className="h-10 w-10 text-success" />
+            <div className="w-20 h-20 bg-neutral-700 rounded-full flex items-center justify-center mx-auto mb-6">
+              <Check className="h-10 w-10 text-white" />
             </div>
             <h1 className="text-3xl font-bold mb-4">Booking Submitted Successfully!</h1>
             <p className="text-neutral-300 text-lg mb-8">
@@ -140,7 +140,7 @@ const BookingPage: React.FC = () => {
             {/* Progress Bar */}
             <div className="absolute top-1/2 left-0 right-0 h-1 bg-neutral-700 -translate-y-1/2 z-0"></div>
             <div 
-              className="absolute top-1/2 left-0 h-1 bg-primary -translate-y-1/2 z-0 transition-all duration-300"
+              className="absolute top-1/2 left-0 h-1 bg-neutral-600 -translate-y-1/2 z-0 transition-all duration-300"
               style={{ width: `${(currentStep - 1) * 33.3}%` }}
             ></div>
             
@@ -150,7 +150,7 @@ const BookingPage: React.FC = () => {
                 key={step}
                 className={`w-10 h-10 rounded-full flex items-center justify-center z-10 transition-colors duration-300 ${
                   step <= currentStep
-                    ? 'bg-primary text-white'
+                    ? 'bg-neutral-600 text-white'
                     : 'bg-neutral-700 text-neutral-400'
                 }`}
               >
@@ -165,16 +165,16 @@ const BookingPage: React.FC = () => {
           
           {/* Step Labels */}
           <div className="flex justify-between mt-2 text-sm">
-            <div className={`w-10 text-center ${currentStep >= 1 ? 'text-primary' : 'text-neutral-400'}`}>
+            <div className={`w-10 text-center ${currentStep >= 1 ? 'text-white' : 'text-neutral-400'}`}>
               Artist
             </div>
-            <div className={`w-10 text-center ${currentStep >= 2 ? 'text-primary' : 'text-neutral-400'}`}>
+            <div className={`w-10 text-center ${currentStep >= 2 ? 'text-white' : 'text-neutral-400'}`}>
               Event
             </div>
-            <div className={`w-10 text-center ${currentStep >= 3 ? 'text-primary' : 'text-neutral-400'}`}>
+            <div className={`w-10 text-center ${currentStep >= 3 ? 'text-white' : 'text-neutral-400'}`}>
               Venue
             </div>
-            <div className={`w-10 text-center ${currentStep >= 4 ? 'text-primary' : 'text-neutral-400'}`}>
+            <div className={`w-10 text-center ${currentStep >= 4 ? 'text-white' : 'text-neutral-400'}`}>
               Contact
             </div>
           </div>
@@ -187,7 +187,7 @@ const BookingPage: React.FC = () => {
             {currentStep === 1 && (
               <div>
                 <h2 className="text-2xl font-bold mb-6 flex items-center">
-                  <Music className="mr-2 text-primary" /> Choose Your Artist
+                  <Music className="mr-2 text-neutral-400" /> Choose Your Artist
                 </h2>
                 
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mb-8">
@@ -196,8 +196,8 @@ const BookingPage: React.FC = () => {
                       key={artist.id}
                       className={`border-2 rounded-xl p-4 cursor-pointer transition-colors ${
                         selectedArtist === artist.id
-                          ? 'border-primary bg-primary/10'
-                          : 'border-neutral-700 hover:border-primary/50'
+                          ? 'border-neutral-600 bg-neutral-800'
+                          : 'border-neutral-700 hover:border-neutral-600'
                       }`}
                       onClick={() => setSelectedArtist(artist.id)}
                     >
@@ -233,7 +233,7 @@ const BookingPage: React.FC = () => {
                           {selectedArtistData.genres && Array.isArray(selectedArtistData.genres) && selectedArtistData.genres.map((genre, index) => (
                             <span 
                               key={index} 
-                              className="text-xs font-medium bg-primary/10 text-primary px-2 py-1 rounded-full"
+                              className="text-xs font-medium bg-neutral-700 text-neutral-300 px-2 py-1 rounded-full"
                             >
                               {genre}
                             </span>
@@ -250,7 +250,7 @@ const BookingPage: React.FC = () => {
             {currentStep === 2 && (
               <div>
                 <h2 className="text-2xl font-bold mb-6 flex items-center">
-                  <Calendar className="mr-2 text-primary" /> Event Details
+                  <Calendar className="mr-2 text-neutral-400" /> Event Details
                 </h2>
                 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
@@ -260,7 +260,7 @@ const BookingPage: React.FC = () => {
                     </label>
                     <input
                       type="date"
-                      className="w-full bg-background border border-neutral-700 rounded-lg p-3 focus:ring-primary focus:border-primary"
+                      className="w-full bg-background border border-neutral-700 rounded-lg p-3 focus:border-neutral-600"
                       value={eventDate}
                       onChange={(e) => setEventDate(e.target.value)}
                       required
@@ -272,7 +272,7 @@ const BookingPage: React.FC = () => {
                     </label>
                     <input
                       type="time"
-                      className="w-full bg-background border border-neutral-700 rounded-lg p-3 focus:ring-primary focus:border-primary"
+                      className="w-full bg-background border border-neutral-700 rounded-lg p-3 focus:border-neutral-600"
                       value={eventTime}
                       onChange={(e) => setEventTime(e.target.value)}
                       required
@@ -286,7 +286,7 @@ const BookingPage: React.FC = () => {
                       Event Type*
                     </label>
                     <select
-                      className="w-full bg-background border border-neutral-700 rounded-lg p-3 focus:ring-primary focus:border-primary"
+                      className="w-full bg-background border border-neutral-700 rounded-lg p-3 focus:border-neutral-600"
                       value={eventType}
                       onChange={(e) => setEventType(e.target.value)}
                       required
@@ -306,7 +306,7 @@ const BookingPage: React.FC = () => {
                       Duration (hours)*
                     </label>
                     <select
-                      className="w-full bg-background border border-neutral-700 rounded-lg p-3 focus:ring-primary focus:border-primary"
+                      className="w-full bg-background border border-neutral-700 rounded-lg p-3 focus:border-neutral-600"
                       value={eventDuration}
                       onChange={(e) => setEventDuration(e.target.value)}
                       required
@@ -327,7 +327,7 @@ const BookingPage: React.FC = () => {
                     Special Requests or Additional Information
                   </label>
                   <textarea
-                    className="w-full bg-background border border-neutral-700 rounded-lg p-3 focus:ring-primary focus:border-primary min-h-[120px]"
+                    className="w-full bg-background border border-neutral-700 rounded-lg p-3 focus:border-neutral-600 min-h-[120px]"
                     placeholder="Please share any specific music preferences, special dedications, or other important details..."
                     value={specialRequests}
                     onChange={(e) => setSpecialRequests(e.target.value)}
@@ -340,7 +340,7 @@ const BookingPage: React.FC = () => {
             {currentStep === 3 && (
               <div>
                 <h2 className="text-2xl font-bold mb-6 flex items-center">
-                  <MapPin className="mr-2 text-primary" /> Venue Information
+                  <MapPin className="mr-2 text-neutral-400" /> Venue Information
                 </h2>
                 
                 <div className="mb-6">
@@ -349,7 +349,7 @@ const BookingPage: React.FC = () => {
                   </label>
                   <input
                     type="text"
-                    className="w-full bg-background border border-neutral-700 rounded-lg p-3 focus:ring-primary focus:border-primary"
+                    className="w-full bg-background border border-neutral-700 rounded-lg p-3 focus:border-neutral-600"
                     placeholder="e.g. Grand Ballroom, Sunset Beach Club"
                     value={venueName}
                     onChange={(e) => setVenueName(e.target.value)}
@@ -362,7 +362,7 @@ const BookingPage: React.FC = () => {
                     Venue Address*
                   </label>
                   <textarea
-                    className="w-full bg-background border border-neutral-700 rounded-lg p-3 focus:ring-primary focus:border-primary"
+                    className="w-full bg-background border border-neutral-700 rounded-lg p-3 focus:border-neutral-600"
                     placeholder="Full address including city and zip code"
                     value={venueAddress}
                     onChange={(e) => setVenueAddress(e.target.value)}
@@ -377,7 +377,7 @@ const BookingPage: React.FC = () => {
                     </label>
                     <input
                       type="number"
-                      className="w-full bg-background border border-neutral-700 rounded-lg p-3 focus:ring-primary focus:border-primary"
+                      className="w-full bg-background border border-neutral-700 rounded-lg p-3 focus:border-neutral-600"
                       placeholder="e.g. 100"
                       value={guestCount}
                       onChange={(e) => setGuestCount(e.target.value)}
@@ -389,7 +389,7 @@ const BookingPage: React.FC = () => {
                       Venue Type
                     </label>
                     <select
-                      className="w-full bg-background border border-neutral-700 rounded-lg p-3 focus:ring-primary focus:border-primary"
+                      className="w-full bg-background border border-neutral-700 rounded-lg p-3 focus:border-neutral-600"
                     >
                       <option value="">Select venue type</option>
                       <option value="Hotel">Hotel</option>
@@ -407,19 +407,19 @@ const BookingPage: React.FC = () => {
                   <h3 className="font-semibold mb-3">Venue Facilities</h3>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     <label className="flex items-center space-x-2">
-                      <input type="checkbox" className="h-5 w-5 rounded text-primary focus:ring-primary" />
+                      <input type="checkbox" className="h-5 w-5 rounded text-neutral-600" />
                       <span>Sound system available</span>
                     </label>
                     <label className="flex items-center space-x-2">
-                      <input type="checkbox" className="h-5 w-5 rounded text-primary focus:ring-primary" />
+                      <input type="checkbox" className="h-5 w-5 rounded text-neutral-600" />
                       <span>Lighting equipment available</span>
                     </label>
                     <label className="flex items-center space-x-2">
-                      <input type="checkbox" className="h-5 w-5 rounded text-primary focus:ring-primary" />
+                      <input type="checkbox" className="h-5 w-5 rounded text-neutral-600" />
                       <span>Stage available</span>
                     </label>
                     <label className="flex items-center space-x-2">
-                      <input type="checkbox" className="h-5 w-5 rounded text-primary focus:ring-primary" />
+                      <input type="checkbox" className="h-5 w-5 rounded text-neutral-600" />
                       <span>Dance floor available</span>
                     </label>
                   </div>
@@ -441,7 +441,7 @@ const BookingPage: React.FC = () => {
                     </label>
                     <input
                       type="text"
-                      className="w-full bg-background border border-neutral-700 rounded-lg p-3 focus:ring-primary focus:border-primary"
+                      className="w-full bg-background border border-neutral-700 rounded-lg p-3 focus:border-neutral-600"
                       placeholder="Your full name"
                       value={contactName}
                       onChange={(e) => setContactName(e.target.value)}
@@ -454,7 +454,7 @@ const BookingPage: React.FC = () => {
                     </label>
                     <input
                       type="email"
-                      className="w-full bg-background border border-neutral-700 rounded-lg p-3 focus:ring-primary focus:border-primary"
+                      className="w-full bg-background border border-neutral-700 rounded-lg p-3 focus:border-neutral-600"
                       placeholder="Your email address"
                       value={contactEmail}
                       onChange={(e) => setContactEmail(e.target.value)}
@@ -469,7 +469,7 @@ const BookingPage: React.FC = () => {
                   </label>
                   <input
                     type="tel"
-                    className="w-full bg-background border border-neutral-700 rounded-lg p-3 focus:ring-primary focus:border-primary"
+                    className="w-full bg-background border border-neutral-700 rounded-lg p-3 focus:border-neutral-600"
                     placeholder="Your phone number"
                     value={contactPhone}
                     onChange={(e) => setContactPhone(e.target.value)}
@@ -479,23 +479,23 @@ const BookingPage: React.FC = () => {
                 
                 <div className="mb-6">
                   <label className="flex items-center space-x-2">
-                    <input type="checkbox" className="h-5 w-5 rounded text-primary focus:ring-primary" required />
+                    <input type="checkbox" className="h-5 w-5 rounded text-neutral-600" required />
                     <span className="text-sm">
-                      I agree to the <a href="#" className="text-primary hover:underline">terms and conditions</a> and <a href="#" className="text-primary hover:underline">privacy policy</a>
+                      I agree to the <a href="#" className="text-white hover:underline">terms and conditions</a> and <a href="#" className="text-white hover:underline">privacy policy</a>
                     </span>
                   </label>
                 </div>
                 
                 <div className="mb-6">
                   <label className="flex items-center space-x-2">
-                    <input type="checkbox" className="h-5 w-5 rounded text-primary focus:ring-primary" />
+                    <input type="checkbox" className="h-5 w-5 rounded text-neutral-600" />
                     <span className="text-sm">
                       Subscribe to our newsletter for special offers and updates
                     </span>
                   </label>
                 </div>
                 
-                <div className="bg-primary/10 rounded-lg p-4 mb-6">
+                <div className="bg-neutral-800 rounded-lg p-4 mb-6">
                   <p className="text-sm">
                     <strong>Note:</strong> This is a booking request only. Our team will contact you within 24 hours to confirm availability and final pricing. No payment is required at this stage.
                   </p>
@@ -530,7 +530,6 @@ const BookingPage: React.FC = () => {
                 <Button
                   variant="primary"
                   type="submit"
-                  isGlowing
                   disabled={!validateCurrentStep()}
                 >
                   Submit Booking

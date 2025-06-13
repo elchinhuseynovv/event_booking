@@ -36,7 +36,7 @@ const Header: React.FC = () => {
   // Text-based logo component as fallback
   const TextLogo = () => (
     <div className="text-2xl font-bold text-white tracking-wider">
-      <span className="text-primary">RAW</span>
+      <span className="text-white">RAW</span>
       <span className="ml-1">MEDIA</span>
     </div>
   );
@@ -57,7 +57,7 @@ const Header: React.FC = () => {
             <img 
               src={logo.url}
               alt={logo.alt_text || "Raw Media Logo"}
-              className="h-20 md:h-24 transition-all duration-300 group-hover:scale-110 group-hover:brightness-125 filter drop-shadow-[0_0_8px_rgba(72,52,184,0.5)] object-contain"
+              className="h-20 md:h-24 transition-all duration-300 group-hover:scale-110 group-hover:brightness-125 filter object-contain"
               style={{ marginLeft: '0', marginRight: 'auto' }}
               onError={(e) => {
                 console.warn('Logo image failed to load, switching to text logo');
@@ -95,7 +95,7 @@ const Header: React.FC = () => {
           <NavLink to="/contact" isActive={isActive('/contact')} label="Contact" onClick={handleNavClick} />
           <Link 
             to="/booking" 
-            className="btn-primary glow nav-link"
+            className="bg-neutral-600 hover:bg-neutral-500 text-white px-6 py-2 rounded-lg transition-all duration-300 nav-link"
             onClick={handleNavClick}
             data-text="Book Now"
           >
@@ -131,7 +131,7 @@ const Header: React.FC = () => {
           <MobileNavLink to="/contact" label="Contact" onClick={(e) => { closeMenu(); handleNavClick(e); }} />
           <Link
             to="/booking"
-            className="btn-primary glow mt-8 text-center nav-link"
+            className="bg-neutral-600 hover:bg-neutral-500 text-white px-6 py-3 rounded-lg mt-8 text-center nav-link transition-all duration-300"
             onClick={(e) => { closeMenu(); handleNavClick(e); }}
             data-text="Book Now"
           >
@@ -154,13 +154,13 @@ const NavLink: React.FC<NavLinkProps> = ({ to, label, isActive, onClick }) => (
   <Link
     to={to}
     className={`text-base font-medium transition-colors relative nav-link
-      ${isActive ? 'text-primary' : 'text-white hover:text-primary-300'}`}
+      ${isActive ? 'text-white font-bold' : 'text-white hover:text-neutral-300'}`}
     onClick={onClick}
     data-text={label}
   >
     {label}
     {isActive && (
-      <span className="absolute bottom-0 left-0 w-full h-0.5 bg-primary rounded-full" />
+      <span className="absolute bottom-0 left-0 w-full h-0.5 bg-white rounded-full" />
     )}
   </Link>
 );
@@ -174,7 +174,7 @@ type MobileNavLinkProps = {
 const MobileNavLink: React.FC<MobileNavLinkProps> = ({ to, label, onClick }) => (
   <Link
     to={to}
-    className="text-xl font-medium py-4 border-b border-neutral-800 hover:text-primary transition-colors nav-link"
+    className="text-xl font-medium py-4 border-b border-neutral-800 hover:text-neutral-300 transition-colors nav-link"
     onClick={onClick}
     data-text={label}
   >

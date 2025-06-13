@@ -23,14 +23,14 @@ const Button: React.FC<ButtonProps> = ({
   className = '',
   ...props
 }) => {
-  const baseClasses = 'inline-flex items-center justify-center font-medium rounded-lg transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none';
+  const baseClasses = 'inline-flex items-center justify-center font-medium rounded-lg transition-all duration-300 focus:outline-none disabled:opacity-50 disabled:pointer-events-none';
   
   const variantClasses = {
-    primary: 'bg-primary hover:bg-primary-600 text-white focus:ring-primary-500',
-    secondary: 'bg-secondary hover:bg-secondary-600 text-white focus:ring-secondary-500',
-    accent: 'bg-accent hover:bg-accent-600 text-black focus:ring-accent-500',
-    outline: 'border-2 border-primary text-primary hover:bg-primary hover:text-white focus:ring-primary-500',
-    ghost: 'text-primary hover:bg-primary-100/10 focus:ring-primary-500',
+    primary: 'bg-neutral-600 hover:bg-neutral-500 text-white',
+    secondary: 'bg-neutral-700 hover:bg-neutral-600 text-white',
+    accent: 'bg-neutral-600 hover:bg-neutral-500 text-white',
+    outline: 'border-2 border-neutral-600 text-neutral-300 hover:bg-neutral-600 hover:text-white',
+    ghost: 'text-neutral-300 hover:bg-neutral-800',
   };
   
   const sizeClasses = {
@@ -39,7 +39,8 @@ const Button: React.FC<ButtonProps> = ({
     lg: 'px-7 py-3 text-lg',
   };
   
-  const glowClasses = isGlowing ? 'glow' : '';
+  // Remove glow effects for monochromatic design
+  const glowClasses = '';
   const widthClasses = fullWidth ? 'w-full' : '';
   
   return (

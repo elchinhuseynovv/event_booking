@@ -59,9 +59,9 @@ const HeroSection: React.FC = () => {
       
       <div className="container relative z-10">
         <div className="max-w-3xl">
-          {/* Keep original headline styling exactly as is */}
-          <h1 ref={titleRef} className="mb-6 glitch floating" data-text="Book the Perfect DJ & Artist for Your Next Event">
-            Book the Perfect <span className="hero-text-gradient">DJ & Artist</span> for Your Next Event
+          {/* Updated headline without "DJ" */}
+          <h1 ref={titleRef} className="mb-6 glitch floating text-white" data-text="Book the Perfect Artist for Your Next Event">
+            Book the Perfect <span className="text-white font-bold">Artist</span> for Your Next Event
           </h1>
           
           <p className="text-xl text-zinc-300 mb-8 metallic-glass p-4 font-bold tracking-wide">
@@ -72,10 +72,9 @@ const HeroSection: React.FC = () => {
             <Button 
               variant="primary" 
               size="lg" 
-              isGlowing
               rightIcon={<ChevronRight />}
               onClick={() => navigate('/artists')}
-              className="metallic-gradient-border font-bold tracking-wider"
+              className="font-bold tracking-wider"
             >
               EXPLORE ARTISTS
             </Button>
@@ -85,7 +84,7 @@ const HeroSection: React.FC = () => {
               size="lg" 
               leftIcon={<PlayCircle />}
               onClick={() => window.open('#', '_blank')}
-              className="metallic-glass-outline font-bold tracking-wider"
+              className="font-bold tracking-wider"
             >
               WATCH SHOWREEL
             </Button>

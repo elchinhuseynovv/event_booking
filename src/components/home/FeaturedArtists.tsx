@@ -38,7 +38,7 @@ const FeaturedArtists: React.FC = () => {
                   className="w-full aspect-square object-cover group-hover:scale-105 transition-transform duration-500"
                 />
                 {artist.featured && (
-                  <div className="absolute top-4 right-4 bg-secondary text-white text-xs font-semibold px-2 py-1 rounded-full">
+                  <div className="absolute top-4 right-4 bg-neutral-600 text-white text-xs font-semibold px-2 py-1 rounded-full">
                     Featured
                   </div>
                 )}
@@ -46,7 +46,7 @@ const FeaturedArtists: React.FC = () => {
               
               <div className="p-6">
                 <div className="flex items-center mb-2">
-                  <div className="flex text-warning">
+                  <div className="flex text-neutral-400">
                     {[...Array(5)].map((_, i) => (
                       <Star 
                         key={i} 
@@ -66,7 +66,7 @@ const FeaturedArtists: React.FC = () => {
                   {(artist.genres || []).map((genre, index) => (
                     <span 
                       key={index} 
-                      className="text-xs font-medium bg-primary/10 text-primary px-2 py-1 rounded-full"
+                      className="text-xs font-medium bg-neutral-700 text-neutral-300 px-2 py-1 rounded-full"
                     >
                       {genre}
                     </span>
@@ -76,7 +76,7 @@ const FeaturedArtists: React.FC = () => {
                 <div className="flex justify-between items-center">
                   <div>
                     <p className="text-sm text-neutral-400">Starting from</p>
-                    <p className="text-lg font-semibold text-primary">${artist.price}/hr</p>
+                    <p className="text-lg font-semibold text-white">${artist.price}/hr</p>
                   </div>
                   <Button 
                     variant="outline" 
