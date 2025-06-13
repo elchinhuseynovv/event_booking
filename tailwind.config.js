@@ -4,9 +4,9 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Orbitron', 'HandelGothic', 'Inter', 'sans-serif'],
-        eurostile: ['HandelGothic', 'sans-serif'],
-        metallic: ['Orbitron', 'sans-serif'],
+        sans: ['CenturyGothic', 'Orbitron', 'Inter', 'sans-serif'],
+        century: ['CenturyGothic', 'sans-serif'],
+        metallic: ['CenturyGothic', 'Orbitron', 'sans-serif'],
       },
       colors: {
         background: '#000000',

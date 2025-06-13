@@ -1,7 +1,7 @@
 @font-face {
-  font-family: 'HandelGothic';
-  src: url('/fonts/HandelGothic-Regular.woff2') format('woff2'),
-       url('/fonts/HandelGothic-Regular.woff') format('woff');
+  font-family: 'CenturyGothic';
+  src: url('/fonts/centurygothic.woff2') format('woff2'),
+       url('/fonts/centurygothic.woff') format('woff');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -19,12 +19,14 @@
   }
   
   body {
-    @apply bg-background text-white font-sans;
+    @apply bg-background text-white;
+    font-family: 'CenturyGothic', 'Orbitron', sans-serif;
     overflow-x: hidden;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-sans font-bold leading-tight;
+    font-family: 'CenturyGothic', 'Orbitron', sans-serif;
+    @apply font-bold leading-tight;
   }
 
   h1 {
@@ -55,6 +57,7 @@
   
   .btn {
     @apply inline-flex items-center justify-center px-6 py-3 text-base font-medium rounded-lg transition-all duration-300 focus:outline-none;
+    font-family: 'CenturyGothic', 'Orbitron', sans-serif;
   }
   
   .btn-primary {
@@ -152,7 +155,7 @@
   .character-select-title {
     @apply text-5xl md:text-7xl font-black tracking-wider mb-4;
     color: #FFFFFF;
-    font-family: 'Orbitron', sans-serif;
+    font-family: 'CenturyGothic', 'Orbitron', sans-serif;
     text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
     letter-spacing: 0.1em;
   }
@@ -160,7 +163,7 @@
   .character-select-subtitle {
     @apply text-xl md:text-2xl font-medium tracking-wide;
     color: #A8A6A1;
-    font-family: 'Orbitron', sans-serif;
+    font-family: 'CenturyGothic', 'Orbitron', sans-serif;
   }
 
   .character-select-controls {
@@ -171,7 +174,7 @@
     @apply w-full p-4 pl-10 rounded-lg border-2 border-transparent transition-all duration-300;
     background: rgba(40, 42, 35, 0.8);
     color: #E8E6E3;
-    font-family: 'Orbitron', sans-serif;
+    font-family: 'CenturyGothic', 'Orbitron', sans-serif;
     font-weight: 500;
     letter-spacing: 0.05em;
   }
@@ -188,7 +191,7 @@
 
   .character-select-filter-btn {
     @apply border-2 border-[#4A4D42] text-[#E8E6E3] hover:border-neutral-600 hover:bg-neutral-600 hover:text-white;
-    font-family: 'Orbitron', sans-serif;
+    font-family: 'CenturyGothic', 'Orbitron', sans-serif;
     font-weight: 600;
     letter-spacing: 0.05em;
   }
@@ -205,7 +208,7 @@
     background: rgba(40, 42, 35, 0.8);
     border-color: #4A4D42;
     color: #A8A6A1;
-    font-family: 'Orbitron', sans-serif;
+    font-family: 'CenturyGothic', 'Orbitron', sans-serif;
     font-weight: 600;
     letter-spacing: 0.05em;
   }
@@ -227,7 +230,7 @@
     @apply flex items-center px-3 py-1 text-sm rounded-full;
     background: rgba(160, 160, 160, 0.2);
     color: #A0A0A0;
-    font-family: 'Orbitron', sans-serif;
+    font-family: 'CenturyGothic', 'Orbitron', sans-serif;
     font-weight: 600;
     letter-spacing: 0.05em;
   }
@@ -247,7 +250,7 @@
   .character-select-section-title {
     @apply text-4xl md:text-5xl font-black tracking-wider text-center pb-4;
     color: #FFFFFF;
-    font-family: 'Orbitron', sans-serif;
+    font-family: 'CenturyGothic', 'Orbitron', sans-serif;
     letter-spacing: 0.1em;
     border-bottom: 2px solid rgba(160, 160, 160, 0.3);
     text-shadow: none;
@@ -303,7 +306,7 @@
     @apply absolute top-2 right-2 px-2 py-1 text-xs font-bold rounded;
     background: #A0A0A0;
     color: white;
-    font-family: 'Orbitron', sans-serif;
+    font-family: 'CenturyGothic', 'Orbitron', sans-serif;
     letter-spacing: 0.05em;
   }
 
@@ -323,16 +326,16 @@
 
   .character-select-category {
     @apply text-xs font-bold px-2 py-1 rounded;
-    background: rgba(160, 160, 160, 0.3);
-    color: #A0A0A0;
-    font-family: 'Orbitron', sans-serif;
+    background: #A0A0A0;
+    color: white;
+    font-family: 'CenturyGothic', 'Orbitron', sans-serif;
     letter-spacing: 0.05em;
   }
 
   .character-select-price {
     @apply text-sm font-bold;
     color: #E8E6E3;
-    font-family: 'Orbitron', sans-serif;
+    font-family: 'CenturyGothic', 'Orbitron', sans-serif;
     letter-spacing: 0.05em;
   }
 
@@ -343,7 +346,7 @@
   .character-select-name {
     @apply text-lg font-bold mb-1 transition-all duration-300;
     color: #FFFFFF;
-    font-family: 'Orbitron', sans-serif;
+    font-family: 'CenturyGothic', 'Orbitron', sans-serif;
     letter-spacing: 0.05em;
   }
 
@@ -356,7 +359,7 @@
   .character-select-location {
     @apply text-sm;
     color: #A8A6A1;
-    font-family: 'Orbitron', sans-serif;
+    font-family: 'CenturyGothic', 'Orbitron', sans-serif;
     font-weight: 500;
     letter-spacing: 0.05em;
   }
@@ -479,10 +482,49 @@
     top: 0;
   }
 
+  /* Colorful Glitch Effect for "Artist" */
+  .colorful-glitch-artist {
+    position: relative;
+    display: inline-block;
+    animation: colorful-glitch 2s ease-in-out infinite;
+  }
+
+  .colorful-glitch-artist::before,
+  .colorful-glitch-artist::after {
+    content: attr(data-text);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.8;
+  }
+
+  .colorful-glitch-artist::before {
+    animation: colorful-glitch-1 2s infinite;
+    color: #ff0080;
+    text-shadow: 
+      2px 0 #ff0080,
+      -2px 0 #00ff80,
+      0 2px #8000ff;
+    z-index: -1;
+  }
+
+  .colorful-glitch-artist::after {
+    animation: colorful-glitch-2 2s infinite;
+    color: #00ff80;
+    text-shadow: 
+      -2px 0 #00ff80,
+      2px 0 #ff8000,
+      0 -2px #0080ff;
+    z-index: -2;
+  }
+
   /* New glitch effect for nav links */
   .nav-link {
     position: relative;
     transition: all 0.2s ease;
+    font-family: 'CenturyGothic', 'Orbitron', sans-serif;
   }
 
   .nav-link.glitching {
@@ -616,6 +658,136 @@
   }
   100% {
     clip: rect(24px, 9999px, 71px, 0);
+  }
+}
+
+/* Colorful Glitch Animations */
+@keyframes colorful-glitch {
+  0%, 100% {
+    transform: translate(0);
+    filter: hue-rotate(0deg);
+  }
+  10% {
+    transform: translate(-2px, 2px);
+    filter: hue-rotate(90deg);
+  }
+  20% {
+    transform: translate(-4px, -2px);
+    filter: hue-rotate(180deg);
+  }
+  30% {
+    transform: translate(4px, 2px);
+    filter: hue-rotate(270deg);
+  }
+  40% {
+    transform: translate(-2px, -4px);
+    filter: hue-rotate(360deg);
+  }
+  50% {
+    transform: translate(2px, 4px);
+    filter: hue-rotate(90deg);
+  }
+  60% {
+    transform: translate(-4px, 2px);
+    filter: hue-rotate(180deg);
+  }
+  70% {
+    transform: translate(4px, -2px);
+    filter: hue-rotate(270deg);
+  }
+  80% {
+    transform: translate(-2px, 4px);
+    filter: hue-rotate(360deg);
+  }
+  90% {
+    transform: translate(2px, -4px);
+    filter: hue-rotate(90deg);
+  }
+}
+
+@keyframes colorful-glitch-1 {
+  0%, 100% {
+    transform: translateX(0);
+    opacity: 0.8;
+  }
+  10% {
+    transform: translateX(-5px);
+    opacity: 1;
+  }
+  20% {
+    transform: translateX(5px);
+    opacity: 0.6;
+  }
+  30% {
+    transform: translateX(-3px);
+    opacity: 0.9;
+  }
+  40% {
+    transform: translateX(3px);
+    opacity: 0.7;
+  }
+  50% {
+    transform: translateX(-2px);
+    opacity: 1;
+  }
+  60% {
+    transform: translateX(2px);
+    opacity: 0.8;
+  }
+  70% {
+    transform: translateX(-4px);
+    opacity: 0.6;
+  }
+  80% {
+    transform: translateX(4px);
+    opacity: 0.9;
+  }
+  90% {
+    transform: translateX(-1px);
+    opacity: 0.7;
+  }
+}
+
+@keyframes colorful-glitch-2 {
+  0%, 100% {
+    transform: translateX(0);
+    opacity: 0.7;
+  }
+  15% {
+    transform: translateX(3px);
+    opacity: 0.9;
+  }
+  25% {
+    transform: translateX(-3px);
+    opacity: 0.5;
+  }
+  35% {
+    transform: translateX(4px);
+    opacity: 0.8;
+  }
+  45% {
+    transform: translateX(-4px);
+    opacity: 0.6;
+  }
+  55% {
+    transform: translateX(2px);
+    opacity: 1;
+  }
+  65% {
+    transform: translateX(-2px);
+    opacity: 0.7;
+  }
+  75% {
+    transform: translateX(5px);
+    opacity: 0.5;
+  }
+  85% {
+    transform: translateX(-5px);
+    opacity: 0.9;
+  }
+  95% {
+    transform: translateX(1px);
+    opacity: 0.8;
   }
 }
 
