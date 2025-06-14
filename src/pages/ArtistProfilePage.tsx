@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { Calendar, MapPin, Music, Clock, Instagram, Facebook, Twitter, Globe, Play, Heart, Share2, Star } from 'lucide-react';
+import { Calendar, MapPin, Music, Clock, Instagram, Play, Heart, Share2, Star } from 'lucide-react';
 import Button from '../components/ui/Button';
 import { artists } from '../data/artists';
 
@@ -29,20 +29,21 @@ const ArtistProfilePage: React.FC = () => {
     if (artist.id === '1') { // WRK
       return {
         soundcloud: 'https://on.soundcloud.com/Qntc0dcB35cDSkJo4H',
-        instagram: 'https://www.instagram.com/wrk_dj?igsh=OXFjam10bnlhd2F5',
-        facebook: '#',
-        twitter: '#',
-        website: '#'
+        instagram: 'https://www.instagram.com/wrk_dj?igsh=OXFjam10bnlhd2F5'
       };
     }
     
-    // Default links for other artists
+    if (artist.id === '5') { // Huseyn Gurbanli
+      return {
+        soundcloud: '',
+        instagram: 'https://www.instagram.com/raw_visualstudio'
+      };
+    }
+    
+    // Default links for other artists (empty for now)
     return {
-      soundcloud: '#',
-      instagram: '#',
-      facebook: '#',
-      twitter: '#',
-      website: '#'
+      soundcloud: '',
+      instagram: ''
     };
   };
 
@@ -163,34 +164,85 @@ const ArtistProfilePage: React.FC = () => {
               {activeTab === 'about' && (
                 <div>
                   <h2 className="text-2xl font-bold mb-4">Biography</h2>
-                  <p className="text-neutral-300 mb-6">
-                    {artist.biography || `${artist.name} is a professional DJ and music producer based in ${artist.location}. With ${artist.experience} years of experience in the industry, they've performed at numerous venues and events, from intimate clubs to major festivals.`}
+                  <p className="text-neutral-300 mb-6 leading-relaxed">
+                    {artist.biography}
                   </p>
                   
-                  <h3 className="text-xl font-bold mb-3">Musical Style</h3>
-                  <p className="text-neutral-300 mb-6">
-                    Specializing in {artist.genres.join(', ')}, {artist.name} creates an energetic atmosphere that keeps the dance floor packed all night long. Their unique sound combines classic tracks with the latest hits, always adapted to match the mood and theme of each event.
-                  </p>
+                  {/* Show signature for Huseyn */}
+                  {artist.signature && (
+                    <>
+                      <h3 className="text-xl font-bold mb-3">Signature Style</h3>
+                      <p className="text-neutral-300 mb-6 leading-relaxed">
+                        {artist.signature}
+                      </p>
+                    </>
+                  )}
                   
-                  <h3 className="text-xl font-bold mb-3">Equipment</h3>
-                  <ul className="list-disc list-inside text-neutral-300 mb-6">
-                    <li>Professional Pioneer DJ equipment</li>
-                    <li>High-quality sound system</li>
-                    <li>Dynamic lighting setup</li>
-                    <li>Backup equipment for reliability</li>
-                  </ul>
+                  {/* Show mission for Huseyn */}
+                  {artist.mission && (
+                    <>
+                      <h3 className="text-xl font-bold mb-3">Mission</h3>
+                      <p className="text-neutral-300 mb-6 leading-relaxed">
+                        {artist.mission}
+                      </p>
+                    </>
+                  )}
                   
-                  <h3 className="text-xl font-bold mb-3">Events</h3>
-                  <p className="text-neutral-300">
-                    {artist.name} is available for a wide range of events including:
-                  </p>
-                  <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mt-4">
-                    {['Weddings', 'Corporate Events', 'Nightclubs', 'Festivals', 'Private Parties', 'Birthday Celebrations'].map((event, index) => (
+                  <h3 className="text-xl font-bold mb-3">Specializations</h3>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                    {artist.genres.map((genre, index) => (
                       <div key={index} className="bg-background-light p-4 rounded-lg text-center">
-                        {event}
+                        {genre}
                       </div>
                     ))}
                   </div>
+                  
+                  {artist.category === 'photographer' ? (
+                    <>
+                      <h3 className="text-xl font-bold mb-3">Equipment & Services</h3>
+                      <ul className="list-disc list-inside text-neutral-300 mb-6">
+                        <li>Professional camera equipment for low-light environments</li>
+                        <li>4K video recording capabilities</li>
+                        <li>Live event streaming setup</li>
+                        <li>Post-production editing and color grading</li>
+                        <li>Same-day delivery for urgent projects</li>
+                      </ul>
+                      
+                      <h3 className="text-xl font-bold mb-3">Event Types</h3>
+                      <p className="text-neutral-300">
+                        {artist.name} specializes in capturing the raw energy of:
+                      </p>
+                      <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mt-4">
+                        {['Techno Events', 'Underground Raves', 'Music Festivals', 'Club Nights', 'Artist Portraits', 'Behind the Scenes'].map((event, index) => (
+                          <div key={index} className="bg-background-light p-4 rounded-lg text-center">
+                            {event}
+                          </div>
+                        ))}
+                      </div>
+                    </>
+                  ) : (
+                    <>
+                      <h3 className="text-xl font-bold mb-3">Equipment</h3>
+                      <ul className="list-disc list-inside text-neutral-300 mb-6">
+                        <li>Professional Pioneer DJ equipment</li>
+                        <li>High-quality sound system</li>
+                        <li>Dynamic lighting setup</li>
+                        <li>Backup equipment for reliability</li>
+                      </ul>
+                      
+                      <h3 className="text-xl font-bold mb-3">Events</h3>
+                      <p className="text-neutral-300">
+                        {artist.name} is available for a wide range of events including:
+                      </p>
+                      <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mt-4">
+                        {['Weddings', 'Corporate Events', 'Nightclubs', 'Festivals', 'Private Parties', 'Birthday Celebrations'].map((event, index) => (
+                          <div key={index} className="bg-background-light p-4 rounded-lg text-center">
+                            {event}
+                          </div>
+                        ))}
+                      </div>
+                    </>
+                  )}
                 </div>
               )}
               
@@ -213,13 +265,19 @@ const ArtistProfilePage: React.FC = () => {
                       </div>
                     </div>
                     <div className="p-4">
-                      <h4 className="font-bold">Live at Summer Festival 2023</h4>
-                      <p className="text-neutral-400 text-sm">Downtown Main Stage</p>
+                      <h4 className="font-bold">
+                        {artist.category === 'photographer' ? 'Raw Visual Studio Showreel 2024' : 'Live at Summer Festival 2023'}
+                      </h4>
+                      <p className="text-neutral-400 text-sm">
+                        {artist.category === 'photographer' ? 'Underground Techno Documentation' : 'Downtown Main Stage'}
+                      </p>
                     </div>
                   </div>
                   
                   {/* Photo Gallery */}
-                  <h3 className="text-xl font-bold mb-4">Photos</h3>
+                  <h3 className="text-xl font-bold mb-4">
+                    {artist.category === 'photographer' ? 'Portfolio' : 'Photos'}
+                  </h3>
                   <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-8">
                     {[1, 2, 3, 4, 5, 6].map((item) => (
                       <div key={item} className="aspect-square rounded-lg overflow-hidden">
@@ -232,20 +290,35 @@ const ArtistProfilePage: React.FC = () => {
                     ))}
                   </div>
                   
-                  {/* Audio Samples */}
-                  <h3 className="text-xl font-bold mb-4">Listen</h3>
+                  {/* Audio Samples or Video Samples */}
+                  <h3 className="text-xl font-bold mb-4">
+                    {artist.category === 'photographer' ? 'Recent Projects' : 'Listen'}
+                  </h3>
                   <div className="space-y-4">
-                    {['Summer Mix 2023', 'Club Classics Remix', 'Wedding Celebration Set'].map((track, index) => (
-                      <div key={index} className="bg-background-light rounded-lg p-4 flex items-center">
-                        <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center mr-4">
-                          <Play size={20} className="text-primary" />
+                    {artist.category === 'photographer' ? 
+                      ['Boiler Room Warsaw 2024', 'Hive Festival Documentation', 'Verknipt After Movie'].map((project, index) => (
+                        <div key={index} className="bg-background-light rounded-lg p-4 flex items-center">
+                          <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center mr-4">
+                            <Play size={20} className="text-primary" />
+                          </div>
+                          <div>
+                            <h4 className="font-medium">{project}</h4>
+                            <p className="text-neutral-400 text-sm">Video Documentation</p>
+                          </div>
                         </div>
-                        <div>
-                          <h4 className="font-medium">{track}</h4>
-                          <p className="text-neutral-400 text-sm">60:00 min</p>
+                      )) :
+                      ['Summer Mix 2023', 'Club Classics Remix', 'Wedding Celebration Set'].map((track, index) => (
+                        <div key={index} className="bg-background-light rounded-lg p-4 flex items-center">
+                          <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center mr-4">
+                            <Play size={20} className="text-primary" />
+                          </div>
+                          <div>
+                            <h4 className="font-medium">{track}</h4>
+                            <p className="text-neutral-400 text-sm">60:00 min</p>
+                          </div>
                         </div>
-                      </div>
-                    ))}
+                      ))
+                    }
                   </div>
                 </div>
               )}
@@ -271,7 +344,29 @@ const ArtistProfilePage: React.FC = () => {
                   
                   {/* Review List */}
                   <div className="space-y-6">
-                    {[
+                    {artist.category === 'photographer' ? [
+                      {
+                        name: 'Teletech Events',
+                        date: '1 month ago',
+                        rating: 5,
+                        comment: 'Raw captured the essence of our underground event perfectly. His ability to work in low light conditions while maintaining artistic quality is unmatched. The final video exceeded all expectations.',
+                        event: 'Techno Event Documentation'
+                      },
+                      {
+                        name: 'Festival Director',
+                        date: '2 months ago',
+                        rating: 5,
+                        comment: 'Working with Raw was seamless. He understood our vision immediately and delivered content that truly represents the raw energy of electronic music culture. Highly professional and creative.',
+                        event: 'Festival Coverage'
+                      },
+                      {
+                        name: 'Club Manager',
+                        date: '3 months ago',
+                        rating: 5,
+                        comment: 'Raw has an incredible eye for capturing authentic moments. His work helps us showcase the real atmosphere of our venue. The photos and videos always generate great engagement on social media.',
+                        event: 'Club Night Photography'
+                      }
+                    ] : [
                       {
                         name: 'Sarah Johnson',
                         date: '2 months ago',
@@ -329,9 +424,9 @@ const ArtistProfilePage: React.FC = () => {
           </div>
           
           {/* Sidebar */}
-          <div>
+          <div className="space-y-8">
             {/* Booking Card */}
-            <div className="bg-background-light rounded-xl p-6 sticky top-24 mb-8">
+            <div className="bg-background-light rounded-xl p-6">
               <h3 className="text-xl font-bold mb-4">Book This Artist</h3>
               
               <div className="flex justify-between mb-4 pb-4 border-b border-neutral-800">
@@ -363,27 +458,35 @@ const ArtistProfilePage: React.FC = () => {
                 <div className="flex items-start">
                   <Music size={20} className="text-primary mr-3 mt-1" />
                   <div>
-                    <h4 className="font-medium">Equipment Included</h4>
-                    <p className="text-neutral-400 text-sm">Professional sound & lighting setup</p>
+                    <h4 className="font-medium">
+                      {artist.category === 'photographer' ? 'Equipment Included' : 'Equipment Included'}
+                    </h4>
+                    <p className="text-neutral-400 text-sm">
+                      {artist.category === 'photographer' ? 'Professional camera & editing setup' : 'Professional sound & lighting setup'}
+                    </p>
                   </div>
                 </div>
                 <div className="flex items-start">
                   <Clock size={20} className="text-primary mr-3 mt-1" />
                   <div>
-                    <h4 className="font-medium">Performance Duration</h4>
-                    <p className="text-neutral-400 text-sm">Flexible, from 2 hours to all night</p>
+                    <h4 className="font-medium">
+                      {artist.category === 'photographer' ? 'Coverage Duration' : 'Performance Duration'}
+                    </h4>
+                    <p className="text-neutral-400 text-sm">
+                      {artist.category === 'photographer' ? 'Flexible, from 2 hours to full event' : 'Flexible, from 2 hours to all night'}
+                    </p>
                   </div>
                 </div>
               </div>
             </div>
             
             {/* Social Links */}
-            <div className="bg-background-light rounded-xl p-6 mb-8">
+            <div className="bg-background-light rounded-xl p-6">
               <h3 className="font-bold mb-4">Connect</h3>
               
               <div className="flex flex-wrap gap-2">
-                {/* SoundCloud */}
-                {socialLinks.soundcloud !== '#' && (
+                {/* SoundCloud - only show if URL exists */}
+                {socialLinks.soundcloud && (
                   <a 
                     href={socialLinks.soundcloud} 
                     target="_blank"
@@ -397,8 +500,8 @@ const ArtistProfilePage: React.FC = () => {
                   </a>
                 )}
                 
-                {/* Instagram */}
-                {socialLinks.instagram !== '#' && (
+                {/* Instagram - only show if URL exists */}
+                {socialLinks.instagram && (
                   <a 
                     href={socialLinks.instagram} 
                     target="_blank"
@@ -409,39 +512,6 @@ const ArtistProfilePage: React.FC = () => {
                     <Instagram size={18} />
                   </a>
                 )}
-                
-                {/* Facebook */}
-                <a 
-                  href={socialLinks.facebook} 
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-center h-10 w-10 rounded-full bg-[#1877F2] text-white hover:bg-[#166FE5] transition-colors"
-                  aria-label="Facebook"
-                >
-                  <Facebook size={18} />
-                </a>
-                
-                {/* Twitter */}
-                <a 
-                  href={socialLinks.twitter} 
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-center h-10 w-10 rounded-full bg-[#1DA1F2] text-white hover:bg-[#1A91DA] transition-colors"
-                  aria-label="Twitter"
-                >
-                  <Twitter size={18} />
-                </a>
-                
-                {/* Website */}
-                <a 
-                  href={socialLinks.website} 
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-center h-10 w-10 rounded-full bg-primary text-white hover:bg-primary-600 transition-colors"
-                  aria-label="Website"
-                >
-                  <Globe size={18} />
-                </a>
               </div>
             </div>
             
@@ -451,7 +521,7 @@ const ArtistProfilePage: React.FC = () => {
               
               <div className="space-y-4">
                 {artists
-                  .filter(a => a.id !== artist.id && a.genres.some(g => artist.genres.includes(g)))
+                  .filter(a => a.id !== artist.id && a.category === artist.category)
                   .slice(0, 3)
                   .map(similarArtist => (
                     <div 

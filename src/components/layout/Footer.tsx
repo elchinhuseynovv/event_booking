@@ -16,7 +16,7 @@ const Footer: React.FC = () => {
   );
 
   return (
-    <footer className="bg-background-light pt-16 pb-8">
+    <footer className="bg-background-light pt-16 pb-8 relative z-20">
       <div className="container">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           {/* Company Info */}
@@ -66,7 +66,7 @@ const Footer: React.FC = () => {
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-lg font-semibold mb-6">Quick Links</h4>
+            <h4 className="text-lg font-semibold mb-6 text-white">Quick Links</h4>
             <ul className="space-y-3">
               <FooterLink to="/artists" label="Find Artists" />
               <FooterLink to="/booking" label="Book an Event" />
@@ -79,7 +79,7 @@ const Footer: React.FC = () => {
 
           {/* Contact Info */}
           <div>
-            <h4 className="text-lg font-semibold mb-6">Contact Us</h4>
+            <h4 className="text-lg font-semibold mb-6 text-white">Contact Us</h4>
             <ul className="space-y-3 text-neutral-400">
               <li>123 Music Street</li>
               <li>Los Angeles, CA 90001</li>
@@ -101,7 +101,7 @@ const Footer: React.FC = () => {
 
           {/* Newsletter */}
           <div>
-            <h4 className="text-lg font-semibold mb-6">Subscribe</h4>
+            <h4 className="text-lg font-semibold mb-6 text-white">Subscribe</h4>
             <p className="text-neutral-400 mb-4">
               Stay updated with the latest artists and exclusive offers.
             </p>
@@ -109,12 +109,12 @@ const Footer: React.FC = () => {
               <input
                 type="email"
                 placeholder="Your email address"
-                className="bg-background text-white px-4 py-2 rounded-l-lg focus:outline-none w-full"
+                className="bg-background text-white px-4 py-2 rounded-l-lg focus:outline-none w-full border border-neutral-700 focus:border-neutral-600"
                 required
               />
               <button
                 type="submit"
-                className="bg-primary hover:bg-primary-600 px-4 py-2 rounded-r-lg transition-colors"
+                className="bg-primary hover:bg-primary-600 px-4 py-2 rounded-r-lg transition-colors text-white"
                 aria-label="Subscribe"
               >
                 <Send size={20} />

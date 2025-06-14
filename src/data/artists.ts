@@ -28,10 +28,12 @@ export const artists: Artist[] = [
     reviewCount: 75,
     location: 'Warsaw',
     featured: true,
-    experience: 7,
+    experience: 4,
     bookings: 180,
-    biography: 'Professional photographer and videographer with a unique eye for capturing authentic moments. Specializing in event photography, corporate shoots, and creative storytelling through visual media.',
-    genres: ['Event Photography', 'Corporate Photography', 'Portrait Photography', 'Wedding Photography']
+    biography: 'Huseyn "Raw" - Videographer and Photographer of the Underground. From the flicker of warehouse strobes in Baku to the neon-hazed basements of Warsaw, Huseyn—better known as Raw—hunts for electricity in the dark. He first lifted a camera to the rave in 2021, determined to bottle the unruly poetry of techno. What began as late-night shooting for friends in Azerbaijan has grown into a roaming personal studio, Raw Visual Studio, where concrete echoes become cinema and stills are frozen rhythms. Now based in Poland, Raw has lent his eye to some of Europe\'s flagship techno gatherings, serving as both videographer and on-site photographer for Teletech, Boiler Room, Hive Festival, Laboratorium Festival, Open\'er Festival, Verknipt, and Mayday. Whether it\'s an intimate club stream or a festival stage at dawn, he distills the night\'s energy into images built to last. Alongside his lens work he founded Raw Media, a talent agency curating a growing constellation of electronic artists. The same instinct that finds perfect light in chaos helps him spot voices and noises worth amplifying.',
+    genres: ['Underground Photography', 'Techno Documentation', 'Festival Coverage', 'Club Photography'],
+    signature: 'Atmosphere first, then emotion, then everything else. He shoots handheld and close, letting motion blur and grain kiss the frame while his photographs linger on textures—condensation, vinyl grooves, a single bead of sweat rolling down a cheek.',
+    mission: '"I frame raw moments into stories." To Raw, rave culture is modern folklore. His mission is to archive it before the lights come up, whether through a fifteen-second teaser, a festival short film, or a single frame that whispers louder than the sub-bass.'
   }
 ];
 

@@ -13,4 +13,6 @@ export interface Artist {
   bookings: number;
   biography?: string;
   genres: string[];
+  signature?: string;
+  mission?: string;
 }
