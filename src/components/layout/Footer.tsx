@@ -1,9 +1,19 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Music, Facebook, Instagram, Twitter, Youtube, Mail, Send } from 'lucide-react';
+import { Facebook, Instagram, Twitter, Youtube, Mail, Send } from 'lucide-react';
+import { useLogo } from '../../hooks/useLogo';
 
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
+  const { logo, loading: logoLoading } = useLogo();
+
+  // Text-based logo component as fallback
+  const TextLogo = () => (
+    <div className="text-xl font-bold text-white tracking-wider">
+      <span className="text-white">RAW</span>
+      <span className="ml-1">MEDIA</span>
+    </div>
+  );
 
   return (
     <footer className="bg-background-light pt-16 pb-8">
@@ -12,8 +22,36 @@ const Footer: React.FC = () => {
           {/* Company Info */}
           <div>
             <Link to="/" className="flex items-center space-x-2 mb-6">
-              <Music className="h-8 w-8 text-primary" />
-              <span className="text-xl font-bold">Raw Media</span>
+              {!logoLoading && logo?.url ? (
+                <img 
+                  src={logo.url}
+                  alt={logo.alt_text || "Raw Media Logo"}
+                  className="h-8 transition-all duration-300 hover:scale-110 hover:brightness-125 filter object-contain"
+                  onError={(e) => {
+                    console.warn('Footer logo image failed to load, switching to text logo');
+                    // Hide the broken image and show text logo instead
+                    e.currentTarget.style.display = 'none';
+                    const textLogo = e.currentTarget.nextElementSibling as HTMLElement;
+                    if (textLogo) {
+                      textLogo.style.display = 'block';
+                    }
+                  }}
+                />
+              ) : null}
+              
+              {/* Text logo - shown when loading, no logo available, or image fails */}
+              <div 
+                className={`transition-all duration-300 hover:scale-110 ${
+                  logoLoading || !logo?.url ? 'block' : 'hidden'
+                }`}
+                style={{ display: logoLoading || !logo?.url ? 'block' : 'none' }}
+              >
+                {logoLoading ? (
+                  <div className="h-6 w-24 bg-neutral-700 animate-pulse rounded"></div>
+                ) : (
+                  <TextLogo />
+                )}
+              </div>
             </Link>
             <p className="text-neutral-400 mb-6">
               Connecting the world's best artists with your next unforgettable event.
