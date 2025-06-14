@@ -41,31 +41,31 @@ const AboutPage: React.FC = () => {
           </div>
         </div>
         
-        {/* Stats Section */}
+        {/* Stats Section - Updated for new starter */}
         <div className="bg-background-light rounded-2xl p-12 mb-24">
           <div className="text-center mb-12">
-            <h2 className="mb-4">Our Impact</h2>
+            <h2 className="mb-4">Our Growing Impact</h2>
             <p className="text-neutral-300 max-w-3xl mx-auto">
-              Since our launch, we've helped create countless memories through the power of music
+              Since launching, we're building meaningful connections in the music industry
             </p>
           </div>
           
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div className="p-6">
-              <div className="text-primary text-4xl font-bold mb-2">500+</div>
-              <div className="text-neutral-300">Professional Artists</div>
+              <div className="text-primary text-4xl font-bold mb-2">5+</div>
+              <div className="text-neutral-300">Curated Artists</div>
             </div>
             <div className="p-6">
-              <div className="text-secondary text-4xl font-bold mb-2">10,000+</div>
+              <div className="text-secondary text-4xl font-bold mb-2">25+</div>
               <div className="text-neutral-300">Events Completed</div>
             </div>
             <div className="p-6">
-              <div className="text-accent text-4xl font-bold mb-2">250,000+</div>
+              <div className="text-accent text-4xl font-bold mb-2">500+</div>
               <div className="text-neutral-300">Happy Guests</div>
             </div>
             <div className="p-6">
-              <div className="text-success text-4xl font-bold mb-2">98%</div>
-              <div className="text-neutral-300">Satisfaction Rate</div>
+              <div className="text-success text-4xl font-bold mb-2">100%</div>
+              <div className="text-neutral-300">Client Satisfaction</div>
             </div>
           </div>
         </div>
