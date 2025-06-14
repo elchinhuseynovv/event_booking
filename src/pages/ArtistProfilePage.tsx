@@ -24,6 +24,30 @@ const ArtistProfilePage: React.FC = () => {
     );
   }
 
+  // Get social links based on artist
+  const getSocialLinks = () => {
+    if (artist.id === '1') { // WRK
+      return {
+        soundcloud: 'https://on.soundcloud.com/Qntc0dcB35cDSkJo4H',
+        instagram: 'https://www.instagram.com/wrk_dj?igsh=OXFjam10bnlhd2F5',
+        facebook: '#',
+        twitter: '#',
+        website: '#'
+      };
+    }
+    
+    // Default links for other artists
+    return {
+      soundcloud: '#',
+      instagram: '#',
+      facebook: '#',
+      twitter: '#',
+      website: '#'
+    };
+  };
+
+  const socialLinks = getSocialLinks();
+
   return (
     <div className="pt-24 pb-16">
       <div className="container">
@@ -358,38 +382,62 @@ const ArtistProfilePage: React.FC = () => {
               <h3 className="font-bold mb-4">Connect</h3>
               
               <div className="flex flex-wrap gap-2">
+                {/* SoundCloud */}
+                {socialLinks.soundcloud !== '#' && (
+                  <a 
+                    href={socialLinks.soundcloud} 
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center h-10 w-10 rounded-full bg-[#FF5500] text-white hover:bg-[#FF4400] transition-colors"
+                    aria-label="SoundCloud"
+                  >
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M7 17.939h-1v-8.068c.308-.231.639-.429 1-.566v8.634zm3 0h1v-9.224c-.229.265-.443.548-.621.857l-.379-.184v8.551zm2 0h1v-8.848c-.508-.079-.623-.05-1-.01v8.858zm-4 0h1v-7.02c-.312.458-.555.971-.692 1.535l-.308-.182v5.667zm-3-5.25c-.606.547-1 1.354-1 2.25 0 .896.394 1.703 1 2.25v-4.5zm10.237 5.25c-.185 0-.312-.149-.312-.35v-8.55c0-.201.127-.35.312-.35.185 0 .313.149.313.35v8.55c0 .201-.128.35-.313.35zm3.736-2.083c0 2.59-2.1 4.691-4.691 4.691-.185 0-.312-.149-.312-.35v-8.55c0-.201.127-.35.312-.35 2.591 0 4.691 2.1 4.691 4.559z"/>
+                    </svg>
+                  </a>
+                )}
+                
+                {/* Instagram */}
+                {socialLinks.instagram !== '#' && (
+                  <a 
+                    href={socialLinks.instagram} 
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center h-10 w-10 rounded-full bg-gradient-to-r from-[#405DE6] via-[#E1306C] to-[#FFDC80] text-white hover:opacity-80 transition-opacity"
+                    aria-label="Instagram"
+                  >
+                    <Instagram size={18} />
+                  </a>
+                )}
+                
+                {/* Facebook */}
                 <a 
-                  href="#" 
+                  href={socialLinks.facebook} 
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center h-10 w-10 rounded-full bg-[#1877F2] text-white"
+                  className="flex items-center justify-center h-10 w-10 rounded-full bg-[#1877F2] text-white hover:bg-[#166FE5] transition-colors"
                   aria-label="Facebook"
                 >
                   <Facebook size={18} />
                 </a>
+                
+                {/* Twitter */}
                 <a 
-                  href="#" 
+                  href={socialLinks.twitter} 
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center h-10 w-10 rounded-full bg-[#1DA1F2] text-white"
+                  className="flex items-center justify-center h-10 w-10 rounded-full bg-[#1DA1F2] text-white hover:bg-[#1A91DA] transition-colors"
                   aria-label="Twitter"
                 >
                   <Twitter size={18} />
                 </a>
+                
+                {/* Website */}
                 <a 
-                  href="#" 
+                  href={socialLinks.website} 
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center h-10 w-10 rounded-full bg-gradient-to-r from-[#405DE6] via-[#E1306C] to-[#FFDC80] text-white"
-                  aria-label="Instagram"
-                >
-                  <Instagram size={18} />
-                </a>
-                <a 
-                  href="#" 
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-center h-10 w-10 rounded-full bg-primary text-white"
+                  className="flex items-center justify-center h-10 w-10 rounded-full bg-primary text-white hover:bg-primary-600 transition-colors"
                   aria-label="Website"
                 >
                   <Globe size={18} />

@@ -162,7 +162,7 @@
 
   .character-select-subtitle {
     @apply text-xl md:text-2xl font-medium tracking-wide;
-    color: #A8A6A1;
+    color: #C0C0C0; /* Much lighter grey for better visibility */
     font-family: 'CenturyGothic', 'Orbitron', sans-serif;
   }
 
@@ -172,55 +172,55 @@
 
   .character-select-search {
     @apply w-full p-4 pl-10 rounded-lg border-2 border-transparent transition-all duration-300;
-    background: rgba(15, 15, 15, 0.9);
+    background: rgba(25, 25, 25, 0.9); /* Darker background */
     color: #E8E6E3;
     font-family: 'CenturyGothic', 'Orbitron', sans-serif;
     font-weight: 500;
     letter-spacing: 0.05em;
-    border-color: rgba(64, 64, 64, 0.5);
+    border-color: rgba(96, 96, 96, 0.5); /* Lighter border */
   }
 
   .character-select-search::placeholder {
-    color: #6B6D65;
+    color: #A0A0A0; /* Much lighter placeholder */
   }
 
   .character-select-search:focus {
     outline: none;
-    border-color: #A0A0A0;
-    box-shadow: 0 0 20px rgba(160, 160, 160, 0.3);
-    background: rgba(20, 20, 20, 0.95);
+    border-color: #C0C0C0; /* Lighter focus border */
+    box-shadow: 0 0 20px rgba(192, 192, 192, 0.3);
+    background: rgba(30, 30, 30, 0.95);
   }
 
   .character-select-filter-btn {
-    @apply border-2 border-[#404040] text-[#E8E6E3] hover:border-neutral-600 hover:bg-neutral-600 hover:text-white;
+    @apply border-2 border-[#606060] text-[#E8E6E3] hover:border-neutral-400 hover:bg-neutral-600 hover:text-white;
     font-family: 'CenturyGothic', 'Orbitron', sans-serif;
     font-weight: 600;
     letter-spacing: 0.05em;
-    background: rgba(15, 15, 15, 0.8);
+    background: rgba(25, 25, 25, 0.8);
   }
 
   .character-select-filters {
     @apply rounded-xl p-6 mb-6;
-    background: rgba(15, 15, 15, 0.9);
-    border: 1px solid rgba(64, 64, 64, 0.3);
+    background: rgba(25, 25, 25, 0.9); /* Darker background */
+    border: 1px solid rgba(96, 96, 96, 0.3); /* Lighter border */
     backdrop-filter: blur(10px);
   }
 
   .character-select-filter-tag {
     @apply px-4 py-2 text-sm rounded-lg transition-all duration-300 border-2;
-    background: rgba(15, 15, 15, 0.9);
-    border-color: #404040;
-    color: #A8A6A1;
+    background: rgba(25, 25, 25, 0.9);
+    border-color: #606060; /* Lighter border */
+    color: #C0C0C0; /* Much lighter text */
     font-family: 'CenturyGothic', 'Orbitron', sans-serif;
     font-weight: 600;
     letter-spacing: 0.05em;
   }
 
   .character-select-filter-tag:hover {
-    border-color: #A0A0A0;
-    color: #A0A0A0;
+    border-color: #C0C0C0; /* Lighter hover border */
+    color: #E0E0E0; /* Even lighter hover text */
     transform: translateY(-1px);
-    background: rgba(25, 25, 25, 0.9);
+    background: rgba(35, 35, 35, 0.9);
   }
 
   .character-select-filter-tag.active {
@@ -233,7 +233,7 @@
   .character-select-active-filter {
     @apply flex items-center px-3 py-1 text-sm rounded-full;
     background: rgba(160, 160, 160, 0.2);
-    color: #A0A0A0;
+    color: #C0C0C0; /* Lighter text */
     font-family: 'CenturyGothic', 'Orbitron', sans-serif;
     font-weight: 600;
     letter-spacing: 0.05em;
@@ -262,7 +262,7 @@
 
   .character-select-section-count {
     @apply text-2xl ml-4;
-    color: #A8A6A1;
+    color: #C0C0C0; /* Much lighter grey */
   }
 
   .character-select-grid {
@@ -282,7 +282,7 @@
 
   .character-select-portrait-container {
     @apply relative aspect-square rounded-lg overflow-hidden mb-4;
-    background: rgba(15, 15, 15, 0.9);
+    background: rgba(25, 25, 25, 0.9); /* Darker background */
     border: 2px solid transparent;
     transition: all 0.3s ease;
   }
@@ -316,7 +316,7 @@
 
   .character-select-overlay {
     @apply absolute inset-0 flex items-end justify-between p-3 opacity-0 transition-all duration-300;
-    background: linear-gradient(to top, rgba(10, 10, 10, 0.95) 0%, transparent 60%);
+    background: linear-gradient(to top, rgba(15, 15, 15, 0.95) 0%, transparent 60%);
   }
 
   .character-select-card:hover .character-select-overlay,
@@ -362,7 +362,7 @@
 
   .character-select-location {
     @apply text-sm;
-    color: #A8A6A1;
+    color: #C0C0C0; /* Much lighter grey for better visibility */
     font-family: 'CenturyGothic', 'Orbitron', sans-serif;
     font-weight: 500;
     letter-spacing: 0.05em;
@@ -389,11 +389,11 @@
 
   .metallic-glass {
     background: linear-gradient(135deg, 
-      rgba(25, 25, 25, 0.8) 0%, 
-      rgba(35, 35, 35, 0.6) 50%, 
-      rgba(25, 25, 25, 0.8) 100%);
+      rgba(35, 35, 35, 0.8) 0%, 
+      rgba(45, 45, 45, 0.6) 50%, 
+      rgba(35, 35, 35, 0.8) 100%);
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(64, 64, 64, 0.3);
+    border: 1px solid rgba(96, 96, 96, 0.3); /* Lighter border */
     box-shadow: 
       inset 0 1px 0 rgba(255, 255, 255, 0.05),
       0 4px 20px rgba(0, 0, 0, 0.5);
@@ -401,29 +401,29 @@
 
   .metallic-glass-dark {
     background: linear-gradient(135deg, 
-      rgba(15, 15, 15, 0.95) 0%, 
-      rgba(25, 25, 25, 0.8) 50%, 
-      rgba(15, 15, 15, 0.95) 100%);
+      rgba(25, 25, 25, 0.95) 0%, 
+      rgba(35, 35, 35, 0.8) 50%, 
+      rgba(25, 25, 25, 0.95) 100%);
     backdrop-filter: blur(15px);
-    border: 1px solid rgba(64, 64, 64, 0.4);
+    border: 1px solid rgba(96, 96, 96, 0.4); /* Lighter border */
     box-shadow: 
       inset 0 1px 0 rgba(255, 255, 255, 0.03),
       0 8px 32px rgba(0, 0, 0, 0.6);
   }
 
   .metallic-glass-outline {
-    background: rgba(10, 10, 10, 0.3);
-    border: 2px solid rgba(64, 64, 64, 0.5);
+    background: rgba(20, 20, 20, 0.3); /* Darker background */
+    border: 2px solid rgba(96, 96, 96, 0.5); /* Lighter border */
     backdrop-filter: blur(10px);
     transition: all 0.3s ease;
   }
 
   .metallic-glass-outline:hover {
     background: linear-gradient(135deg, 
-      rgba(25, 25, 25, 0.6) 0%, 
-      rgba(35, 35, 35, 0.4) 50%, 
-      rgba(25, 25, 25, 0.6) 100%);
-    border-color: rgba(160, 160, 160, 0.6);
+      rgba(35, 35, 35, 0.6) 0%, 
+      rgba(45, 45, 45, 0.4) 50%, 
+      rgba(35, 35, 35, 0.6) 100%);
+    border-color: rgba(192, 192, 192, 0.6); /* Much lighter hover border */
     box-shadow: 
       inset 0 1px 0 rgba(255, 255, 255, 0.05),
       0 4px 20px rgba(0, 0, 0, 0.4);
@@ -450,9 +450,9 @@
     height: 60px;
     background: linear-gradient(90deg, 
       transparent 0%, 
-      rgba(64, 64, 64, 0.3) 25%, 
-      rgba(48, 48, 48, 0.5) 50%, 
-      rgba(64, 64, 64, 0.3) 75%, 
+      rgba(96, 96, 96, 0.3) 25%, 
+      rgba(80, 80, 80, 0.5) 50%, 
+      rgba(96, 96, 96, 0.3) 75%, 
       transparent 100%);
     animation: metallic-wave 3s ease-in-out infinite;
     opacity: 0.6;
