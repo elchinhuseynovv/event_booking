@@ -15,7 +15,65 @@ export const artists: Artist[] = [
     experience: 5,
     bookings: 120,
     biography: 'WRK is a dynamic and innovative DJ who brings fresh energy to every performance. With a unique style that blends contemporary beats with classic rhythms, she creates an unforgettable atmosphere that keeps the crowd moving all night long.',
-    genres: ['Electronic', 'House', 'Techno', 'Progressive']
+    genres: ['Electronic', 'House', 'Techno', 'Progressive'],
+    soundcloudTracks: [
+      {
+        title: 'WRK - TECHNO MIX 2024',
+        url: 'https://soundcloud.com/wrk_dj/wrk-techno-mix-2024',
+        duration: '60:00',
+        plays: '2.5K',
+        description: 'A powerful techno journey featuring the latest underground hits and driving basslines that will keep you moving all night long.'
+      },
+      {
+        title: 'WRK - HOUSE VIBES',
+        url: 'https://soundcloud.com/wrk_dj/wrk-house-vibes',
+        duration: '45:30',
+        plays: '1.8K',
+        description: 'Deep house selection perfect for late night sessions with groovy basslines and atmospheric pads.'
+      },
+      {
+        title: 'WRK - PROGRESSIVE JOURNEY',
+        url: 'https://soundcloud.com/wrk_dj/wrk-progressive-journey',
+        duration: '52:15',
+        plays: '3.1K',
+        description: 'Progressive house mix with emotional builds and euphoric drops that take you on a musical journey.'
+      },
+      {
+        title: 'WRK - UNDERGROUND SESSIONS',
+        url: 'https://soundcloud.com/wrk_dj/wrk-underground-sessions',
+        duration: '38:45',
+        plays: '1.2K',
+        description: 'Raw underground techno for the true enthusiasts and warehouse vibes that capture the essence of the scene.'
+      },
+      {
+        title: 'WRK - FESTIVAL ENERGY',
+        url: 'https://soundcloud.com/wrk_dj/wrk-festival-energy',
+        duration: '55:20',
+        plays: '4.2K',
+        description: 'High-energy festival set with peak-time bangers and crowd favorites that ignite any dancefloor.'
+      },
+      {
+        title: 'WRK - MINIMAL TECH',
+        url: 'https://soundcloud.com/wrk_dj/wrk-minimal-tech',
+        duration: '42:10',
+        plays: '1.9K',
+        description: 'Minimal techno exploration with hypnotic rhythms and subtle progressions for the discerning listener.'
+      },
+      {
+        title: 'WRK - AFTERHOURS',
+        url: 'https://soundcloud.com/wrk_dj/wrk-afterhours',
+        duration: '48:35',
+        plays: '2.7K',
+        description: 'Deep and atmospheric sounds for those special afterhours moments when the night becomes magic.'
+      },
+      {
+        title: 'WRK - LIVE AT WAREHOUSE',
+        url: 'https://soundcloud.com/wrk_dj/wrk-live-at-warehouse',
+        duration: '65:45',
+        plays: '3.8K',
+        description: 'Live recording from an underground warehouse party in Warsaw - raw energy captured in its purest form.'
+      }
+    ]
   },
   {
     id: '5',

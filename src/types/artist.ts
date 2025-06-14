@@ -1,3 +1,11 @@
+export interface SoundCloudTrack {
+  title: string;
+  url: string;
+  duration: string;
+  plays: string;
+  description: string;
+}
+
 export interface Artist {
   id: string;
   name: string;
@@ -15,4 +23,5 @@ export interface Artist {
   genres: string[];
   signature?: string;
   mission?: string;
+  soundcloudTracks?: SoundCloudTrack[];
 }
