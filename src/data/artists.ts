@@ -18,60 +18,53 @@ export const artists: Artist[] = [
     genres: ['Electronic', 'House', 'Techno', 'Progressive'],
     soundcloudTracks: [
       {
-        title: 'WRK - TECHNO MIX 2024',
-        url: 'https://soundcloud.com/wrk_dj/wrk-techno-mix-2024',
+        title: 'ZIMNYGRZYB - 4822 PODCAST - 007',
+        url: 'https://soundcloud.com/wrk_dj/zimnygrzyb-4822-podcast-007',
         duration: '60:00',
-        plays: '2.5K',
-        description: 'A powerful techno journey featuring the latest underground hits and driving basslines that will keep you moving all night long.'
+        plays: '2.3K',
+        description: 'Deep electronic journey featuring ZIMNYGRZYB for the 4822 podcast series - atmospheric sounds and driving rhythms.'
       },
       {
-        title: 'WRK - HOUSE VIBES',
-        url: 'https://soundcloud.com/wrk_dj/wrk-house-vibes',
-        duration: '45:30',
+        title: 'WIX COLLINA - 4822 PODCAST - 010',
+        url: 'https://soundcloud.com/wrk_dj/wix-collina-4822-podcast-010',
+        duration: '58:45',
         plays: '1.8K',
-        description: 'Deep house selection perfect for late night sessions with groovy basslines and atmospheric pads.'
+        description: 'WIX COLLINA takes over the 4822 podcast with deep disco and house selection, featuring underground gems and dancefloor favorites.'
       },
       {
-        title: 'WRK - PROGRESSIVE JOURNEY',
-        url: 'https://soundcloud.com/wrk_dj/wrk-progressive-journey',
-        duration: '52:15',
-        plays: '3.1K',
-        description: 'Progressive house mix with emotional builds and euphoric drops that take you on a musical journey.'
+        title: 'WRK | Underground Lublin | 20052022',
+        url: 'https://soundcloud.com/wrk_dj/wrk-undergroud-lublin-20052022',
+        duration: '76:06',
+        plays: '2.1K',
+        description: 'Live recording from Underground Lublin event - a powerful techno journey through the night with driving basslines and hypnotic rhythms.'
       },
       {
-        title: 'WRK - UNDERGROUND SESSIONS',
-        url: 'https://soundcloud.com/wrk_dj/wrk-underground-sessions',
-        duration: '38:45',
-        plays: '1.2K',
-        description: 'Raw underground techno for the true enthusiasts and warehouse vibes that capture the essence of the scene.'
-      },
-      {
-        title: 'WRK - FESTIVAL ENERGY',
-        url: 'https://soundcloud.com/wrk_dj/wrk-festival-energy',
-        duration: '55:20',
-        plays: '4.2K',
-        description: 'High-energy festival set with peak-time bangers and crowd favorites that ignite any dancefloor.'
-      },
-      {
-        title: 'WRK - MINIMAL TECH',
-        url: 'https://soundcloud.com/wrk_dj/wrk-minimal-tech',
-        duration: '42:10',
+        title: 'WRK | Borderline Przyjaźń | 26032022',
+        url: 'https://soundcloud.com/wrk_dj/wrk-borderline-przyjazn-26032022',
+        duration: '65:30',
         plays: '1.9K',
-        description: 'Minimal techno exploration with hypnotic rhythms and subtle progressions for the discerning listener.'
+        description: 'Live set from Borderline Przyjaźń event - raw underground techno energy captured in its purest form.'
       },
       {
-        title: 'WRK - AFTERHOURS',
-        url: 'https://soundcloud.com/wrk_dj/wrk-afterhours',
-        duration: '48:35',
-        plays: '2.7K',
-        description: 'Deep and atmospheric sounds for those special afterhours moments when the night becomes magic.'
+        title: 'PYOTREK - 4822 PODCAST - 009',
+        url: 'https://soundcloud.com/wrk_dj/pyotrek-4822-podcast-009',
+        duration: '55:20',
+        plays: '1.5K',
+        description: 'PYOTREK delivers a powerful mix for the 4822 podcast series with underground electronic sounds and festival energy.'
       },
       {
-        title: 'WRK - LIVE AT WAREHOUSE',
-        url: 'https://soundcloud.com/wrk_dj/wrk-live-at-warehouse',
-        duration: '65:45',
-        plays: '3.8K',
-        description: 'Live recording from an underground warehouse party in Warsaw - raw energy captured in its purest form.'
+        title: 'SICKDAT - 4822 PODCAST - 008',
+        url: 'https://soundcloud.com/wrk_dj/sickdat-4822-podcast-008',
+        duration: '62:15',
+        plays: '1.7K',
+        description: 'SICKDAT brings dark and driving techno to the 4822 podcast series - perfect for late night sessions.'
+      },
+      {
+        title: 'LAS FESTIWAL 2023',
+        url: 'https://soundcloud.com/wrk_dj/las-festiwal-2023',
+        duration: '45:40',
+        plays: '2.8K',
+        description: 'Live recording from LAS Festiwal 2023 - outdoor festival vibes with peak-time bangers and crowd favorites.'
       }
     ]
   },
