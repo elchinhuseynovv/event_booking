@@ -16,6 +16,38 @@ export const artists: Artist[] = [
     bookings: 120,
     biography: 'WRK is a dynamic and innovative DJ who brings fresh energy to every performance. With a unique style that blends contemporary beats with classic rhythms, she creates an unforgettable atmosphere that keeps the crowd moving all night long.',
     genres: ['Electronic', 'House', 'Techno', 'Progressive'],
+    galleryImages: [
+      {
+        url: 'https://rroyrxpcceyhgixpgzrs.supabase.co/storage/v1/object/sign/artists/WRK/wrk01.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV82N2JkYWYxNi03YzRhLTQ3ZmUtYTE1NS1mZjcxOTE2ZTdiMGQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJhcnRpc3RzL1dSSy93cmswMS5qcGciLCJpYXQiOjE3NDk5ODYwMzUsImV4cCI6MjE4MTk4NjAzNX0.O1LvKB_t_LIbx5qUAiG6DYE-p4i8XyG4Jlc4TtDpNv8',
+        alt: 'WRK performing at underground event',
+        caption: 'Live performance at underground techno event'
+      },
+      {
+        url: 'https://rroyrxpcceyhgixpgzrs.supabase.co/storage/v1/object/sign/artists/WRK/wrk02.JPG?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV82N2JkYWYxNi03YzRhLTQ3ZmUtYTE1NS1mZjcxOTE2ZTdiMGQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJhcnRpc3RzL1dSSy93cmswMi5KUEciLCJpYXQiOjE3NDk5ODYwNDYsImV4cCI6MjE4MTk4NjA0Nn0.UzC0epw0JMI9UeQ1p5uwrhdSrmb_xRvoabYIchBHfqc',
+        alt: 'WRK behind the decks',
+        caption: 'Behind the decks at festival main stage'
+      },
+      {
+        url: 'https://rroyrxpcceyhgixpgzrs.supabase.co/storage/v1/object/sign/artists/WRK/wrk03.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV82N2JkYWYxNi03YzRhLTQ3ZmUtYTE1NS1mZjcxOTE2ZTdiMGQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJhcnRpc3RzL1dSSy93cmswMy5qcGciLCJpYXQiOjE3NDk5ODYwNjAsImV4cCI6MjE4MTk4NjA2MH0.ELc0hkt6nCxo6Snu4eyuvW3wgnFDJ3EIk9239ycHHzU',
+        alt: 'WRK crowd interaction',
+        caption: 'Connecting with the crowd during peak time'
+      },
+      {
+        url: 'https://rroyrxpcceyhgixpgzrs.supabase.co/storage/v1/object/sign/artists/WRK/wrk04.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV82N2JkYWYxNi03YzRhLTQ3ZmUtYTE1NS1mZjcxOTE2ZTdiMGQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJhcnRpc3RzL1dSSy93cmswNC5qcGciLCJpYXQiOjE3NDk5ODYwNzIsImV4cCI6MjE4MTk4NjA3Mn0.bzs2fNxOqRelRPefvODGyXYcV_LNLEJeWOC5eTuJ8KU',
+        alt: 'WRK studio session',
+        caption: 'Studio session preparing new tracks'
+      },
+      {
+        url: 'https://rroyrxpcceyhgixpgzrs.supabase.co/storage/v1/object/sign/artists/WRK/wrk05.jpeg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV82N2JkYWYxNi03YzRhLTQ3ZmUtYTE1NS1mZjcxOTE2ZTdiMGQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJhcnRpc3RzL1dSSy93cmswNS5qcGVnIiwiaWF0IjoxNzQ5OTg2MDgyLCJleHAiOjIxODE5ODYwODJ9.ijBV-4d7cLWf1llLif5ADKWa_CdzrLdZ5JIJxrRqPek',
+        alt: 'WRK festival performance',
+        caption: 'Festival performance under the lights'
+      },
+      {
+        url: 'https://rroyrxpcceyhgixpgzrs.supabase.co/storage/v1/object/sign/artists/WRK/wrk06.jpeg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV82N2JkYWYxNi03YzRhLTQ3ZmUtYTE1NS1mZjcxOTE2ZTdiMGQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJhcnRpc3RzL1dSSy93cmswNi5qcGVnIiwiaWF0IjoxNzQ5OTg2MDkwLCJleHAiOjIxODE5ODYwOTB9.aOwuievdZoDIDHgsNnMj13Q8wn5qZTeTbtfdr5nkLNs',
+        alt: 'WRK backstage',
+        caption: 'Backstage moments before the show'
+      }
+    ],
     soundcloudTracks: [
       {
         title: 'ZIMNYGRZYB - 4822 PODCAST - 007',

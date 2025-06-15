@@ -6,6 +6,12 @@ export interface SoundCloudTrack {
   description: string;
 }
 
+export interface GalleryImage {
+  url: string;
+  alt: string;
+  caption?: string;
+}
+
 export interface Artist {
   id: string;
   name: string;
@@ -24,4 +30,5 @@ export interface Artist {
   signature?: string;
   mission?: string;
   soundcloudTracks?: SoundCloudTrack[];
+  galleryImages?: GalleryImage[];
 }

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { Calendar, MapPin, Music, Clock, Instagram, Play, Heart, Share2, Star, ExternalLink, Headphones } from 'lucide-react';
 import Button from '../components/ui/Button';
+import SoundCloudPlayer from '../components/ui/SoundCloudPlayer';
 import { artists } from '../data/artists';
 
 const ArtistProfilePage: React.FC = () => {
@@ -17,6 +18,7 @@ const ArtistProfilePage: React.FC = () => {
   console.log('Available artists:', artists.map(a => ({ id: a.id, name: a.name })));
   console.log('Found artist:', artist);
   console.log('Artist soundcloud tracks:', artist?.soundcloudTracks);
+  console.log('Artist gallery images:', artist?.galleryImages);
   
   if (!artist) {
     return (
@@ -283,38 +285,11 @@ const ArtistProfilePage: React.FC = () => {
                         
                         <div className="space-y-4">
                           {artist.soundcloudTracks.map((track, index) => (
-                            <div key={index} className="bg-background-light rounded-xl p-6 hover:bg-neutral-800 transition-colors group">
-                              <div className="flex items-start justify-between">
-                                <div className="flex items-start space-x-4 flex-1">
-                                  <div className="w-16 h-16 rounded-lg bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform">
-                                    <Play size={24} className="text-white ml-1" />
-                                  </div>
-                                  <div className="flex-1 min-w-0">
-                                    <h4 className="font-bold text-lg mb-2 truncate text-white group-hover:text-orange-400 transition-colors">{track.title}</h4>
-                                    <p className="text-neutral-400 text-sm mb-3 line-clamp-2 leading-relaxed">{track.description}</p>
-                                    <div className="flex items-center space-x-6 text-sm text-neutral-500">
-                                      <span className="flex items-center">
-                                        <Clock size={14} className="mr-1" />
-                                        {track.duration}
-                                      </span>
-                                      <span className="flex items-center">
-                                        <Play size={14} className="mr-1" />
-                                        {track.plays} plays
-                                      </span>
-                                    </div>
-                                  </div>
-                                </div>
-                                <a
-                                  href={track.url}
-                                  target="_blank"
-                                  rel="noopener noreferrer"
-                                  className="ml-4 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white px-6 py-3 rounded-lg transition-all duration-300 flex items-center font-medium shadow-lg hover:shadow-xl transform hover:scale-105"
-                                >
-                                  <Play size={16} className="mr-2" />
-                                  Listen
-                                </a>
-                              </div>
-                            </div>
+                            <SoundCloudPlayer 
+                              key={index} 
+                              track={track} 
+                              index={index}
+                            />
                           ))}
                         </div>
                         
@@ -367,15 +342,33 @@ const ArtistProfilePage: React.FC = () => {
                     {artist.category === 'photographer' ? 'Portfolio' : 'Photos'}
                   </h3>
                   <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-8">
-                    {[1, 2, 3, 4, 5, 6].map((item) => (
-                      <div key={item} className="aspect-square rounded-lg overflow-hidden">
-                        <img 
-                          src={`https://images.pexels.com/photos/167636/pexels-photo-167636.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1`} 
-                          alt={`Gallery image ${item}`} 
-                          className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
-                        />
-                      </div>
-                    ))}
+                    {artist.galleryImages && artist.galleryImages.length > 0 ? (
+                      artist.galleryImages.map((image, index) => (
+                        <div key={index} className="aspect-square rounded-lg overflow-hidden group relative">
+                          <img 
+                            src={image.url} 
+                            alt={image.alt} 
+                            className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
+                          />
+                          {image.caption && (
+                            <div className="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-3">
+                              <p className="text-white text-sm">{image.caption}</p>
+                            </div>
+                          )}
+                        </div>
+                      ))
+                    ) : (
+                      // Fallback to default images if no gallery images
+                      [1, 2, 3, 4, 5, 6].map((item) => (
+                        <div key={item} className="aspect-square rounded-lg overflow-hidden">
+                          <img 
+                            src={`https://images.pexels.com/photos/167636/pexels-photo-167636.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1`} 
+                            alt={`Gallery image ${item}`} 
+                            className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
+                          />
+                        </div>
+                      ))
+                    )}
                   </div>
                   
                   {/* Additional Content for Photographers */}
