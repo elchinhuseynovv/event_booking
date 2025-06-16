@@ -102,8 +102,8 @@ const HeroSection: React.FC = () => {
               ))}
             </div>
             <div>
-              <div className="text-zinc-200 font-bold text-lg tracking-wide">500+ ARTISTS</div>
-              <div className="text-zinc-400 text-sm font-medium tracking-wide">Ready to make your event special</div>
+              <div className="text-zinc-200 font-bold text-lg tracking-wide">CURATED TALENT</div>
+              <div className="text-zinc-400 text-sm font-medium tracking-wide">Handpicked artists ready to elevate your event</div>
             </div>
           </div>
         </div>

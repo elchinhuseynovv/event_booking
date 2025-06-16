@@ -21,6 +21,25 @@ const Header: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Close menu when route changes
+  useEffect(() => {
+    closeMenu();
+  }, [location.pathname]);
+
+  // Prevent body scroll when menu is open
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+
+    // Cleanup on unmount
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isMenuOpen]);
+
   const isActive = (path: string) => location.pathname === path;
 
   const handleNavClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
@@ -105,7 +124,7 @@ const Header: React.FC = () => {
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden text-white p-2"
+          className="md:hidden text-white p-2 relative z-[60]"
           onClick={toggleMenu}
           aria-label="Toggle menu"
         >
@@ -117,26 +136,41 @@ const Header: React.FC = () => {
         </button>
       </div>
 
+      {/* Mobile Navigation Overlay */}
+      {isMenuOpen && (
+        <div className="md:hidden fixed inset-0 z-[55] bg-black/50 backdrop-blur-sm" onClick={closeMenu} />
+      )}
+
       {/* Mobile Navigation */}
       <div
-        className={`md:hidden fixed inset-0 bg-background z-40 transform transition-transform duration-300 ease-in-out ${
+        className={`md:hidden fixed inset-0 z-[55] transform transition-transform duration-300 ease-in-out ${
           isMenuOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
       >
-        <div className="flex flex-col h-full p-8 pt-24">
-          <MobileNavLink to="/" label="Home" onClick={(e) => { closeMenu(); handleNavClick(e); }} />
-          <MobileNavLink to="/artists" label="Artists" onClick={(e) => { closeMenu(); handleNavClick(e); }} />
-          <MobileNavLink to="/booking" label="Booking" onClick={(e) => { closeMenu(); handleNavClick(e); }} />
-          <MobileNavLink to="/about" label="About" onClick={(e) => { closeMenu(); handleNavClick(e); }} />
-          <MobileNavLink to="/contact" label="Contact" onClick={(e) => { closeMenu(); handleNavClick(e); }} />
-          <Link
-            to="/booking"
-            className="bg-neutral-600 hover:bg-neutral-500 text-white px-6 py-3 rounded-lg mt-8 text-center nav-link transition-all duration-300"
-            onClick={(e) => { closeMenu(); handleNavClick(e); }}
-            data-text="Book Now"
-          >
-            Book Now
-          </Link>
+        {/* Full screen background */}
+        <div className="absolute inset-0 bg-background"></div>
+        
+        {/* Menu content */}
+        <div className="relative z-10 flex flex-col h-full p-8 pt-24">
+          <div className="flex-1 space-y-2">
+            <MobileNavLink to="/" label="Home" onClick={(e) => { closeMenu(); handleNavClick(e); }} />
+            <MobileNavLink to="/artists" label="Artists" onClick={(e) => { closeMenu(); handleNavClick(e); }} />
+            <MobileNavLink to="/booking" label="Booking" onClick={(e) => { closeMenu(); handleNavClick(e); }} />
+            <MobileNavLink to="/about" label="About" onClick={(e) => { closeMenu(); handleNavClick(e); }} />
+            <MobileNavLink to="/contact" label="Contact" onClick={(e) => { closeMenu(); handleNavClick(e); }} />
+          </div>
+          
+          {/* Book Now button at bottom */}
+          <div className="mt-8">
+            <Link
+              to="/booking"
+              className="block w-full bg-neutral-600 hover:bg-neutral-500 text-white px-6 py-3 rounded-lg text-center nav-link transition-all duration-300 font-medium"
+              onClick={(e) => { closeMenu(); handleNavClick(e); }}
+              data-text="Book Now"
+            >
+              Book Now
+            </Link>
+          </div>
         </div>
       </div>
     </header>
@@ -174,7 +208,7 @@ type MobileNavLinkProps = {
 const MobileNavLink: React.FC<MobileNavLinkProps> = ({ to, label, onClick }) => (
   <Link
     to={to}
-    className="text-xl font-medium py-4 border-b border-neutral-800 hover:text-neutral-300 transition-colors nav-link"
+    className="block text-xl font-medium py-4 border-b border-neutral-800 hover:text-neutral-300 transition-colors nav-link"
     onClick={onClick}
     data-text={label}
   >
