@@ -210,7 +210,7 @@ const BookingPage: React.FC = () => {
                         <div>
                           <h4 className="font-medium">{artist.name}</h4>
                           <p className="text-sm text-neutral-400">
-                            {artist.genres?.[0]}, ${artist.price}/hr
+                            {artist.genres?.[0]}, {artist.experience} years exp.
                           </p>
                         </div>
                       </div>

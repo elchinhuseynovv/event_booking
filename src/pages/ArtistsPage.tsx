@@ -294,7 +294,7 @@ const CharacterSelectCard: React.FC<CharacterSelectCardProps> = ({
             {artist.category === 'dj' ? 'DJ' : 'PHOTOGRAPHER'}
           </div>
           <div className="character-select-price">
-            ${artist.price}/HR
+            {artist.experience} YRS
           </div>
         </div>
       </div>

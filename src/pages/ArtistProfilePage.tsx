@@ -502,11 +502,6 @@ const ArtistProfilePage: React.FC = () => {
             <div className="bg-background-light rounded-xl p-6">
               <h3 className="text-xl font-bold mb-4">Book This Artist</h3>
               
-              <div className="flex justify-between mb-4 pb-4 border-b border-neutral-800">
-                <span className="text-neutral-400">Starting price:</span>
-                <span className="text-2xl font-bold text-primary">${artist.price}/hr</span>
-              </div>
-              
               <p className="text-neutral-300 mb-6">
                 Fill out the booking form to check availability and get a personalized quote for your event.
               </p>

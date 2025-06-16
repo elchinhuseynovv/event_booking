@@ -76,8 +76,8 @@ const FeaturedArtists: React.FC = () => {
                 
                 <div className="flex justify-between items-center">
                   <div>
-                    <p className="text-xs md:text-sm text-neutral-400">Starting from</p>
-                    <p className="text-sm md:text-lg font-semibold text-white">${artist.price}/hr</p>
+                    <p className="text-xs md:text-sm text-neutral-400">{artist.location}</p>
+                    <p className="text-sm md:text-lg font-semibold text-white">{artist.experience} years exp.</p>
                   </div>
                   <Button 
                     variant="outline" 
