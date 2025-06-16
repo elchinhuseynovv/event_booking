@@ -59,8 +59,8 @@ const HeroSection: React.FC = () => {
       
       <div className="container relative z-10">
         <div className="max-w-3xl">
-          {/* Updated headline with colorful glitch effect on "Artists" */}
-          <h1 ref={titleRef} className="mb-6 glitch floating text-white" data-text="Select. Book. Elevate. Artists That Define the Scene">
+          {/* Updated headline with colorful glitch effect on "Artists" - Added mobile spacing */}
+          <h1 ref={titleRef} className="mb-6 mt-16 md:mt-0 glitch floating text-white" data-text="Select. Book. Elevate. Artists That Define the Scene">
             Select. Book. Elevate. <span className="colorful-glitch-artist" data-text="Artists">Artists</span> That Define the Scene
           </h1>
           
