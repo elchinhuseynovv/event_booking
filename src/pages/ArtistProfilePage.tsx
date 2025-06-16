@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { Calendar, MapPin, Music, Clock, Instagram, Play, Heart, Share2, Star, ExternalLink, Headphones } from 'lucide-react';
+import { Calendar, MapPin, Music, Clock, Instagram, Play, Heart, Share2, Star, ExternalLink, Headphones, Globe } from 'lucide-react';
 import Button from '../components/ui/Button';
 import SoundCloudPlayer from '../components/ui/SoundCloudPlayer';
 import { artists } from '../data/artists';
@@ -47,7 +47,10 @@ const ArtistProfilePage: React.FC = () => {
     if (artist.id === '5') { // Huseyn Gurbanli
       return {
         soundcloud: '',
-        instagram: 'https://www.instagram.com/raw_visualstudio'
+        instagram: 'https://www.instagram.com/raw_visualstudio',
+        tiktok: 'https://www.tiktok.com/@raw_visualstudio',
+        website: 'https://raw-visualstudio.com',
+        pinterest: 'https://pl.pinterest.com/rawvisualstudioffical'
       };
     }
     
@@ -580,6 +583,49 @@ const ArtistProfilePage: React.FC = () => {
                     aria-label="Instagram"
                   >
                     <Instagram size={18} />
+                  </a>
+                )}
+
+                {/* TikTok - only show if URL exists */}
+                {socialLinks.tiktok && (
+                  <a 
+                    href={socialLinks.tiktok} 
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center h-10 w-10 rounded-full bg-black text-white hover:bg-gray-800 transition-all duration-300 transform hover:scale-110"
+                    aria-label="TikTok"
+                  >
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
+                    </svg>
+                  </a>
+                )}
+
+                {/* Website - only show if URL exists */}
+                {socialLinks.website && (
+                  <a 
+                    href={socialLinks.website} 
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center h-10 w-10 rounded-full bg-gradient-to-r from-blue-500 to-blue-600 text-white hover:from-blue-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-110"
+                    aria-label="Website"
+                  >
+                    <Globe size={18} />
+                  </a>
+                )}
+
+                {/* Pinterest - only show if URL exists */}
+                {socialLinks.pinterest && (
+                  <a 
+                    href={socialLinks.pinterest} 
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center h-10 w-10 rounded-full bg-gradient-to-r from-red-500 to-red-600 text-white hover:from-red-600 hover:to-red-700 transition-all duration-300 transform hover:scale-110"
+                    aria-label="Pinterest"
+                  >
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M12 0C5.374 0 0 5.374 0 12s5.374 12 12 12 12-5.374 12-12S18.626 0 12 0zm0 19c-.721 0-1.418-.109-2.073-.312.286-.465.713-1.227.87-1.835l.437-1.664c.229.436.895.803 1.604.803 2.111 0 3.633-1.941 3.633-4.354 0-2.312-1.888-4.042-4.316-4.042-3.021 0-4.625 2.027-4.625 4.235 0 1.027.547 2.305 1.422 2.712.132.062.203.034.234-.094l.193-.793c.017-.071.009-.132-.049-.202-.288-.35-.472-.808-.472-1.458 0-1.809 1.337-3.57 3.613-3.57 1.968 0 3.323 1.333 3.323 3.231 0 2.067-.895 3.486-2.067 3.486-.632 0-1.175-.529-.999-1.175.211-.777.620-1.612.620-2.175 0-.502-.266-.921-.817-.921-.649 0-1.171.679-1.171 1.588 0 .577.194.967.194.967s-.656 2.804-.77 3.288c-.164.694-.025 1.588.013 1.678.021.05.049.045.069.018.032-.045.436-.558.642-1.216.08-.257.459-1.8.459-1.8.240.458.938.854 1.683.854 2.217 0 3.811-2.042 3.811-4.539C18.121 6.292 15.623 4.75 12 4.75c-3.623 0-6.371 1.542-6.371 4.789 0 1.32.496 2.490 1.56 2.92.174.07.330.004.381-.19.036-.132.121-.484.158-.628.052-.196.032-.265-.114-.437-.324-.381-.531-.871-.531-1.565 0-2.014 1.505-3.815 3.917-3.815 2.137 0 3.31 1.313 3.31 3.067 0 2.307-.102 4.248-1.614 4.248-.532 0-.929-.441-.802-.982.151-.646.444-1.342.444-1.808 0-.417-.223-.765-.686-.765-.544 0-.982.563-.982 1.317 0 .481.163.806.163.806s-.556 2.357-.653 2.77c-.097.412-.146.919-.097 1.303C5.098 18.746 1.5 15.745 1.5 12 1.5 6.201 6.201 1.5 12 1.5S22.5 6.201 22.5 12 17.799 22.5 12 22.5z"/>
+                    </svg>
                   </a>
                 )}
               </div>
