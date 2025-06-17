@@ -63,6 +63,34 @@ const ArtistProfilePage: React.FC = () => {
 
   const socialLinks = getSocialLinks();
 
+  // Get featured video based on artist
+  const getFeaturedVideo = () => {
+    if (artist.id === '1') { // WRK
+      return {
+        url: 'https://rroyrxpcceyhgixpgzrs.supabase.co/storage/v1/object/sign/artists/WRK/WRKvideo%20(1).mp4?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV82N2JkYWYxNi03YzRhLTQ3ZmUtYTE1NS1mZjcxOTE2ZTdiMGQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJhcnRpc3RzL1dSSy9XUkt2aWRlbyAoMSkubXA0IiwiaWF0IjoxNzUwMTk2MTMzLCJleHAiOjIxODIxOTYxMzN9.PWejYc7tHHTrrt3Ik4aTruqlnT8PP96qpHw29LEHgso',
+        title: 'WRK - Underground Energy 2025',
+        description: 'Raw techno power in motion'
+      };
+    }
+    
+    if (artist.id === '5') { // Raw
+      return {
+        url: 'https://images.pexels.com/photos/2034851/pexels-photo-2034851.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+        title: 'Raw Visual Studio Showreel 2024',
+        description: 'Underground Techno Documentation'
+      };
+    }
+    
+    // Default video for other artists
+    return {
+      url: 'https://images.pexels.com/photos/2034851/pexels-photo-2034851.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+      title: 'Live Performance Highlights',
+      description: 'Professional event coverage'
+    };
+  };
+
+  const featuredVideo = getFeaturedVideo();
+
   return (
     <div className="pt-24 pb-16">
       <div className="container">
@@ -329,23 +357,39 @@ const ArtistProfilePage: React.FC = () => {
                   {/* Featured Video */}
                   <div className="bg-background-light rounded-xl overflow-hidden mb-8">
                     <div className="aspect-video relative group cursor-pointer">
-                      <img 
-                        src="https://images.pexels.com/photos/2034851/pexels-photo-2034851.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
-                        alt="Featured performance" 
-                        className="w-full h-full object-cover"
-                      />
-                      <div className="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                        <div className="w-16 h-16 rounded-full bg-primary/80 flex items-center justify-center">
-                          <Play fill="white" size={30} />
-                        </div>
-                      </div>
+                      {artist.id === '1' ? (
+                        // WRK gets the actual video
+                        <video 
+                          className="w-full h-full object-cover"
+                          poster={artist.image}
+                          controls
+                          preload="metadata"
+                        >
+                          <source src={featuredVideo.url} type="video/mp4" />
+                          Your browser does not support the video tag.
+                        </video>
+                      ) : (
+                        // Other artists get the image placeholder
+                        <>
+                          <img 
+                            src={featuredVideo.url} 
+                            alt="Featured performance" 
+                            className="w-full h-full object-cover"
+                          />
+                          <div className="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                            <div className="w-16 h-16 rounded-full bg-primary/80 flex items-center justify-center">
+                              <Play fill="white" size={30} />
+                            </div>
+                          </div>
+                        </>
+                      )}
                     </div>
                     <div className="p-4">
                       <h4 className="font-bold">
-                        {artist.category === 'photographer' ? 'Raw Visual Studio Showreel 2024' : 'Live at Summer Festival 2023'}
+                        {featuredVideo.title}
                       </h4>
                       <p className="text-neutral-400 text-sm">
-                        {artist.category === 'photographer' ? 'Underground Techno Documentation' : 'Downtown Main Stage'}
+                        {featuredVideo.description}
                       </p>
                     </div>
                   </div>
