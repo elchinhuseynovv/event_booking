@@ -93,6 +93,198 @@ const ArtistProfilePage: React.FC = () => {
 
   const featuredVideo = getFeaturedVideo();
 
+  // Get reviews based on artist
+  const getArtistReviews = () => {
+    if (artist.id === '5') { // Raw - Photographer/Videographer
+      return [
+        {
+          name: 'Teletech Events',
+          date: '2 weeks ago',
+          rating: 5,
+          comment: 'Raw captured the essence of our underground event perfectly. His ability to work in low light conditions while maintaining artistic quality is unmatched. The final video exceeded all expectations.',
+          event: 'Techno Event Documentation'
+        },
+        {
+          name: 'Kamil Nowak',
+          date: '1 month ago',
+          rating: 5,
+          comment: 'Współpraca z Raw była bezproblemowa. Rozumiał naszą wizję od razu i dostarczył treści, które naprawdę reprezentują surową energię kultury muzyki elektronicznej. Bardzo profesjonalny i kreatywny.',
+          event: 'Festival Coverage'
+        },
+        {
+          name: 'Club Manager Warsaw',
+          date: '1 month ago',
+          rating: 5,
+          comment: 'Raw has an incredible eye for capturing authentic moments. His work helps us showcase the real atmosphere of our venue. The photos and videos always generate great engagement on social media.',
+          event: 'Club Night Photography'
+        },
+        {
+          name: 'Anar Məmmədov',
+          date: '2 months ago',
+          rating: 5,
+          comment: 'Raw ilə işləmək çox yaxşı idi. O, bizim tədbirimizin ruhunu mükəmməl şəkildə çəkdi. Onun işi həqiqətən peşəkardır və yaradıcıdır.',
+          event: 'Baku Underground Event'
+        },
+        {
+          name: 'Anna Kowalska',
+          date: '2 months ago',
+          rating: 5,
+          comment: 'Niesamowite zdjęcia i filmy z naszego wydarzenia. Raw ma talent do uchwycenia prawdziwych emocji i atmosfery. Zdecydowanie polecam!',
+          event: 'Warsaw Rave Documentation'
+        },
+        {
+          name: 'Festival Director',
+          date: '3 months ago',
+          rating: 4,
+          comment: 'Working with Raw was seamless. He understood our vision immediately and delivered content that truly represents the raw energy of electronic music culture. Highly professional and creative.',
+          event: 'Festival Coverage'
+        },
+        {
+          name: 'Piotr Wiśniewski',
+          date: '3 months ago',
+          rating: 5,
+          comment: 'Raw to prawdziwy artysta. Jego zdjęcia i filmy mają niepowtarzalny styl. Każdy kadr opowiada historię. Bardzo polecam jego usługi!',
+          event: 'Underground Club Night'
+        },
+        {
+          name: 'Leyla Həsənova',
+          date: '4 months ago',
+          rating: 5,
+          comment: 'Raw çox istedadlı fotoqrafçıdır. Bizim tədbirimizi çox gözəl çəkdi. Onun işi həqiqətən professional səviyyədədir.',
+          event: 'Baku Music Festival'
+        },
+        {
+          name: 'Michał Zieliński',
+          date: '4 months ago',
+          rating: 5,
+          comment: 'Fantastyczna jakość zdjęć i filmów. Raw ma oko do szczegółów i potrafi uchwycić magiczne momenty. Bardzo profesjonalne podejście.',
+          event: 'Techno Event Warsaw'
+        },
+        {
+          name: 'Event Organizer',
+          date: '5 months ago',
+          rating: 4,
+          comment: 'Raw delivered exceptional visual content for our event. His understanding of underground culture and ability to capture the right moments is impressive. Great to work with.',
+          event: 'Underground Rave'
+        }
+      ];
+    } else if (artist.id === '1') { // WRK - DJ
+      return [
+        {
+          name: 'Willa Club Warsaw',
+          date: '2 weeks ago',
+          rating: 5,
+          comment: 'WRK absolutely destroyed the dancefloor at our underground techno night! Her hard techno and schranz selection was exactly what our crowd needed. The energy was insane from start to finish.',
+          event: 'Underground Techno Night'
+        },
+        {
+          name: 'Marcin Kowalski',
+          date: '3 weeks ago',
+          rating: 5,
+          comment: 'WRK to prawdziwa królowa hard techno! Jej set był niesamowity, tłum szalał przez całą noc. Profesjonalizm na najwyższym poziomie.',
+          event: 'Łódź Underground Event'
+        },
+        {
+          name: 'Cyber Glow Event',
+          date: '1 month ago',
+          rating: 5,
+          comment: 'As the mastermind behind Cyber Glow, WRK delivered an unforgettable neo rave experience. Her track selection and mixing skills are top-notch. The crowd was completely hypnotized by her set.',
+          event: 'Neo Rave Event'
+        },
+        {
+          name: 'Katarzyna Nowak',
+          date: '1 month ago',
+          rating: 5,
+          comment: 'Niesamowita energia! WRK wie jak rozpalić parkiet. Jej schranz i hard techno to czysta magia. Każdy beat był idealny.',
+          event: 'Warsaw Techno Night'
+        },
+        {
+          name: 'Festival Organizer',
+          date: '2 months ago',
+          rating: 5,
+          comment: 'WRK brought that authentic Polish underground energy to our festival. Her schranz-infused set was a highlight of the weekend. She has this incredible ability to connect with the crowd.',
+          event: 'Techno Festival'
+        },
+        {
+          name: 'Paweł Jankowski',
+          date: '2 months ago',
+          rating: 4,
+          comment: 'WRK to gwiazda polskiej sceny techno. Jej set był pełen energii i pasji. Publiczność była zachwycona od pierwszego do ostatniego utworu.',
+          event: 'Kraków Underground'
+        },
+        {
+          name: 'Schron Club',
+          date: '3 months ago',
+          rating: 5,
+          comment: 'WRK is a resident at our venue for a reason. She knows exactly how to read the crowd and deliver those peak moments that people remember forever. Pure underground energy.',
+          event: 'Schron Resident Night'
+        },
+        {
+          name: 'Agnieszka Wiśniewska',
+          date: '3 months ago',
+          rating: 5,
+          comment: 'Fantastyczny set! WRK ma niesamowity talent do miksowania. Jej hard techno i neo rave to połączenie idealne. Polecam każdemu!',
+          event: 'Gdańsk Rave'
+        },
+        {
+          name: 'Underground Collective',
+          date: '4 months ago',
+          rating: 5,
+          comment: 'WRK represents the true spirit of Polish underground techno. Her sets are raw, powerful, and authentic. She\'s definitely one to watch in the European scene.',
+          event: 'Underground Showcase'
+        },
+        {
+          name: 'Tomasz Kowalczyk',
+          date: '4 months ago',
+          rating: 4,
+          comment: 'WRK to prawdziwa profesjonalistka. Jej znajomość muzyki underground i umiejętność czytania tłumu są na najwyższym poziomie. Świetny set!',
+          event: 'Wrocław Techno Event'
+        },
+        {
+          name: 'Berlin Club Promoter',
+          date: '5 months ago',
+          rating: 5,
+          comment: 'WRK brought that Eastern European underground fire to Berlin. Her hard techno selection was perfect for our crowd. Looking forward to booking her again.',
+          event: 'Berlin Underground'
+        },
+        {
+          name: 'Magdalena Zielińska',
+          date: '5 months ago',
+          rating: 5,
+          comment: 'Niesamowite doświadczenie! WRK potrafi stworzyć atmosferę, która zostaje w pamięci na długo. Jej pasja do muzyki jest zaraźliwa.',
+          event: 'Poznań Techno Night'
+        }
+      ];
+    } else {
+      // Default reviews for other artists
+      return [
+        {
+          name: 'Sarah Johnson',
+          date: '2 months ago',
+          rating: 5,
+          comment: 'Amazing performance at our wedding reception! The track selection was perfect and the energy was incredible. Everyone was on the dance floor all night long.',
+          event: 'Wedding Reception'
+        },
+        {
+          name: 'Michael Rodriguez',
+          date: '3 months ago',
+          rating: 5,
+          comment: 'Fantastic performance at our corporate event. Very professional, arrived early to set up, and perfectly adapted the set to our crowd. Will definitely book again.',
+          event: 'Corporate Party'
+        },
+        {
+          name: 'Jessica Williams',
+          date: '5 months ago',
+          rating: 4,
+          comment: 'Great music selection and very accommodating with our requests. Brought amazing energy to my birthday party. Only minor issue was a slight delay in start time.',
+          event: 'Birthday Celebration'
+        }
+      ];
+    }
+  };
+
+  const artistReviews = getArtistReviews();
+
   return (
     <div className="pt-24 pb-16">
       <div className="container">
@@ -199,7 +391,7 @@ const ArtistProfilePage: React.FC = () => {
                 }`}
                 onClick={() => setActiveTab('reviews')}
               >
-                Reviews ({artist.reviewCount})
+                Reviews ({artistReviews.length})
               </button>
             </div>
             
@@ -522,80 +714,13 @@ const ArtistProfilePage: React.FC = () => {
                         ))}
                       </div>
                       <span className="font-bold">{artist.rating}</span>
-                      <span className="text-neutral-400 ml-1">({artist.reviewCount})</span>
+                      <span className="text-neutral-400 ml-1">({artistReviews.length})</span>
                     </div>
                   </div>
                   
                   {/* Review List */}
                   <div className="space-y-6">
-                    {artist.category === 'photographer' ? [
-                      {
-                        name: 'Teletech Events',
-                        date: '1 month ago',
-                        rating: 5,
-                        comment: 'Raw captured the essence of our underground event perfectly. His ability to work in low light conditions while maintaining artistic quality is unmatched. The final video exceeded all expectations.',
-                        event: 'Techno Event Documentation'
-                      },
-                      {
-                        name: 'Festival Director',
-                        date: '2 months ago',
-                        rating: 5,
-                        comment: 'Working with Raw was seamless. He understood our vision immediately and delivered content that truly represents the raw energy of electronic music culture. Highly professional and creative.',
-                        event: 'Festival Coverage'
-                      },
-                      {
-                        name: 'Club Manager',
-                        date: '3 months ago',
-                        rating: 5,
-                        comment: 'Raw has an incredible eye for capturing authentic moments. His work helps us showcase the real atmosphere of our venue. The photos and videos always generate great engagement on social media.',
-                        event: 'Club Night Photography'
-                      }
-                    ] : artist.id === '1' ? [
-                      // WRK's specialized reviews
-                      {
-                        name: 'Willa Club Warsaw',
-                        date: '1 month ago',
-                        rating: 5,
-                        comment: 'WRK absolutely destroyed the dancefloor at our underground techno night! Her hard techno and schranz selection was exactly what our crowd needed. The energy was insane from start to finish. She knows how to read the room and deliver pure fire.',
-                        event: 'Underground Techno Night'
-                      },
-                      {
-                        name: 'Cyber Glow Event',
-                        date: '2 months ago',
-                        rating: 5,
-                        comment: 'As the mastermind behind Cyber Glow, WRK delivered an unforgettable neo rave experience. Her track selection and mixing skills are top-notch. The crowd was completely hypnotized by her set. Professional and passionate about the underground scene.',
-                        event: 'Neo Rave Event'
-                      },
-                      {
-                        name: 'Festival Organizer',
-                        date: '3 months ago',
-                        rating: 5,
-                        comment: 'WRK brought that authentic Polish underground energy to our festival. Her schranz-infused set was a highlight of the weekend. She has this incredible ability to connect with the crowd and create those peak moments that people remember forever.',
-                        event: 'Techno Festival'
-                      }
-                    ] : [
-                      {
-                        name: 'Sarah Johnson',
-                        date: '2 months ago',
-                        rating: 5,
-                        comment: 'WRK absolutely killed it at our wedding reception! Her track selection was perfect and she read the crowd amazingly. Everyone was on the dance floor all night long. The energy was incredible and her mixing skills are top-notch. Highly recommend!',
-                        event: 'Wedding Reception'
-                      },
-                      {
-                        name: 'Michael Rodriguez',
-                        date: '3 months ago',
-                        rating: 5,
-                        comment: 'Fantastic performance at our corporate event. WRK was very professional, arrived early to set up, and perfectly adapted her set to our crowd. The music selection was spot-on and kept everyone engaged. Will definitely book again for future events.',
-                        event: 'Corporate Party'
-                      },
-                      {
-                        name: 'Jessica Williams',
-                        date: '5 months ago',
-                        rating: 4,
-                        comment: 'Great music selection and very accommodating with our requests. WRK brought amazing energy to my birthday party and her techno/house mix was exactly what we wanted. Only minor issue was a slight delay in start time, but the overall experience was excellent.',
-                        event: 'Birthday Celebration'
-                      }
-                    ].map((review, index) => (
+                    {artistReviews.map((review, index) => (
                       <div key={index} className="bg-background-light rounded-xl p-6">
                         <div className="flex justify-between mb-2">
                           <h4 className="font-bold">{review.name}</h4>
