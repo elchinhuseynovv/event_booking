@@ -10,12 +10,12 @@ export const artists: Artist[] = [
     price: 200,
     rating: 5.0,
     reviewCount: 45,
-    location: 'Warsaw',
+    location: 'Łódź',
     featured: true,
     experience: 5,
     bookings: 120,
-    biography: 'WRK is a dynamic and innovative DJ who brings fresh energy to every performance. With a unique style that blends contemporary beats with classic rhythms, she creates an unforgettable atmosphere that keeps the crowd moving all night long.',
-    genres: ['Electronic', 'House', 'Techno', 'Progressive'],
+    biography: 'A 24-year-old DJ and promoter living in Łódź. On stage since 2020. Despite her short experience, she has managed to win the hearts of dancers with her energy and authenticity. Blazing onto the scene, @wrk_dj brings unstoppable energy and raw intensity to the decks. A driving force behind Poland\'s underground, she\'s the mastermind behind Cyber Glow and a resident at Willa and Schron. Known for her relentless hard techno, neo rave, and schranz-infused sets, she\'s got the power to convert even the skeptics. Shaking up Poland\'s biggest clubs and making waves in Berlin - get ready for full-throttle chaos. She played alongside artists such as Alignment, Azyr, Parfait, Shlømo, Tham, Westbam, Noemi Black, D-Leria, Nur Jaber & more...',
+    genres: ['Hard Techno', 'Neo Rave', 'Schranz', 'Underground Techno'],
     galleryImages: [
       {
         url: 'https://rroyrxpcceyhgixpgzrs.supabase.co/storage/v1/object/sign/artists/WRK/wrk01.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV82N2JkYWYxNi03YzRhLTQ3ZmUtYTE1NS1mZjcxOTE2ZTdiMGQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJhcnRpc3RzL1dSSy93cmswMS5qcGciLCJpYXQiOjE3NDk5ODYwMzUsImV4cCI6MjE4MTk4NjAzNX0.O1LvKB_t_LIbx5qUAiG6DYE-p4i8XyG4Jlc4TtDpNv8',
@@ -102,7 +102,7 @@ export const artists: Artist[] = [
   },
   {
     id: '5',
-    name: 'Huseyn Gurbanli',
+    name: 'Raw',
     image: 'https://rroyrxpcceyhgixpgzrs.supabase.co/storage/v1/object/sign/artists/huseyngurbanliprofile.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV82N2JkYWYxNi03YzRhLTQ3ZmUtYTE1NS1mZjcxOTE2ZTdiMGQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJhcnRpc3RzL2h1c2V5bmd1cmJhbmxpcHJvZmlsZS5qcGciLCJpYXQiOjE3NDk3MTY3ODMsImV4cCI6MjE5ODk5Njc4M30.4qn7iTWB3pHMBfTaTvrgYUIpV38MkBfc0b7NGaSl12E',
     backgroundImage: 'https://rroyrxpcceyhgixpgzrs.supabase.co/storage/v1/object/sign/artists/HuseynGurbanli/huseyngurbanlibck.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV82N2JkYWYxNi03YzRhLTQ3ZmUtYTE1NS1mZjcxOTE2ZTdiMGQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJhcnRpc3RzL0h1c2V5bkd1cmJhbmxpL2h1c2V5bmd1cmJhbmxpYmNrLmpwZyIsImlhdCI6MTc1MDA4MjcyMCwiZXhwIjoyMTgyMDgyNzIwfQ.PCZKCD6bkYUi7gc6J85EqOwQazZPVNQ_fn1BnuEf-88',
     category: 'photographer',
@@ -113,7 +113,7 @@ export const artists: Artist[] = [
     featured: true,
     experience: 4,
     bookings: 180,
-    biography: 'Huseyn "Raw" - Videographer and Photographer of the Underground. From the flicker of warehouse strobes in Baku to the neon-hazed basements of Warsaw, Huseyn—better known as Raw—hunts for electricity in the dark. He first lifted a camera to the rave in 2021, determined to bottle the unruly poetry of techno. What began as late-night shooting for friends in Azerbaijan has grown into a roaming personal studio, Raw Visual Studio, where concrete echoes become cinema and stills are frozen rhythms. Now based in Poland, Raw has lent his eye to some of Europe\'s flagship techno gatherings, serving as both videographer and on-site photographer for Teletech, Boiler Room, Hive Festival, Laboratorium Festival, Open\'er Festival, Verknipt, and Mayday. Whether it\'s an intimate club stream or a festival stage at dawn, he distills the night\'s energy into images built to last. Alongside his lens work he founded Raw Media, a talent agency curating a growing constellation of electronic artists. The same instinct that finds perfect light in chaos helps him spot voices and noises worth amplifying.',
+    biography: 'Raw - Videographer and Photographer of the Underground. From the flicker of warehouse strobes in Baku to the neon-hazed basements of Warsaw, Raw hunts for electricity in the dark. He first lifted a camera to the rave in 2021, determined to bottle the unruly poetry of techno. What began as late-night shooting for friends in Azerbaijan has grown into a roaming personal studio, Raw Visual Studio, where concrete echoes become cinema and stills are frozen rhythms. Now based in Poland, Raw has lent his eye to some of Europe\'s flagship techno gatherings, serving as both videographer and on-site photographer for Teletech, Boiler Room, Hive Festival, Laboratorium Festival, Open\'er Festival, Verknipt, and Mayday. Whether it\'s an intimate club stream or a festival stage at dawn, he distills the night\'s energy into images built to last. Alongside his lens work he founded Raw Media, a talent agency curating a growing constellation of electronic artists. The same instinct that finds perfect light in chaos helps him spot voices and noises worth amplifying.',
     genres: ['Underground Photography', 'Techno Documentation', 'Festival Coverage', 'Club Photography'],
     signature: 'Atmosphere first, then emotion, then everything else. He shoots handheld and close, letting motion blur and grain kiss the frame while his photographs linger on textures—condensation, vinyl grooves, a single bead of sweat rolling down a cheek.',
     mission: '"I frame raw moments into stories." To Raw, rave culture is modern folklore. His mission is to archive it before the lights come up, whether through a fifteen-second teaser, a festival short film, or a single frame that whispers louder than the sub-bass.'

@@ -44,7 +44,7 @@ const ArtistProfilePage: React.FC = () => {
       };
     }
     
-    if (artist.id === '5') { // Huseyn Gurbanli
+    if (artist.id === '5') { // Raw (formerly Huseyn Gurbanli)
       return {
         soundcloud: '',
         instagram: 'https://www.instagram.com/raw_visualstudio',
@@ -182,7 +182,7 @@ const ArtistProfilePage: React.FC = () => {
                     {artist.biography || 'No biography available.'}
                   </p>
                   
-                  {/* Show signature for Huseyn */}
+                  {/* Show signature for Raw */}
                   {artist.signature && (
                     <>
                       <h3 className="text-xl font-bold mb-3">Signature Style</h3>
@@ -192,7 +192,7 @@ const ArtistProfilePage: React.FC = () => {
                     </>
                   )}
                   
-                  {/* Show mission for Huseyn */}
+                  {/* Show mission for Raw */}
                   {artist.mission && (
                     <>
                       <h3 className="text-xl font-bold mb-3">Mission</h3>
@@ -246,14 +246,24 @@ const ArtistProfilePage: React.FC = () => {
                       
                       <h3 className="text-xl font-bold mb-3">Events</h3>
                       <p className="text-neutral-300">
-                        {artist.name} is available for a wide range of events including:
+                        {artist.name} is available for underground and club events including:
                       </p>
                       <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mt-4">
-                        {['Weddings', 'Corporate Events', 'Nightclubs', 'Festivals', 'Private Parties', 'Birthday Celebrations'].map((event, index) => (
-                          <div key={index} className="bg-background-light p-4 rounded-lg text-center">
-                            {event}
-                          </div>
-                        ))}
+                        {artist.id === '1' ? (
+                          // WRK's specialized events
+                          ['Underground Raves', 'Techno Clubs', 'Music Festivals', 'Warehouse Parties', 'Neo Rave Events', 'Schranz Nights'].map((event, index) => (
+                            <div key={index} className="bg-background-light p-4 rounded-lg text-center">
+                              {event}
+                            </div>
+                          ))
+                        ) : (
+                          // Other DJs' general events
+                          ['Weddings', 'Corporate Events', 'Nightclubs', 'Festivals', 'Private Parties', 'Birthday Celebrations'].map((event, index) => (
+                            <div key={index} className="bg-background-light p-4 rounded-lg text-center">
+                              {event}
+                            </div>
+                          ))
+                        )}
                       </div>
                     </>
                   )}
@@ -439,6 +449,29 @@ const ArtistProfilePage: React.FC = () => {
                         comment: 'Raw has an incredible eye for capturing authentic moments. His work helps us showcase the real atmosphere of our venue. The photos and videos always generate great engagement on social media.',
                         event: 'Club Night Photography'
                       }
+                    ] : artist.id === '1' ? [
+                      // WRK's specialized reviews
+                      {
+                        name: 'Willa Club Warsaw',
+                        date: '1 month ago',
+                        rating: 5,
+                        comment: 'WRK absolutely destroyed the dancefloor at our underground techno night! Her hard techno and schranz selection was exactly what our crowd needed. The energy was insane from start to finish. She knows how to read the room and deliver pure fire.',
+                        event: 'Underground Techno Night'
+                      },
+                      {
+                        name: 'Cyber Glow Event',
+                        date: '2 months ago',
+                        rating: 5,
+                        comment: 'As the mastermind behind Cyber Glow, WRK delivered an unforgettable neo rave experience. Her track selection and mixing skills are top-notch. The crowd was completely hypnotized by her set. Professional and passionate about the underground scene.',
+                        event: 'Neo Rave Event'
+                      },
+                      {
+                        name: 'Festival Organizer',
+                        date: '3 months ago',
+                        rating: 5,
+                        comment: 'WRK brought that authentic Polish underground energy to our festival. Her schranz-infused set was a highlight of the weekend. She has this incredible ability to connect with the crowd and create those peak moments that people remember forever.',
+                        event: 'Techno Festival'
+                      }
                     ] : [
                       {
                         name: 'Sarah Johnson',
@@ -520,7 +553,9 @@ const ArtistProfilePage: React.FC = () => {
                   <Calendar size={20} className="text-primary mr-3 mt-1" />
                   <div>
                     <h4 className="font-medium">Typical Response Time</h4>
-                    <p className="text-neutral-400 text-sm">Within 24 hours</p>
+                    <p className="text-neutral-400 text-sm">
+                      {artist.id === '5' ? 'Within 3 hours' : 'Within 24 hours'}
+                    </p>
                   </div>
                 </div>
                 <div className="flex items-start">
