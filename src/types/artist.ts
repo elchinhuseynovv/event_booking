@@ -12,6 +12,14 @@ export interface GalleryImage {
   caption?: string;
 }
 
+export interface VideoShowreel {
+  title: string;
+  url: string;
+  description: string;
+  duration: string;
+  type: 'intro' | 'event' | 'festival' | 'commercial' | 'documentary';
+}
+
 export interface Artist {
   id: string;
   name: string;
@@ -31,4 +39,5 @@ export interface Artist {
   mission?: string;
   soundcloudTracks?: SoundCloudTrack[];
   galleryImages?: GalleryImage[];
+  videoShowreel?: VideoShowreel[];
 }

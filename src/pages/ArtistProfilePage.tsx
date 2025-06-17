@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { Calendar, MapPin, Music, Clock, Instagram, Play, Heart, Share2, Star, ExternalLink, Headphones, Globe } from 'lucide-react';
+import { Calendar, MapPin, Music, Clock, Instagram, Play, Heart, Share2, Star, ExternalLink, Headphones, Globe, Video } from 'lucide-react';
 import Button from '../components/ui/Button';
 import SoundCloudPlayer from '../components/ui/SoundCloudPlayer';
 import { artists } from '../data/artists';
@@ -19,6 +19,7 @@ const ArtistProfilePage: React.FC = () => {
   console.log('Found artist:', artist);
   console.log('Artist soundcloud tracks:', artist?.soundcloudTracks);
   console.log('Artist gallery images:', artist?.galleryImages);
+  console.log('Artist video showreel:', artist?.videoShowreel);
   
   if (!artist) {
     return (
@@ -74,10 +75,11 @@ const ArtistProfilePage: React.FC = () => {
     }
     
     if (artist.id === '5') { // Raw
+      // Use the intro video as the featured video
       return {
-        url: 'https://images.pexels.com/photos/2034851/pexels-photo-2034851.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-        title: 'Raw Visual Studio Showreel 2024',
-        description: 'Underground Techno Documentation'
+        url: 'https://rroyrxpcceyhgixpgzrs.supabase.co/storage/v1/object/sign/artists/HuseynGurbanli/Huseyn%20(1).mp4?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV82N2JkYWYxNi03YzRhLTQ3ZmUtYTE1NS1mZjcxOTE2ZTdiMGQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJhcnRpc3RzL0h1c2V5bkd1cmJhbmxpL0h1c2V5biAoMSkubXA0IiwiaWF0IjoxNzUwMTk5NzI0LCJleHAiOjIxODIxOTk3MjR9.L_ZlGXCvWauXZTaTF9wQoQXYkY5xvi4qAawashE_Cfk',
+        title: 'Raw Visual Studio - Intro Reel 2025',
+        description: 'Personal introduction and visual style showcase'
       };
     }
     
@@ -302,6 +304,59 @@ const ArtistProfilePage: React.FC = () => {
                 <div>
                   <h2 className="text-2xl font-bold mb-6">Media Gallery</h2>
                   
+                  {/* Video Showreel Section - Show for photographers/videographers */}
+                  {artist.videoShowreel && artist.videoShowreel.length > 0 && (
+                    <>
+                      <div className="mb-8">
+                        <div className="flex items-center justify-between mb-6">
+                          <h3 className="text-xl font-bold flex items-center">
+                            <Video className="mr-2 text-blue-500" size={24} />
+                            Video Showreel
+                          </h3>
+                        </div>
+                        
+                        <div className="space-y-6">
+                          {artist.videoShowreel.map((video, index) => (
+                            <div key={index} className="bg-background-light rounded-xl overflow-hidden">
+                              <div className="aspect-video relative group">
+                                <video 
+                                  className="w-full h-full object-cover"
+                                  poster={artist.image}
+                                  controls
+                                  preload="metadata"
+                                >
+                                  <source src={video.url} type="video/mp4" />
+                                  Your browser does not support the video tag.
+                                </video>
+                              </div>
+                              <div className="p-4">
+                                <div className="flex items-center justify-between mb-2">
+                                  <h4 className="font-bold text-lg">{video.title}</h4>
+                                  <span className="text-sm text-neutral-400 bg-neutral-800 px-2 py-1 rounded">
+                                    {video.duration}
+                                  </span>
+                                </div>
+                                <p className="text-neutral-400 text-sm mb-2">
+                                  {video.description}
+                                </p>
+                                <div className="flex items-center">
+                                  <span className={`text-xs font-medium px-2 py-1 rounded-full ${
+                                    video.type === 'intro' ? 'bg-blue-500/20 text-blue-400' :
+                                    video.type === 'event' ? 'bg-purple-500/20 text-purple-400' :
+                                    video.type === 'festival' ? 'bg-green-500/20 text-green-400' :
+                                    'bg-neutral-500/20 text-neutral-400'
+                                  }`}>
+                                    {video.type.charAt(0).toUpperCase() + video.type.slice(1)}
+                                  </span>
+                                </div>
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    </>
+                  )}
+                  
                   {/* SoundCloud Tracks Section - Show for ALL artists that have tracks */}
                   {artist.soundcloudTracks && artist.soundcloudTracks.length > 0 && (
                     <>
@@ -354,45 +409,47 @@ const ArtistProfilePage: React.FC = () => {
                     </>
                   )}
                   
-                  {/* Featured Video */}
-                  <div className="bg-background-light rounded-xl overflow-hidden mb-8">
-                    <div className="aspect-video relative group cursor-pointer">
-                      {artist.id === '1' ? (
-                        // WRK gets the actual video
-                        <video 
-                          className="w-full h-full object-cover"
-                          poster={artist.image}
-                          controls
-                          preload="metadata"
-                        >
-                          <source src={featuredVideo.url} type="video/mp4" />
-                          Your browser does not support the video tag.
-                        </video>
-                      ) : (
-                        // Other artists get the image placeholder
-                        <>
-                          <img 
-                            src={featuredVideo.url} 
-                            alt="Featured performance" 
+                  {/* Featured Video - Only show if no video showreel exists */}
+                  {(!artist.videoShowreel || artist.videoShowreel.length === 0) && (
+                    <div className="bg-background-light rounded-xl overflow-hidden mb-8">
+                      <div className="aspect-video relative group cursor-pointer">
+                        {artist.id === '1' ? (
+                          // WRK gets the actual video
+                          <video 
                             className="w-full h-full object-cover"
-                          />
-                          <div className="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                            <div className="w-16 h-16 rounded-full bg-primary/80 flex items-center justify-center">
-                              <Play fill="white" size={30} />
+                            poster={artist.image}
+                            controls
+                            preload="metadata"
+                          >
+                            <source src={featuredVideo.url} type="video/mp4" />
+                            Your browser does not support the video tag.
+                          </video>
+                        ) : (
+                          // Other artists get the image placeholder
+                          <>
+                            <img 
+                              src={featuredVideo.url} 
+                              alt="Featured performance" 
+                              className="w-full h-full object-cover"
+                            />
+                            <div className="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                              <div className="w-16 h-16 rounded-full bg-primary/80 flex items-center justify-center">
+                                <Play fill="white" size={30} />
+                              </div>
                             </div>
-                          </div>
-                        </>
-                      )}
+                          </>
+                        )}
+                      </div>
+                      <div className="p-4">
+                        <h4 className="font-bold">
+                          {featuredVideo.title}
+                        </h4>
+                        <p className="text-neutral-400 text-sm">
+                          {featuredVideo.description}
+                        </p>
+                      </div>
                     </div>
-                    <div className="p-4">
-                      <h4 className="font-bold">
-                        {featuredVideo.title}
-                      </h4>
-                      <p className="text-neutral-400 text-sm">
-                        {featuredVideo.description}
-                      </p>
-                    </div>
-                  </div>
+                  )}
                   
                   {/* Photo Gallery */}
                   <h3 className="text-xl font-bold mb-4">

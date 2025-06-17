@@ -148,6 +148,29 @@ export const artists: Artist[] = [
         alt: 'Raw behind the scenes work',
         caption: 'Behind the scenes of visual storytelling'
       }
+    ],
+    videoShowreel: [
+      {
+        title: 'Raw Visual Studio - Intro Reel 2025',
+        url: 'https://rroyrxpcceyhgixpgzrs.supabase.co/storage/v1/object/sign/artists/HuseynGurbanli/Huseyn%20(1).mp4?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV82N2JkYWYxNi03YzRhLTQ3ZmUtYTE1NS1mZjcxOTE2ZTdiMGQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJhcnRpc3RzL0h1c2V5bkd1cmJhbmxpL0h1c2V5biAoMSkubXA0IiwiaWF0IjoxNzUwMTk5NzI0LCJleHAiOjIxODIxOTk3MjR9.L_ZlGXCvWauXZTaTF9wQoQXYkY5xvi4qAawashE_Cfk',
+        description: 'Personal introduction and visual style showcase',
+        duration: '2:30',
+        type: 'intro'
+      },
+      {
+        title: 'Teletech 2025 - Underground Documentation',
+        url: 'https://rroyrxpcceyhgixpgzrs.supabase.co/storage/v1/object/sign/artists/HuseynGurbanli/Teletech%202025%20(4).mp4?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV82N2JkYWYxNi03YzRhLTQ3ZmUtYTE1NS1mZjcxOTE2ZTdiMGQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJhcnRpc3RzL0h1c2V5bkd1cmJhbmxpL1RlbGV0ZWNoIDIwMjUgKDQpLm1wNCIsImlhdCI6MTc1MDE5OTc0MSwiZXhwIjoyMTgyMTk5NzQxfQ.WYM2BLFkwJOKRm7vlpoyVxGejdw_-6gNNw7kJaPnWrw',
+        description: 'Live event coverage capturing the raw energy of Teletech 2025 underground techno event',
+        duration: '3:45',
+        type: 'event'
+      },
+      {
+        title: 'Laboratorium Festival - Visual Story',
+        url: 'https://rroyrxpcceyhgixpgzrs.supabase.co/storage/v1/object/sign/artists/HuseynGurbanli/Laboratorium%20(6).mp4?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV82N2JkYWYxNi03YzRhLTQ3ZmUtYTE1NS1mZjcxOTE2ZTdiMGQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJhcnRpc3RzL0h1c2V5bkd1cmJhbmxpL0xhYm9yYXRvcml1bSAoNikubXA0IiwiaWF0IjoxNzUwMTk5NzYxLCJleHAiOjIxODIxOTk3NjF9.OW9m4p1w_ZQBGXua_hI19n_ZVRT4-1OLrLp3aJlkehc',
+        description: 'Festival documentation showcasing the atmosphere and energy of Laboratorium Festival',
+        duration: '4:20',
+        type: 'festival'
+      }
     ]
   }
 ];
