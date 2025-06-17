@@ -113,60 +113,6 @@ const AboutPage: React.FC = () => {
           </div>
         </div>
         
-        {/* Team Section */}
-        <div className="mb-24">
-          <div className="text-center mb-12">
-            <h2 className="mb-4">Meet Our Team</h2>
-            <p className="text-neutral-300 max-w-3xl mx-auto">
-              The passionate people behind RAW MEDIA
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              {
-                name: "Sarah Johnson",
-                title: "Founder & CEO",
-                image: "https://images.pexels.com/photos/3310695/pexels-photo-3310695.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-                bio: "Former artist and music producer with 15 years in the underground scene."
-              },
-              {
-                name: "Elchin Huseynov",
-                title: "Web Developer",
-                image: "https://rroyrxpcceyhgixpgzrs.supabase.co/storage/v1/object/sign/workers/elchinhuseynovprofile.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV82N2JkYWYxNi03YzRhLTQ3ZmUtYTE1NS1mZjcxOTE2ZTdiMGQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJ3b3JrZXJzL2VsY2hpbmh1c2V5bm92cHJvZmlsZS5qcGciLCJpYXQiOjE3NDk3MTcyNTgsImV4cCI6MjE4MTcxNzI1OH0.IixIU7mwqyiBwZKD5EYOELW_ZbqK9aNHl6cPiyC6VmA",
-                bio: "Skilled web developer passionate about creating innovative digital experiences for underground culture."
-              },
-              {
-                name: "Maria Rodriguez",
-                title: "Artist Relations",
-                image: "https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-                bio: "Former talent agent with deep connections in the European underground scene."
-              },
-              {
-                name: "James Wilson",
-                title: "Head of Events",
-                image: "https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-                bio: "Event planning expert specializing in underground festivals and cultural events."
-              }
-            ].map((member, index) => (
-              <div key={index} className="bg-background-light rounded-xl overflow-hidden group">
-                <div className="aspect-square overflow-hidden">
-                  <img 
-                    src={member.image} 
-                    alt={member.name} 
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-bold mb-1">{member.name}</h3>
-                  <p className="text-primary mb-3">{member.title}</p>
-                  <p className="text-neutral-400">{member.bio}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-        
         {/* CTA Section */}
         <div className="text-center bg-background-light rounded-2xl p-12">
           <h2 className="mb-6">Ready to Connect with Underground Culture?</h2>

@@ -32,6 +32,32 @@ const ContactPage: React.FC = () => {
     }, 1500);
   };
 
+  const handleArtistApplication = () => {
+    const subject = encodeURIComponent('Artist Application - Portfolio Submission');
+    const body = encodeURIComponent(`Hello RAW MEDIA Team,
+
+I am interested in joining your artist network and would like to submit my portfolio for review.
+
+Please find attached/linked:
+- My portfolio/demo reel
+- Artist biography
+- Performance history
+- Social media links
+- Any relevant press or media coverage
+
+Artist Name: [Your Name]
+Genre/Specialty: [Your Genre/Specialty]
+Location: [Your Location]
+Experience: [Years of Experience]
+
+I look forward to hearing from you.
+
+Best regards,
+[Your Name]`);
+    
+    window.location.href = `mailto:info@raw-media.co?subject=${subject}&body=${body}`;
+  };
+
   return (
     <div className="pt-24 pb-16">
       <div className="container">
@@ -154,13 +180,17 @@ const ContactPage: React.FC = () => {
         {/* CTA Section */}
         <div className="bg-gradient-to-r from-primary/20 via-secondary/20 to-accent/20 rounded-2xl p-12 text-center mt-16">
           <h2 className="mb-6">Join Our Artist Network</h2>
-          <p className="text-xl text-neutral-300 mb-8 max-w-2xl mx-auto">
+          <p className="text-xl text-neutral-300 mb-4 max-w-2xl mx-auto">
             Are you an artist who defines underground culture? Join RAW MEDIA to connect with global audiences and expand your reach.
+          </p>
+          <p className="text-neutral-400 mb-8 max-w-2xl mx-auto">
+            Send your portfolio, biography, and performance history to <span className="text-primary font-medium">info@raw-media.co</span> for review by our team.
           </p>
           <Button 
             variant="primary" 
             size="lg" 
             isGlowing
+            onClick={handleArtistApplication}
           >
             Apply as an Artist
           </Button>
