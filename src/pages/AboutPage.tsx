@@ -167,47 +167,6 @@ const AboutPage: React.FC = () => {
           </div>
         </div>
         
-        {/* Testimonials Section */}
-        <div className="bg-gradient-to-r from-primary/20 via-background to-secondary/20 rounded-2xl p-12 mb-24">
-          <div className="text-center mb-12">
-            <h2 className="mb-4">What People Say</h2>
-            <p className="text-neutral-300 max-w-3xl mx-auto">
-              Hear from our clients about their experiences with RAW MEDIA
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              {
-                quote: "RAW MEDIA connected us with artists who truly understand underground culture. Their talent roster is unmatched in authenticity and vision.",
-                name: "Emma & Jason",
-                event: "Festival Organizers"
-              },
-              {
-                quote: "Working with RAW MEDIA means accessing artists who don't just perform — they create cultural moments. Their curation is exceptional.",
-                name: "Michael Torres",
-                event: "Cultural Institution"
-              },
-              {
-                quote: "RAW MEDIA represents the future of underground talent. Their artists consistently deliver experiences that define the scene.",
-                name: "Underground Collective",
-                event: "Event Promoters"
-              }
-            ].map((testimonial, index) => (
-              <div key={index} className="bg-background rounded-xl p-6">
-                <div className="text-primary text-5xl font-serif mb-4">"</div>
-                <p className="text-neutral-300 italic mb-6">
-                  {testimonial.quote}
-                </p>
-                <div>
-                  <p className="font-bold">{testimonial.name}</p>
-                  <p className="text-neutral-400">{testimonial.event}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-        
         {/* CTA Section */}
         <div className="text-center bg-background-light rounded-2xl p-12">
           <h2 className="mb-6">Ready to Connect with Underground Culture?</h2>

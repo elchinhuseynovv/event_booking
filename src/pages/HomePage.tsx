@@ -3,7 +3,6 @@ import { useNavigate, Link } from 'react-router-dom';
 import HeroSection from '../components/home/HeroSection';
 import FeaturedArtists from '../components/home/FeaturedArtists';
 import HowItWorks from '../components/home/HowItWorks';
-import Testimonials from '../components/home/Testimonials';
 import Button from '../components/ui/Button';
 
 const HomePage: React.FC = () => {
@@ -14,7 +13,6 @@ const HomePage: React.FC = () => {
       <HeroSection />
       <FeaturedArtists />
       <HowItWorks />
-      <Testimonials />
       
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-r from-primary/20 via-secondary/20 to-accent/20">
