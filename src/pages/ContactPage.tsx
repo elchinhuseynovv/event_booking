@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { MapPin, Phone, Mail, Clock, Send } from 'lucide-react';
+import { MapPin, Mail, Clock, Send } from 'lucide-react';
 import Button from '../components/ui/Button';
 
 const ContactPage: React.FC = () => {
@@ -44,30 +44,24 @@ const ContactPage: React.FC = () => {
         </div>
         
         {/* Contact Information Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-          <ContactCard 
-            icon={<Phone className="h-6 w-6" />}
-            title="Phone"
-            details={['+1 (123) 456-7890']}
-            color="primary"
-          />
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
           <ContactCard 
             icon={<Mail className="h-6 w-6" />}
             title="Email"
-            details={['info@beatbooker.com', 'support@beatbooker.com']}
-            color="secondary"
+            details={['info@raw-media.co']}
+            color="primary"
           />
           <ContactCard 
             icon={<MapPin className="h-6 w-6" />}
             title="Office"
-            details={['123 Music Street', 'Los Angeles, CA 90001']}
-            color="accent"
+            details={['Jagiellońska 42', '03-462, Warsaw, Poland']}
+            color="secondary"
           />
           <ContactCard 
             icon={<Clock className="h-6 w-6" />}
             title="Hours"
             details={['Monday-Friday: 9AM-6PM', 'Weekend: 10AM-4PM']}
-            color="success"
+            color="accent"
           />
         </div>
         

@@ -81,19 +81,12 @@ const Footer: React.FC = () => {
           <div>
             <h4 className="text-lg font-semibold mb-6 text-white">Contact Us</h4>
             <ul className="space-y-3 text-neutral-400">
-              <li>123 Music Street</li>
-              <li>Los Angeles, CA 90001</li>
-              <li>United States</li>
+              <li>Jagiellońska 42</li>
+              <li>03-462, Warsaw, Poland</li>
               <li className="flex items-center space-x-2">
                 <Mail size={16} className="text-primary" />
-                <a href="mailto:info@rawmedia.com" className="hover:text-primary transition-colors">
-                  info@rawmedia.com
-                </a>
-              </li>
-              <li className="flex items-center space-x-2">
-                <span className="text-primary">Phone:</span>
-                <a href="tel:+11234567890" className="hover:text-primary transition-colors">
-                  +1 (123) 456-7890
+                <a href="mailto:info@raw-media.co" className="hover:text-primary transition-colors">
+                  info@raw-media.co
                 </a>
               </li>
             </ul>
