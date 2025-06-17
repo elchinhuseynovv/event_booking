@@ -39,7 +39,7 @@ const ContactPage: React.FC = () => {
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h1 className="mb-6">Get in Touch</h1>
           <p className="text-xl text-neutral-300">
-            Have questions or need assistance? We're here to help you find the perfect musical talent for your event.
+            Connect with RAW MEDIA to discover artists who define tomorrow's underground culture.
           </p>
         </div>
         
@@ -114,11 +114,11 @@ const ContactPage: React.FC = () => {
                   required
                 >
                   <option value="">Select a subject</option>
-                  <option value="Booking Inquiry">Booking Inquiry</option>
-                  <option value="Artist Information">Artist Information</option>
-                  <option value="Event Planning">Event Planning</option>
-                  <option value="Technical Support">Technical Support</option>
-                  <option value="Partnership Opportunity">Partnership Opportunity</option>
+                  <option value="Artist Booking">Artist Booking</option>
+                  <option value="Artist Representation">Artist Representation</option>
+                  <option value="Cultural Partnership">Cultural Partnership</option>
+                  <option value="Media Collaboration">Media Collaboration</option>
+                  <option value="Festival Booking">Festival Booking</option>
                   <option value="Other">Other</option>
                 </select>
               </div>
@@ -130,7 +130,7 @@ const ContactPage: React.FC = () => {
                 <textarea
                   name="message"
                   className="w-full bg-background border border-neutral-700 rounded-lg p-3 focus:ring-primary focus:border-primary min-h-[150px]"
-                  placeholder="How can we help you?"
+                  placeholder="Tell us about your project or event..."
                   value={formData.message}
                   onChange={handleChange}
                   required
@@ -155,7 +155,7 @@ const ContactPage: React.FC = () => {
         <div className="bg-gradient-to-r from-primary/20 via-secondary/20 to-accent/20 rounded-2xl p-12 text-center mt-16">
           <h2 className="mb-6">Join Our Artist Network</h2>
           <p className="text-xl text-neutral-300 mb-8 max-w-2xl mx-auto">
-            Are you a DJ or artist looking to expand your bookings? Join our platform to connect with clients and grow your career.
+            Are you an artist who defines underground culture? Join RAW MEDIA to connect with global audiences and expand your reach.
           </p>
           <Button 
             variant="primary" 

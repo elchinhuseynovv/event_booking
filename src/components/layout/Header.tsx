@@ -75,7 +75,7 @@ const Header: React.FC = () => {
           {!logoLoading && logo?.url ? (
             <img 
               src={logo.url}
-              alt={logo.alt_text || "Raw Media Logo"}
+              alt={logo.alt_text || "RAW MEDIA Logo"}
               className="h-20 md:h-24 transition-all duration-300 group-hover:scale-110 group-hover:brightness-125 filter object-contain"
               style={{ marginLeft: '0', marginRight: 'auto' }}
               onError={(e) => {

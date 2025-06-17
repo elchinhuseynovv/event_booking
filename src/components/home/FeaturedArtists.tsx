@@ -13,7 +13,7 @@ const FeaturedArtists: React.FC = () => {
         <div className="flex justify-between items-center mb-12">
           <div>
             <h2 className="mb-2">Featured Artists</h2>
-            <p className="text-neutral-400">Discover our top performers</p>
+            <p className="text-neutral-400">From underground warehouses in Warsaw to international stages, we represent the artists shaping tomorrow's culture</p>
           </div>
           <Button 
             variant="ghost" 
@@ -94,6 +94,15 @@ const FeaturedArtists: React.FC = () => {
               </div>
             </div>
           ))}
+        </div>
+        
+        {/* New tagline block */}
+        <div className="mt-16 text-center max-w-4xl mx-auto">
+          <div className="bg-background rounded-xl p-8 border border-neutral-700">
+            <p className="text-lg text-neutral-300 leading-relaxed">
+              DJs, music producers, filmmakers, photographers, VJs — RAW MEDIA connects visionary talents with promoters, festivals and cultural institutions worldwide
+            </p>
+          </div>
         </div>
       </div>
     </section>

@@ -58,14 +58,14 @@ const HeroSection: React.FC = () => {
       <div className="absolute bottom-0 left-0 right-0 metallic-sound-wave" />
       
       <div className="container relative z-10">
-        <div className="max-w-3xl">
-          {/* Updated headline with colorful glitch effect on "Artists" - Added mobile spacing */}
-          <h1 ref={titleRef} className="mb-6 mt-16 md:mt-0 glitch floating text-white" data-text="Select. Book. Elevate. Artists That Define the Scene">
-            Select. Book. Elevate. <span className="colorful-glitch-artist" data-text="Artists">Artists</span> That Define the Scene
+        <div className="max-w-4xl">
+          {/* Updated headline with new messaging */}
+          <h1 ref={titleRef} className="mb-6 mt-16 md:mt-0 glitch floating text-white" data-text="We Represent Artists Who Create Culture">
+            We Represent <span className="colorful-glitch-artist" data-text="Artists">Artists</span> Who Create Culture
           </h1>
           
           <p className="text-xl text-zinc-300 mb-8 metallic-glass p-4 font-bold tracking-wide">
-            From intimate gatherings to festival main stages, find and book the perfect talent to make your event unforgettable.
+            A Europe based global talent agency representing cutting edge DJs, visual artists and media creators
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4">
@@ -96,14 +96,14 @@ const HeroSection: React.FC = () => {
                 <img 
                   key={num}
                   src={`https://images.pexels.com/photos/167636/pexels-photo-167636.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1`} 
-                  alt="DJ performing" 
+                  alt="Artist performing" 
                   className="w-12 h-12 rounded-full border-2 border-zinc-600 object-cover ring-2 ring-zinc-800"
                 />
               ))}
             </div>
             <div>
-              <div className="text-zinc-200 font-bold text-lg tracking-wide">CURATED TALENT</div>
-              <div className="text-zinc-400 text-sm font-medium tracking-wide">Handpicked artists ready to elevate your event</div>
+              <div className="text-zinc-200 font-bold text-lg tracking-wide">SOUND VISION CULTURE</div>
+              <div className="text-zinc-400 text-sm font-medium tracking-wide">Artists who define tomorrow's underground aesthetic</div>
             </div>
           </div>
         </div>

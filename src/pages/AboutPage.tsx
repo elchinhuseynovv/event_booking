@@ -7,27 +7,27 @@ const AboutPage: React.FC = () => {
       <div className="container">
         {/* Hero Section */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h1 className="mb-6">About Raw Media</h1>
+          <h1 className="mb-6">About RAW MEDIA</h1>
           <p className="text-xl text-neutral-300">
-            We connect exceptional musical talent with unforgettable events, making the process of finding and booking your perfect artist simple and stress-free.
+            We Represent Sound Vision and Culture
           </p>
         </div>
         
         {/* Story Section */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-24">
           <div>
-            <h2 className="mb-6">Our Story</h2>
+            <h2 className="mb-6">About RAW MEDIA</h2>
             <p className="text-neutral-300 mb-4">
-              Raw Media is a multidisciplinary artist management and creative direction agency based in Warsaw, Poland. Founded in 2025, our journey began in 2022 with a vision to bridge the gap between emerging artists and global audiences.
+              Based in Poland and operating across Europe and beyond, RAW MEDIA is a multidisciplinary talent agency representing artists who don't just perform — they define the visual and sonic aesthetics of the underground.
             </p>
             <p className="text-neutral-300 mb-4">
-              At Raw Media, we believe in the power of authentic narratives and meaningful connections. Our mission is to cultivate artistry that resonates, transcending boundaries and fostering a dynamic cultural dialogue. We collaborate with visionaries across music, visual arts, and cultural expression, guiding them through their creative journeys with integrity and purpose.
+              We book DJs and producers, manage visual artists and VJs, and deliver full scale documentation through cinematic photography and video. We act as both an agency and a cultural engine, curating talent, producing content and building moments that last beyond the night.
             </p>
             <p className="text-neutral-300 mb-4">
-              Our approach is holistic, combining strategic planning with a deep understanding of the artistic process. We are committed to ensuring our talents thrive both personally and professionally, navigating the ever-evolving landscape of the creative industry.
+              From underground warehouses in Warsaw to international stages, we represent the artists shaping tomorrow's culture. Our approach combines strategic artist development with deep cultural understanding, ensuring our talents thrive in an ever-evolving creative landscape.
             </p>
             <p className="text-neutral-300">
-              Join us as we continue to build bridges between art and audience, tradition and innovation, passion and purpose.
+              We connect visionary talents with promoters, festivals and cultural institutions worldwide, fostering authentic connections that transcend boundaries and create lasting impact in the global underground scene.
             </p>
           </div>
           <div className="relative">
@@ -46,14 +46,14 @@ const AboutPage: React.FC = () => {
           <div className="text-center mb-12">
             <h2 className="mb-4">Our Growing Impact</h2>
             <p className="text-neutral-300 max-w-3xl mx-auto">
-              Since launching, we're building meaningful connections in the music industry
+              Building meaningful connections across the global underground scene
             </p>
           </div>
           
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div className="p-6">
               <div className="text-primary text-4xl font-bold mb-2">5+</div>
-              <div className="text-neutral-300">Curated Artists</div>
+              <div className="text-neutral-300">Represented Artists</div>
             </div>
             <div className="p-6">
               <div className="text-secondary text-4xl font-bold mb-2">25+</div>
@@ -61,11 +61,11 @@ const AboutPage: React.FC = () => {
             </div>
             <div className="p-6">
               <div className="text-accent text-4xl font-bold mb-2">500+</div>
-              <div className="text-neutral-300">Happy Guests</div>
+              <div className="text-neutral-300">Cultural Connections</div>
             </div>
             <div className="p-6">
               <div className="text-success text-4xl font-bold mb-2">100%</div>
-              <div className="text-neutral-300">Client Satisfaction</div>
+              <div className="text-neutral-300">Underground Authenticity</div>
             </div>
           </div>
         </div>
@@ -75,7 +75,7 @@ const AboutPage: React.FC = () => {
           <div className="text-center mb-12">
             <h2 className="mb-4">Our Values</h2>
             <p className="text-neutral-300 max-w-3xl mx-auto">
-              These core principles guide everything we do at Raw Media
+              These core principles guide everything we do at RAW MEDIA
             </p>
           </div>
           
@@ -83,23 +83,23 @@ const AboutPage: React.FC = () => {
             {[
               {
                 icon: <Music className="h-10 w-10" />,
-                title: "Musical Excellence",
-                description: "We curate only the highest quality talent, ensuring exceptional performances for every event."
+                title: "Cultural Vision",
+                description: "We represent artists who define the visual and sonic aesthetics of tomorrow's underground culture."
               },
               {
                 icon: <CheckCircle className="h-10 w-10" />,
-                title: "Reliability",
-                description: "From booking to performance, we ensure a seamless, stress-free experience you can count on."
+                title: "Authentic Connections",
+                description: "Building genuine relationships between visionary talents and cultural institutions worldwide."
               },
               {
                 icon: <Headphones className="h-10 w-10" />,
-                title: "Personal Touch",
-                description: "We listen carefully to understand your unique needs and match you with the perfect artist."
+                title: "Sound & Vision",
+                description: "Curating multidisciplinary talent across music, visual arts, and media creation."
               },
               {
                 icon: <Shield className="h-10 w-10" />,
-                title: "Trust & Safety",
-                description: "Our secure platform and vetted professionals ensure peace of mind for every booking."
+                title: "Underground Integrity",
+                description: "Preserving the authentic spirit of underground culture while expanding global reach."
               }
             ].map((value, index) => (
               <div key={index} className="bg-background-light p-8 rounded-xl">
@@ -118,7 +118,7 @@ const AboutPage: React.FC = () => {
           <div className="text-center mb-12">
             <h2 className="mb-4">Meet Our Team</h2>
             <p className="text-neutral-300 max-w-3xl mx-auto">
-              The passionate people behind Raw Media
+              The passionate people behind RAW MEDIA
             </p>
           </div>
           
@@ -128,25 +128,25 @@ const AboutPage: React.FC = () => {
                 name: "Sarah Johnson",
                 title: "Founder & CEO",
                 image: "https://images.pexels.com/photos/3310695/pexels-photo-3310695.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-                bio: "Former artist and music producer with 15 years in the industry."
+                bio: "Former artist and music producer with 15 years in the underground scene."
               },
               {
                 name: "Elchin Huseynov",
                 title: "Web Developer",
                 image: "https://rroyrxpcceyhgixpgzrs.supabase.co/storage/v1/object/sign/workers/elchinhuseynovprofile.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV82N2JkYWYxNi03YzRhLTQ3ZmUtYTE1NS1mZjcxOTE2ZTdiMGQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJ3b3JrZXJzL2VsY2hpbmh1c2V5bm92cHJvZmlsZS5qcGciLCJpYXQiOjE3NDk3MTcyNTgsImV4cCI6MjE4MTcxNzI1OH0.IixIU7mwqyiBwZKD5EYOELW_ZbqK9aNHl6cPiyC6VmA",
-                bio: "Skilled web developer passionate about creating innovative digital experiences and user-friendly interfaces."
+                bio: "Skilled web developer passionate about creating innovative digital experiences for underground culture."
               },
               {
                 name: "Maria Rodriguez",
                 title: "Artist Relations",
                 image: "https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-                bio: "Former talent agent with deep connections in the music scene."
+                bio: "Former talent agent with deep connections in the European underground scene."
               },
               {
                 name: "James Wilson",
                 title: "Head of Events",
                 image: "https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-                bio: "Event planning expert who's managed major festivals worldwide."
+                bio: "Event planning expert specializing in underground festivals and cultural events."
               }
             ].map((member, index) => (
               <div key={index} className="bg-background-light rounded-xl overflow-hidden group">
@@ -172,26 +172,26 @@ const AboutPage: React.FC = () => {
           <div className="text-center mb-12">
             <h2 className="mb-4">What People Say</h2>
             <p className="text-neutral-300 max-w-3xl mx-auto">
-              Hear from our clients about their experiences
+              Hear from our clients about their experiences with RAW MEDIA
             </p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
-                quote: "Raw Media made finding the perfect artist for our wedding so easy. The talent was incredible and our guests couldn't stop talking about the music!",
+                quote: "RAW MEDIA connected us with artists who truly understand underground culture. Their talent roster is unmatched in authenticity and vision.",
                 name: "Emma & Jason",
-                event: "Wedding"
+                event: "Festival Organizers"
               },
               {
-                quote: "As an event planner, I rely on Raw Media for all my clients' music needs. Their artists are professional, reliable, and always deliver an amazing experience.",
+                quote: "Working with RAW MEDIA means accessing artists who don't just perform — they create cultural moments. Their curation is exceptional.",
                 name: "Michael Torres",
-                event: "Corporate Events Manager"
+                event: "Cultural Institution"
               },
               {
-                quote: "The booking process was seamless and the artist we hired through Raw Media absolutely made our club night. We'll definitely be using them again for future events.",
-                name: "Nightlife Entertainment",
-                event: "Club Owner"
+                quote: "RAW MEDIA represents the future of underground talent. Their artists consistently deliver experiences that define the scene.",
+                name: "Underground Collective",
+                event: "Event Promoters"
               }
             ].map((testimonial, index) => (
               <div key={index} className="bg-background rounded-xl p-6">
@@ -210,9 +210,9 @@ const AboutPage: React.FC = () => {
         
         {/* CTA Section */}
         <div className="text-center bg-background-light rounded-2xl p-12">
-          <h2 className="mb-6">Ready to Find Your Perfect Artist?</h2>
+          <h2 className="mb-6">Ready to Connect with Underground Culture?</h2>
           <p className="text-xl text-neutral-300 mb-8 max-w-2xl mx-auto">
-            Browse our curated selection of top musical talent and book with confidence.
+            Discover artists who define tomorrow's sound, vision and culture.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <button className="btn-primary glow">

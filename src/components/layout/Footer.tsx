@@ -25,7 +25,7 @@ const Footer: React.FC = () => {
               {!logoLoading && logo?.url ? (
                 <img 
                   src={logo.url}
-                  alt={logo.alt_text || "Raw Media Logo"}
+                  alt={logo.alt_text || "RAW MEDIA Logo"}
                   className="h-8 transition-all duration-300 hover:scale-110 hover:brightness-125 filter object-contain"
                   onError={(e) => {
                     console.warn('Footer logo image failed to load, switching to text logo');
@@ -53,8 +53,11 @@ const Footer: React.FC = () => {
                 )}
               </div>
             </Link>
+            <p className="text-neutral-400 mb-4">
+              We Represent Sound Vision and Culture
+            </p>
             <p className="text-neutral-400 mb-6">
-              Connecting the world's best artists with your next unforgettable event.
+              A Europe based global talent agency representing cutting edge DJs, visual artists and media creators who define tomorrow's underground aesthetic.
             </p>
             <div className="flex space-x-4">
               <SocialIcon icon={<Facebook size={20} />} href="https://facebook.com" />
@@ -69,7 +72,7 @@ const Footer: React.FC = () => {
             <h4 className="text-lg font-semibold mb-6 text-white">Quick Links</h4>
             <ul className="space-y-3">
               <FooterLink to="/artists" label="Find Artists" />
-              <FooterLink to="/booking" label="Book an Event" />
+              <FooterLink to="/booking" label="Book an Artist" />
               <FooterLink to="/about" label="About Us" />
               <FooterLink to="/contact" label="Contact" />
               <FooterLink to="/terms" label="Terms & Conditions" />
@@ -96,7 +99,7 @@ const Footer: React.FC = () => {
           <div>
             <h4 className="text-lg font-semibold mb-6 text-white">Subscribe</h4>
             <p className="text-neutral-400 mb-4">
-              Stay updated with the latest artists and exclusive offers.
+              Stay updated with the latest underground culture and exclusive artist releases.
             </p>
             <form className="flex" onSubmit={(e) => e.preventDefault()}>
               <input
@@ -118,9 +121,9 @@ const Footer: React.FC = () => {
 
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-neutral-800 text-neutral-500 text-sm flex flex-col md:flex-row justify-between items-center">
-          <p>© {currentYear} Raw Media. All rights reserved.</p>
+          <p>© {currentYear} RAW MEDIA. All rights reserved.</p>
           <p className="mt-2 md:mt-0">
-            Designed with <span className="text-secondary">♥</span> for music lovers
+            Designed with <span className="text-secondary">♥</span> for underground culture
           </p>
         </div>
       </div>
