@@ -292,9 +292,7 @@ const BookingPage: React.FC = () => {
                       required
                     >
                       <option value="">Select event type</option>
-                      <option value="Wedding">Wedding</option>
                       <option value="Corporate Event">Corporate Event</option>
-                      <option value="Birthday Party">Birthday Party</option>
                       <option value="Nightclub">Nightclub</option>
                       <option value="Festival">Festival</option>
                       <option value="Private Party">Private Party</option>
@@ -350,7 +348,7 @@ const BookingPage: React.FC = () => {
                   <input
                     type="text"
                     className="w-full bg-background border border-neutral-700 rounded-lg p-3 focus:border-neutral-600"
-                    placeholder="e.g. Grand Ballroom, Sunset Beach Club"
+                    placeholder="e.g. Underground Warehouse, Techno Club Berlin"
                     value={venueName}
                     onChange={(e) => setVenueName(e.target.value)}
                     required
@@ -392,12 +390,13 @@ const BookingPage: React.FC = () => {
                       className="w-full bg-background border border-neutral-700 rounded-lg p-3 focus:border-neutral-600"
                     >
                       <option value="">Select venue type</option>
-                      <option value="Hotel">Hotel</option>
-                      <option value="Banquet Hall">Banquet Hall</option>
-                      <option value="Club">Club</option>
-                      <option value="Restaurant">Restaurant</option>
-                      <option value="Outdoor">Outdoor</option>
-                      <option value="Private Residence">Private Residence</option>
+                      <option value="Underground Warehouse">Underground Warehouse</option>
+                      <option value="Techno Club">Techno Club</option>
+                      <option value="Rave Venue">Rave Venue</option>
+                      <option value="Industrial Space">Industrial Space</option>
+                      <option value="Underground Bunker">Underground Bunker</option>
+                      <option value="Alternative Space">Alternative Space</option>
+                      <option value="Festival Ground">Festival Ground</option>
                       <option value="Other">Other</option>
                     </select>
                   </div>
