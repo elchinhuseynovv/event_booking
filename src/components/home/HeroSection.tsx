@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ChevronRight } from 'lucide-react';
 import Button from '../ui/Button';
@@ -6,21 +6,7 @@ import { useWebsiteConfig } from '../../hooks/useWebsiteConfig';
 
 const HeroSection: React.FC = () => {
   const navigate = useNavigate();
-  const heroRef = useRef<HTMLDivElement>(null);
   const { config } = useWebsiteConfig();
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (heroRef.current) {
-        const scroll = window.scrollY;
-        const offset = scroll * 0.5;
-        heroRef.current.style.setProperty('--scroll-offset', `${offset}px`);
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   // Get background video URL from database or fallback
   const getBackgroundVideoUrl = () => {
@@ -28,7 +14,7 @@ const HeroSection: React.FC = () => {
   };
 
   return (
-    <section ref={heroRef} className="relative min-h-screen flex items-center hero-metallic">
+    <section className="relative min-h-screen flex items-center hero-metallic">
       {/* Background Video with Metallic Overlay */}
       <div className="absolute inset-0 overflow-hidden">
         <video
@@ -36,6 +22,7 @@ const HeroSection: React.FC = () => {
           muted
           loop
           playsInline
+          preload="metadata"
           className="absolute w-full h-full object-cover"
           poster="https://images.pexels.com/photos/1540406/pexels-photo-1540406.jpeg"
         >
@@ -43,12 +30,7 @@ const HeroSection: React.FC = () => {
         </video>
         {/* Dark metallic overlay */}
         <div className="absolute inset-0 bg-gradient-to-br from-zinc-900/90 via-neutral-800/85 to-stone-900/90" />
-        {/* Subtle metallic texture overlay */}
-        <div className="absolute inset-0 metallic-texture opacity-20" />
       </div>
-      
-      {/* Animated Sound Wave - Metallic Style */}
-      <div className="absolute bottom-0 left-0 right-0 metallic-sound-wave" />
       
       <div className="container relative z-10">
         <div className="max-w-4xl">
@@ -75,14 +57,30 @@ const HeroSection: React.FC = () => {
           
           <div className="mt-12 flex items-center space-x-6 metallic-glass-dark p-4 rounded-xl border border-zinc-700/50">
             <div className="flex -space-x-4">
-              {[1, 2, 3, 4].map((num) => (
-                <img 
-                  key={num}
-                  src={`https://images.pexels.com/photos/167636/pexels-photo-167636.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1`} 
-                  alt="Artist performing" 
-                  className="w-12 h-12 rounded-full border-2 border-zinc-600 object-cover ring-2 ring-zinc-800"
-                />
-              ))}
+              <img 
+                src="https://rroyrxpcceyhgixpgzrs.supabase.co/storage/v1/object/sign/sitephotos/Sound%20Vision%20Culture/DSC01275.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV82N2JkYWYxNi03YzRhLTQ3ZmUtYTE1NS1mZjcxOTE2ZTdiMGQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJzaXRlcGhvdG9zL1NvdW5kIFZpc2lvbiBDdWx0dXJlL0RTQzAxMjc1LmpwZyIsImlhdCI6MTc1MDM1NzM1NSwiZXhwIjoyMTgyMzU3MzU1fQ.p3i94p3pkCad453WgbjIXKYz5mqisUC-P7ezlNjxnX8" 
+                alt="Sound Vision Culture artist 1" 
+                className="w-12 h-12 rounded-full border-2 border-zinc-600 object-cover ring-2 ring-zinc-800"
+                loading="lazy"
+              />
+              <img 
+                src="https://rroyrxpcceyhgixpgzrs.supabase.co/storage/v1/object/sign/sitephotos/Sound%20Vision%20Culture/DSC04270.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV82N2JkYWYxNi03YzRhLTQ3ZmUtYTE1NS1mZjcxOTE2ZTdiMGQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJzaXRlcGhvdG9zL1NvdW5kIFZpc2lvbiBDdWx0dXJlL0RTQzA0MjcwLmpwZyIsImlhdCI6MTc1MDM1NzQwMCwiZXhwIjoyMTgyMzU3NDAwfQ.toHoHHbTZVycjh6Hf058w2jQmxXJAT0doUiLCmgdbks" 
+                alt="Sound Vision Culture artist 2" 
+                className="w-12 h-12 rounded-full border-2 border-zinc-600 object-cover ring-2 ring-zinc-800"
+                loading="lazy"
+              />
+              <img 
+                src="https://rroyrxpcceyhgixpgzrs.supabase.co/storage/v1/object/sign/sitephotos/Sound%20Vision%20Culture/DSC05665.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV82N2JkYWYxNi03YzRhLTQ3ZmUtYTE1NS1mZjcxOTE2ZTdiMGQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJzaXRlcGhvdG9zL1NvdW5kIFZpc2lvbiBDdWx0dXJlL0RTQzA1NjY1LmpwZyIsImlhdCI6MTc1MDM1NzQwOSwiZXhwIjoyMTgyMzU3NDA5fQ.Z0Rg_L3PehUh0r43TjqOyI-PEPQcXeCBNtXwyS28OvM" 
+                alt="Sound Vision Culture artist 3" 
+                className="w-12 h-12 rounded-full border-2 border-zinc-600 object-cover ring-2 ring-zinc-800"
+                loading="lazy"
+              />
+              <img 
+                src="https://rroyrxpcceyhgixpgzrs.supabase.co/storage/v1/object/sign/sitephotos/Sound%20Vision%20Culture/DSC01275.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV82N2JkYWYxNi03YzRhLTQ3ZmUtYTE1NS1mZjcxOTE2ZTdiMGQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJzaXRlcGhvdG9zL1NvdW5kIFZpc2lvbiBDdWx0dXJlL0RTQzAxMjc1LmpwZyIsImlhdCI6MTc1MDM1NzM1NSwiZXhwIjoyMTgyMzU3MzU1fQ.p3i94p3pkCad453WgbjIXKYz5mqisUC-P7ezlNjxnX8" 
+                alt="Sound Vision Culture artist 4" 
+                className="w-12 h-12 rounded-full border-2 border-zinc-600 object-cover ring-2 ring-zinc-800"
+                loading="lazy"
+              />
             </div>
             <div>
               <div className="text-zinc-200 font-bold text-lg tracking-wide">SOUND VISION CULTURE</div>
