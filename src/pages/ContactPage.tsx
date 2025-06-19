@@ -63,9 +63,9 @@ Best regards,
       <div className="container">
         {/* Hero Section */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h1 className="mb-6">Get in Touch</h1>
+          <h1 className="mb-6">GET IN TOUCH</h1>
           <p className="text-xl text-neutral-300">
-            Connect with RAW MEDIA to discover artists who define tomorrow's underground culture.
+            CONNECT WITH RAW MEDIA TO DISCOVER ARTISTS WHO DEFINE TOMORROW'S UNDERGROUND CULTURE.
           </p>
         </div>
         
@@ -94,7 +94,7 @@ Best regards,
         {/* Contact Form Section */}
         <div className="max-w-3xl mx-auto">
           <div className="bg-background-light rounded-xl p-8">
-            <h2 className="text-2xl font-bold mb-6">Send Us a Message</h2>
+            <h2 className="text-2xl font-bold mb-6">SEND US A MESSAGE</h2>
             
             <form onSubmit={handleSubmit}>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
@@ -179,9 +179,9 @@ Best regards,
         
         {/* CTA Section */}
         <div className="bg-gradient-to-r from-primary/20 via-secondary/20 to-accent/20 rounded-2xl p-12 text-center mt-16">
-          <h2 className="mb-6">Join Our Artist Network</h2>
+          <h2 className="mb-6">JOIN OUR ARTIST NETWORK</h2>
           <p className="text-xl text-neutral-300 mb-4 max-w-2xl mx-auto">
-            Are you an artist who defines underground culture? Join RAW MEDIA to connect with global audiences and expand your reach.
+            ARE YOU AN ARTIST WHO DEFINES UNDERGROUND CULTURE? JOIN RAW MEDIA TO CONNECT WITH GLOBAL AUDIENCES AND EXPAND YOUR REACH.
           </p>
           <p className="text-neutral-400 mb-8 max-w-2xl mx-auto">
             Send your portfolio, biography, and performance history to <span className="text-primary font-medium">info@raw-media.co</span> for review by our team.

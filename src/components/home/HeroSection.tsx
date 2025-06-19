@@ -36,11 +36,11 @@ const HeroSection: React.FC = () => {
         <div className="max-w-4xl">
           {/* Updated headline with clean text - no effects */}
           <h1 className="mb-6 mt-16 md:mt-0 text-white">
-            We Represent Artists Who Create Culture
+            WE REPRESENT ARTISTS WHO CREATE CULTURE
           </h1>
           
           <p className="text-xl text-zinc-300 mb-8 metallic-glass p-4 font-bold tracking-wide">
-            A Europe based global talent agency representing cutting edge DJs, visual artists and media creators
+            A EUROPE BASED GLOBAL TALENT AGENCY REPRESENTING CUTTING EDGE DJS, VISUAL ARTISTS AND MEDIA CREATORS
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4">

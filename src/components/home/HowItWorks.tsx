@@ -4,19 +4,19 @@ import { MessageSquare, Users, CheckCircle } from 'lucide-react';
 const steps = [
   {
     icon: <MessageSquare className="h-12 w-12" />,
-    title: 'Tell us what you want',
+    title: 'TELL US WHAT YOU WANT',
     description: 'Share your event type, date, vibe, and budget.',
     color: 'neutral-600',
   },
   {
     icon: <Users className="h-12 w-12" />,
-    title: 'We recommend artists',
+    title: 'WE RECOMMEND ARTISTS',
     description: 'Get a curated shortlist of talent that fits your needs — with pricing, videos, and availability.',
     color: 'neutral-600',
   },
   {
     icon: <CheckCircle className="h-12 w-12" />,
-    title: 'We handle booking & logistics',
+    title: 'WE HANDLE BOOKING & LOGISTICS',
     description: 'We confirm the artist, negotiate terms, and take care of everything — contracts, travel, riders.',
     color: 'neutral-600',
   },
@@ -27,9 +27,9 @@ const HowItWorks: React.FC = () => {
     <section className="section">
       <div className="container">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="mb-2">How It Works</h2>
+          <h2 className="mb-2">HOW IT WORKS</h2>
           <p className="text-neutral-400">
-            Booking your perfect musical experience is easy with our simple three-step process
+            BOOKING YOUR PERFECT MUSICAL EXPERIENCE IS EASY WITH OUR SIMPLE THREE-STEP PROCESS
           </p>
         </div>
         

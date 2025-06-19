@@ -129,9 +129,9 @@ const BookingPage: React.FC = () => {
   return (
     <div className="pt-24 pb-16 min-h-screen">
       <div className="container">
-        <h1 className="text-center mb-2">Book Your Perfect Artist</h1>
+        <h1 className="text-center mb-2">BOOK YOUR PERFECT ARTIST</h1>
         <p className="text-center text-neutral-400 text-lg mb-12">
-          Fill out the form below to request a booking for your event
+          FILL OUT THE FORM BELOW TO REQUEST A BOOKING FOR YOUR EVENT
         </p>
         
         {/* Progress Steps */}
@@ -187,7 +187,7 @@ const BookingPage: React.FC = () => {
             {currentStep === 1 && (
               <div>
                 <h2 className="text-2xl font-bold mb-6 flex items-center">
-                  <Music className="mr-2 text-neutral-400" /> Choose Your Artist
+                  <Music className="mr-2 text-neutral-400" /> CHOOSE YOUR ARTIST
                 </h2>
                 
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mb-8">

@@ -54,7 +54,7 @@ const ArtistsPage: React.FC = () => {
         <div className="character-select-header">
           <h1 className="character-select-title">SELECT YOUR ARTIST</h1>
           <p className="character-select-subtitle">
-            Choose from our roster of elite talent
+            CHOOSE FROM OUR ROSTER OF ELITE TALENT
           </p>
         </div>
 

@@ -107,18 +107,18 @@ const Header: React.FC = () => {
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-8">
-          <NavLink to="/" isActive={isActive('/')} label="Home" onClick={handleNavClick} />
-          <NavLink to="/artists" isActive={isActive('/artists')} label="Artists" onClick={handleNavClick} />
-          <NavLink to="/booking" isActive={isActive('/booking')} label="Booking" onClick={handleNavClick} />
-          <NavLink to="/about" isActive={isActive('/about')} label="About" onClick={handleNavClick} />
-          <NavLink to="/contact" isActive={isActive('/contact')} label="Contact" onClick={handleNavClick} />
+          <NavLink to="/" isActive={isActive('/')} label="HOME" onClick={handleNavClick} />
+          <NavLink to="/artists" isActive={isActive('/artists')} label="ARTISTS" onClick={handleNavClick} />
+          <NavLink to="/booking" isActive={isActive('/booking')} label="BOOKING" onClick={handleNavClick} />
+          <NavLink to="/about" isActive={isActive('/about')} label="ABOUT" onClick={handleNavClick} />
+          <NavLink to="/contact" isActive={isActive('/contact')} label="CONTACT" onClick={handleNavClick} />
           <Link 
             to="/booking" 
             className="bg-neutral-600 hover:bg-neutral-500 text-white px-6 py-2 rounded-lg transition-all duration-300 nav-link"
             onClick={handleNavClick}
-            data-text="Book Now"
+            data-text="BOOK NOW"
           >
-            Book Now
+            BOOK NOW
           </Link>
         </nav>
 
@@ -153,11 +153,11 @@ const Header: React.FC = () => {
         {/* Menu content */}
         <div className="relative z-10 flex flex-col h-full p-8 pt-24">
           <div className="flex-1 space-y-2">
-            <MobileNavLink to="/" label="Home" onClick={(e) => { closeMenu(); handleNavClick(e); }} />
-            <MobileNavLink to="/artists" label="Artists" onClick={(e) => { closeMenu(); handleNavClick(e); }} />
-            <MobileNavLink to="/booking" label="Booking" onClick={(e) => { closeMenu(); handleNavClick(e); }} />
-            <MobileNavLink to="/about" label="About" onClick={(e) => { closeMenu(); handleNavClick(e); }} />
-            <MobileNavLink to="/contact" label="Contact" onClick={(e) => { closeMenu(); handleNavClick(e); }} />
+            <MobileNavLink to="/" label="HOME" onClick={(e) => { closeMenu(); handleNavClick(e); }} />
+            <MobileNavLink to="/artists" label="ARTISTS" onClick={(e) => { closeMenu(); handleNavClick(e); }} />
+            <MobileNavLink to="/booking" label="BOOKING" onClick={(e) => { closeMenu(); handleNavClick(e); }} />
+            <MobileNavLink to="/about" label="ABOUT" onClick={(e) => { closeMenu(); handleNavClick(e); }} />
+            <MobileNavLink to="/contact" label="CONTACT" onClick={(e) => { closeMenu(); handleNavClick(e); }} />
           </div>
           
           {/* Book Now button at bottom */}
@@ -166,9 +166,9 @@ const Header: React.FC = () => {
               to="/booking"
               className="block w-full bg-neutral-600 hover:bg-neutral-500 text-white px-6 py-3 rounded-lg text-center nav-link transition-all duration-300 font-medium"
               onClick={(e) => { closeMenu(); handleNavClick(e); }}
-              data-text="Book Now"
+              data-text="BOOK NOW"
             >
-              Book Now
+              BOOK NOW
             </Link>
           </div>
         </div>

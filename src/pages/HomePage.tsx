@@ -17,7 +17,7 @@ const HomePage: React.FC = () => {
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-r from-primary/20 via-secondary/20 to-accent/20">
         <div className="container text-center">
-          <h2 className="mb-6 max-w-3xl mx-auto">Ready to Connect with Underground Culture?</h2>
+          <h2 className="mb-6 max-w-3xl mx-auto">READY TO CONNECT WITH UNDERGROUND CULTURE?</h2>
           <p className="text-xl text-neutral-300 mb-8 max-w-2xl mx-auto">
             Discover artists who define tomorrow's sound, vision and culture through RAW MEDIA's curated talent network.
           </p>

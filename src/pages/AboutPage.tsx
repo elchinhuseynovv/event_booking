@@ -7,16 +7,16 @@ const AboutPage: React.FC = () => {
       <div className="container">
         {/* Hero Section */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h1 className="mb-6">About RAW MEDIA</h1>
+          <h1 className="mb-6">ABOUT RAW MEDIA</h1>
           <p className="text-xl text-neutral-300">
-            We Represent Sound Vision and Culture
+            WE REPRESENT SOUND VISION AND CULTURE
           </p>
         </div>
         
         {/* Story Section */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-24">
           <div>
-            <h2 className="mb-6">About RAW MEDIA</h2>
+            <h2 className="mb-6">ABOUT RAW MEDIA</h2>
             <p className="text-neutral-300 mb-4">
               Based in Poland and operating across Europe and beyond, RAW MEDIA is a multidisciplinary talent agency representing artists who don't just perform — they define the visual and sonic aesthetics of the underground.
             </p>
@@ -44,9 +44,9 @@ const AboutPage: React.FC = () => {
         {/* Stats Section - Updated for new starter */}
         <div className="bg-background-light rounded-2xl p-12 mb-24">
           <div className="text-center mb-12">
-            <h2 className="mb-4">Our Growing Impact</h2>
+            <h2 className="mb-4">OUR GROWING IMPACT</h2>
             <p className="text-neutral-300 max-w-3xl mx-auto">
-              Building meaningful connections across the global underground scene
+              BUILDING MEANINGFUL CONNECTIONS ACROSS THE GLOBAL UNDERGROUND SCENE
             </p>
           </div>
           
@@ -73,9 +73,9 @@ const AboutPage: React.FC = () => {
         {/* Values Section */}
         <div className="mb-24">
           <div className="text-center mb-12">
-            <h2 className="mb-4">Our Values</h2>
+            <h2 className="mb-4">OUR VALUES</h2>
             <p className="text-neutral-300 max-w-3xl mx-auto">
-              These core principles guide everything we do at RAW MEDIA
+              THESE CORE PRINCIPLES GUIDE EVERYTHING WE DO AT RAW MEDIA
             </p>
           </div>
           
@@ -83,22 +83,22 @@ const AboutPage: React.FC = () => {
             {[
               {
                 icon: <Music className="h-10 w-10" />,
-                title: "Cultural Vision",
+                title: "CULTURAL VISION",
                 description: "We represent artists who define the visual and sonic aesthetics of tomorrow's underground culture."
               },
               {
                 icon: <CheckCircle className="h-10 w-10" />,
-                title: "Authentic Connections",
+                title: "AUTHENTIC CONNECTIONS",
                 description: "Building genuine relationships between visionary talents and cultural institutions worldwide."
               },
               {
                 icon: <Headphones className="h-10 w-10" />,
-                title: "Sound & Vision",
+                title: "SOUND & VISION",
                 description: "Curating multidisciplinary talent across music, visual arts, and media creation."
               },
               {
                 icon: <Shield className="h-10 w-10" />,
-                title: "Underground Integrity",
+                title: "UNDERGROUND INTEGRITY",
                 description: "Preserving the authentic spirit of underground culture while expanding global reach."
               }
             ].map((value, index) => (
@@ -115,9 +115,9 @@ const AboutPage: React.FC = () => {
         
         {/* CTA Section */}
         <div className="text-center bg-background-light rounded-2xl p-12">
-          <h2 className="mb-6">Ready to Connect with Underground Culture?</h2>
+          <h2 className="mb-6">READY TO CONNECT WITH UNDERGROUND CULTURE?</h2>
           <p className="text-xl text-neutral-300 mb-8 max-w-2xl mx-auto">
-            Discover artists who define tomorrow's sound, vision and culture.
+            DISCOVER ARTISTS WHO DEFINE TOMORROW'S SOUND, VISION AND CULTURE.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <button className="btn-primary glow">
