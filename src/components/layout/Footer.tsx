@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Facebook, Instagram, Twitter, Youtube, Mail, Send } from 'lucide-react';
+import { Instagram, Mail, Send } from 'lucide-react';
 import { useLogo } from '../../hooks/useLogo';
 
 const Footer: React.FC = () => {
@@ -60,10 +60,7 @@ const Footer: React.FC = () => {
               A Europe based global talent agency representing cutting edge DJs, visual artists and media creators who define tomorrow's underground aesthetic.
             </p>
             <div className="flex space-x-4">
-              <SocialIcon icon={<Facebook size={20} />} href="https://facebook.com" />
-              <SocialIcon icon={<Instagram size={20} />} href="https://instagram.com" />
-              <SocialIcon icon={<Twitter size={20} />} href="https://twitter.com" />
-              <SocialIcon icon={<Youtube size={20} />} href="https://youtube.com" />
+              <SocialIcon icon={<Instagram size={20} />} href="https://www.instagram.com/raw_media.co/" />
             </div>
           </div>
 

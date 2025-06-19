@@ -29,7 +29,7 @@ const FeaturedArtists: React.FC = () => {
             <div 
               key={artist.id} 
               className="card group"
-              onClick={() => navigate(`/artists/${artist.id}`)}
+              onClick={() => navigate(`/artists/${artist.slug}`)}
             >
               <div className="relative overflow-hidden">
                 <img 

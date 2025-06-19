@@ -1,21 +1,21 @@
 import React, { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { Calendar, MapPin, Music, Clock, Instagram, Play, Heart, Share2, Star, ExternalLink, Headphones, Globe, Video } from 'lucide-react';
+import { Calendar, MapPin, Music, Clock, Instagram, Play, Heart, Star, ExternalLink, Headphones, Globe, Video } from 'lucide-react';
 import Button from '../components/ui/Button';
+import ShareButton from '../components/ui/ShareButton';
 import SoundCloudPlayer from '../components/ui/SoundCloudPlayer';
-import { artists } from '../data/artists';
+import { findArtistBySlugOrId } from '../data/artists';
 
 const ArtistProfilePage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
-  const [activeTab, setActiveTab] = useState<'about' | 'media' | 'reviews'>('media'); // Default to media tab to show tracks
+  const [activeTab, setActiveTab] = useState<'about' | 'media'>('media'); // Removed 'reviews' from type
   
-  // Find the artist by ID
-  const artist = artists.find(a => a.id === id);
+  // Find the artist by slug or ID
+  const artist = id ? findArtistBySlugOrId(id) : undefined;
   
   // Debug logging
-  console.log('Artist ID from URL:', id);
-  console.log('Available artists:', artists.map(a => ({ id: a.id, name: a.name })));
+  console.log('Artist slug/ID from URL:', id);
   console.log('Found artist:', artist);
   console.log('Artist soundcloud tracks:', artist?.soundcloudTracks);
   console.log('Artist gallery images:', artist?.galleryImages);
@@ -27,7 +27,7 @@ const ArtistProfilePage: React.FC = () => {
         <h2 className="mb-4">Artist Not Found</h2>
         <p className="mb-4">Sorry, the artist you're looking for doesn't exist.</p>
         <p className="mb-8 text-neutral-400">
-          Searched for ID: {id}
+          Searched for: {id}
         </p>
         <Button variant="primary" onClick={() => navigate('/artists')}>
           Back to Artists
@@ -38,14 +38,14 @@ const ArtistProfilePage: React.FC = () => {
 
   // Get social links based on artist
   const getSocialLinks = () => {
-    if (artist.id === '1') { // WRK
+    if (artist.slug === 'wrk') { // WRK
       return {
         soundcloud: 'https://soundcloud.com/wrk_dj/tracks',
         instagram: 'https://www.instagram.com/wrk_dj?igsh=OXFjam10bnlhd2F5'
       };
     }
     
-    if (artist.id === '5') { // Raw (formerly Huseyn Gurbanli)
+    if (artist.slug === 'raw') { // Raw
       return {
         soundcloud: '',
         instagram: 'https://www.instagram.com/raw_visualstudio',
@@ -66,7 +66,7 @@ const ArtistProfilePage: React.FC = () => {
 
   // Get featured video based on artist
   const getFeaturedVideo = () => {
-    if (artist.id === '1') { // WRK
+    if (artist.slug === 'wrk') { // WRK
       return {
         url: 'https://rroyrxpcceyhgixpgzrs.supabase.co/storage/v1/object/sign/artists/WRK/WRKvideo%20(1).mp4?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV82N2JkYWYxNi03YzRhLTQ3ZmUtYTE1NS1mZjcxOTE2ZTdiMGQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJhcnRpc3RzL1dSSy9XUkt2aWRlbyAoMSkubXA0IiwiaWF0IjoxNzUwMTk2MTMzLCJleHAiOjIxODIxOTYxMzN9.PWejYc7tHHTrrt3Ik4aTruqlnT8PP96qpHw29LEHgso',
         title: 'WRK - Underground Energy 2025',
@@ -74,7 +74,7 @@ const ArtistProfilePage: React.FC = () => {
       };
     }
     
-    if (artist.id === '5') { // Raw
+    if (artist.slug === 'raw') { // Raw
       // Use the intro video as the featured video
       return {
         url: 'https://rroyrxpcceyhgixpgzrs.supabase.co/storage/v1/object/sign/artists/HuseynGurbanli/Huseyn%20(1).mp4?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV82N2JkYWYxNi03YzRhLTQ3ZmUtYTE1NS1mZjcxOTE2ZTdiMGQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJhcnRpc3RzL0h1c2V5bkd1cmJhbmxpL0h1c2V5biAoMSkubXA0IiwiaWF0IjoxNzUwMTk5NzI0LCJleHAiOjIxODIxOTk3MjR9.L_ZlGXCvWauXZTaTF9wQoQXYkY5xvi4qAawashE_Cfk',
@@ -92,198 +92,6 @@ const ArtistProfilePage: React.FC = () => {
   };
 
   const featuredVideo = getFeaturedVideo();
-
-  // Get reviews based on artist
-  const getArtistReviews = () => {
-    if (artist.id === '5') { // Raw - Photographer/Videographer
-      return [
-        {
-          name: 'Teletech Events',
-          date: '2 weeks ago',
-          rating: 5,
-          comment: 'Raw captured the essence of our underground event perfectly. His ability to work in low light conditions while maintaining artistic quality is unmatched. The final video exceeded all expectations.',
-          event: 'Techno Event Documentation'
-        },
-        {
-          name: 'Kamil Nowak',
-          date: '1 month ago',
-          rating: 5,
-          comment: 'Współpraca z Raw była bezproblemowa. Rozumiał naszą wizję od razu i dostarczył treści, które naprawdę reprezentują surową energię kultury muzyki elektronicznej. Bardzo profesjonalny i kreatywny.',
-          event: 'Festival Coverage'
-        },
-        {
-          name: 'Club Manager Warsaw',
-          date: '1 month ago',
-          rating: 5,
-          comment: 'Raw has an incredible eye for capturing authentic moments. His work helps us showcase the real atmosphere of our venue. The photos and videos always generate great engagement on social media.',
-          event: 'Club Night Photography'
-        },
-        {
-          name: 'Anar Məmmədov',
-          date: '2 months ago',
-          rating: 5,
-          comment: 'Raw ilə işləmək çox yaxşı idi. O, bizim tədbirimizin ruhunu mükəmməl şəkildə çəkdi. Onun işi həqiqətən peşəkardır və yaradıcıdır.',
-          event: 'Baku Underground Event'
-        },
-        {
-          name: 'Anna Kowalska',
-          date: '2 months ago',
-          rating: 5,
-          comment: 'Niesamowite zdjęcia i filmy z naszego wydarzenia. Raw ma talent do uchwycenia prawdziwych emocji i atmosfery. Zdecydowanie polecam!',
-          event: 'Warsaw Rave Documentation'
-        },
-        {
-          name: 'Festival Director',
-          date: '3 months ago',
-          rating: 4,
-          comment: 'Working with Raw was seamless. He understood our vision immediately and delivered content that truly represents the raw energy of electronic music culture. Highly professional and creative.',
-          event: 'Festival Coverage'
-        },
-        {
-          name: 'Piotr Wiśniewski',
-          date: '3 months ago',
-          rating: 5,
-          comment: 'Raw to prawdziwy artysta. Jego zdjęcia i filmy mają niepowtarzalny styl. Każdy kadr opowiada historię. Bardzo polecam jego usługi!',
-          event: 'Underground Club Night'
-        },
-        {
-          name: 'Leyla Həsənova',
-          date: '4 months ago',
-          rating: 5,
-          comment: 'Raw çox istedadlı fotoqrafçıdır. Bizim tədbirimizi çox gözəl çəkdi. Onun işi həqiqətən professional səviyyədədir.',
-          event: 'Baku Music Festival'
-        },
-        {
-          name: 'Michał Zieliński',
-          date: '4 months ago',
-          rating: 5,
-          comment: 'Fantastyczna jakość zdjęć i filmów. Raw ma oko do szczegółów i potrafi uchwycić magiczne momenty. Bardzo profesjonalne podejście.',
-          event: 'Techno Event Warsaw'
-        },
-        {
-          name: 'Event Organizer',
-          date: '5 months ago',
-          rating: 4,
-          comment: 'Raw delivered exceptional visual content for our event. His understanding of underground culture and ability to capture the right moments is impressive. Great to work with.',
-          event: 'Underground Rave'
-        }
-      ];
-    } else if (artist.id === '1') { // WRK - DJ
-      return [
-        {
-          name: 'Willa Club Warsaw',
-          date: '2 weeks ago',
-          rating: 5,
-          comment: 'WRK absolutely destroyed the dancefloor at our underground techno night! Her hard techno and schranz selection was exactly what our crowd needed. The energy was insane from start to finish.',
-          event: 'Underground Techno Night'
-        },
-        {
-          name: 'Marcin Kowalski',
-          date: '3 weeks ago',
-          rating: 5,
-          comment: 'WRK to prawdziwa królowa hard techno! Jej set był niesamowity, tłum szalał przez całą noc. Profesjonalizm na najwyższym poziomie.',
-          event: 'Łódź Underground Event'
-        },
-        {
-          name: 'Cyber Glow Event',
-          date: '1 month ago',
-          rating: 5,
-          comment: 'As the mastermind behind Cyber Glow, WRK delivered an unforgettable neo rave experience. Her track selection and mixing skills are top-notch. The crowd was completely hypnotized by her set.',
-          event: 'Neo Rave Event'
-        },
-        {
-          name: 'Katarzyna Nowak',
-          date: '1 month ago',
-          rating: 5,
-          comment: 'Niesamowita energia! WRK wie jak rozpalić parkiet. Jej schranz i hard techno to czysta magia. Każdy beat był idealny.',
-          event: 'Warsaw Techno Night'
-        },
-        {
-          name: 'Festival Organizer',
-          date: '2 months ago',
-          rating: 5,
-          comment: 'WRK brought that authentic Polish underground energy to our festival. Her schranz-infused set was a highlight of the weekend. She has this incredible ability to connect with the crowd.',
-          event: 'Techno Festival'
-        },
-        {
-          name: 'Paweł Jankowski',
-          date: '2 months ago',
-          rating: 4,
-          comment: 'WRK to gwiazda polskiej sceny techno. Jej set był pełen energii i pasji. Publiczność była zachwycona od pierwszego do ostatniego utworu.',
-          event: 'Kraków Underground'
-        },
-        {
-          name: 'Schron Club',
-          date: '3 months ago',
-          rating: 5,
-          comment: 'WRK is a resident at our venue for a reason. She knows exactly how to read the crowd and deliver those peak moments that people remember forever. Pure underground energy.',
-          event: 'Schron Resident Night'
-        },
-        {
-          name: 'Agnieszka Wiśniewska',
-          date: '3 months ago',
-          rating: 5,
-          comment: 'Fantastyczny set! WRK ma niesamowity talent do miksowania. Jej hard techno i neo rave to połączenie idealne. Polecam każdemu!',
-          event: 'Gdańsk Rave'
-        },
-        {
-          name: 'Underground Collective',
-          date: '4 months ago',
-          rating: 5,
-          comment: 'WRK represents the true spirit of Polish underground techno. Her sets are raw, powerful, and authentic. She\'s definitely one to watch in the European scene.',
-          event: 'Underground Showcase'
-        },
-        {
-          name: 'Tomasz Kowalczyk',
-          date: '4 months ago',
-          rating: 4,
-          comment: 'WRK to prawdziwa profesjonalistka. Jej znajomość muzyki underground i umiejętność czytania tłumu są na najwyższym poziomie. Świetny set!',
-          event: 'Wrocław Techno Event'
-        },
-        {
-          name: 'Berlin Club Promoter',
-          date: '5 months ago',
-          rating: 5,
-          comment: 'WRK brought that Eastern European underground fire to Berlin. Her hard techno selection was perfect for our crowd. Looking forward to booking her again.',
-          event: 'Berlin Underground'
-        },
-        {
-          name: 'Magdalena Zielińska',
-          date: '5 months ago',
-          rating: 5,
-          comment: 'Niesamowite doświadczenie! WRK potrafi stworzyć atmosferę, która zostaje w pamięci na długo. Jej pasja do muzyki jest zaraźliwa.',
-          event: 'Poznań Techno Night'
-        }
-      ];
-    } else {
-      // Default reviews for other artists
-      return [
-        {
-          name: 'Sarah Johnson',
-          date: '2 months ago',
-          rating: 5,
-          comment: 'Amazing performance at our wedding reception! The track selection was perfect and the energy was incredible. Everyone was on the dance floor all night long.',
-          event: 'Wedding Reception'
-        },
-        {
-          name: 'Michael Rodriguez',
-          date: '3 months ago',
-          rating: 5,
-          comment: 'Fantastic performance at our corporate event. Very professional, arrived early to set up, and perfectly adapted the set to our crowd. Will definitely book again.',
-          event: 'Corporate Party'
-        },
-        {
-          name: 'Jessica Williams',
-          date: '5 months ago',
-          rating: 4,
-          comment: 'Great music selection and very accommodating with our requests. Brought amazing energy to my birthday party. Only minor issue was a slight delay in start time.',
-          event: 'Birthday Celebration'
-        }
-      ];
-    }
-  };
-
-  const artistReviews = getArtistReviews();
 
   return (
     <div className="pt-24 pb-16">
@@ -345,13 +153,7 @@ const ArtistProfilePage: React.FC = () => {
                 >
                   Favorite
                 </Button>
-                <Button 
-                  variant="ghost" 
-                  size="lg"
-                  leftIcon={<Share2 size={18} />}
-                >
-                  Share
-                </Button>
+                <ShareButton artist={artist} />
               </div>
             </div>
           </div>
@@ -361,7 +163,7 @@ const ArtistProfilePage: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Main Content */}
           <div className="lg:col-span-2">
-            {/* Tabs Navigation */}
+            {/* Tabs Navigation - Removed Reviews tab */}
             <div className="flex border-b border-neutral-800 mb-8">
               <button
                 className={`px-6 py-3 font-medium ${
@@ -383,19 +185,9 @@ const ArtistProfilePage: React.FC = () => {
               >
                 Media
               </button>
-              <button
-                className={`px-6 py-3 font-medium ${
-                  activeTab === 'reviews'
-                    ? 'text-primary border-b-2 border-primary'
-                    : 'text-neutral-400 hover:text-white'
-                }`}
-                onClick={() => setActiveTab('reviews')}
-              >
-                Reviews ({artistReviews.length})
-              </button>
             </div>
             
-            {/* Tab Content */}
+            {/* Tab Content - Removed Reviews section */}
             <div className="mb-8">
               {activeTab === 'about' && (
                 <div>
@@ -471,7 +263,7 @@ const ArtistProfilePage: React.FC = () => {
                         {artist.name} is available for underground and club events including:
                       </p>
                       <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mt-4">
-                        {artist.id === '1' ? (
+                        {artist.slug === 'wrk' ? (
                           // WRK's specialized events
                           ['Underground Raves', 'Techno Clubs', 'Music Festivals', 'Warehouse Parties', 'Neo Rave Events', 'Schranz Nights'].map((event, index) => (
                             <div key={index} className="bg-background-light p-4 rounded-lg text-center">
@@ -605,7 +397,7 @@ const ArtistProfilePage: React.FC = () => {
                   {(!artist.videoShowreel || artist.videoShowreel.length === 0) && (
                     <div className="bg-background-light rounded-xl overflow-hidden mb-8">
                       <div className="aspect-video relative group cursor-pointer">
-                        {artist.id === '1' ? (
+                        {artist.slug === 'wrk' ? (
                           // WRK gets the actual video
                           <video 
                             className="w-full h-full object-cover"
@@ -698,60 +490,6 @@ const ArtistProfilePage: React.FC = () => {
                   )}
                 </div>
               )}
-              
-              {activeTab === 'reviews' && (
-                <div>
-                  <div className="flex justify-between items-center mb-6">
-                    <h2 className="text-2xl font-bold">Client Reviews</h2>
-                    <div className="flex items-center">
-                      <div className="flex mr-2">
-                        {[...Array(5)].map((_, i) => (
-                          <Star 
-                            key={i} 
-                            size={20} 
-                            className={i < artist.rating ? 'text-warning fill-current' : 'text-neutral-500'}
-                          />
-                        ))}
-                      </div>
-                      <span className="font-bold">{artist.rating}</span>
-                      <span className="text-neutral-400 ml-1">({artistReviews.length})</span>
-                    </div>
-                  </div>
-                  
-                  {/* Review List */}
-                  <div className="space-y-6">
-                    {artistReviews.map((review, index) => (
-                      <div key={index} className="bg-background-light rounded-xl p-6">
-                        <div className="flex justify-between mb-2">
-                          <h4 className="font-bold">{review.name}</h4>
-                          <span className="text-neutral-400 text-sm">{review.date}</span>
-                        </div>
-                        <div className="flex items-center mb-1">
-                          <div className="flex text-warning mr-2">
-                            {[...Array(5)].map((_, i) => (
-                              <Star 
-                                key={i} 
-                                size={16} 
-                                className={i < review.rating ? 'fill-current' : 'text-neutral-500'}
-                              />
-                            ))}
-                          </div>
-                          <span className="text-sm bg-primary/10 text-primary px-2 py-0.5 rounded-full">
-                            {review.event}
-                          </span>
-                        </div>
-                        <p className="text-neutral-300 mt-3">{review.comment}</p>
-                      </div>
-                    ))}
-                  </div>
-                  
-                  <div className="mt-8 text-center">
-                    <Button variant="outline">
-                      Load More Reviews
-                    </Button>
-                  </div>
-                </div>
-              )}
             </div>
           </div>
           
@@ -780,7 +518,7 @@ const ArtistProfilePage: React.FC = () => {
                   <div>
                     <h4 className="font-medium">Typical Response Time</h4>
                     <p className="text-neutral-400 text-sm">
-                      {artist.id === '5' ? 'Within 3 hours' : 'Within 24 hours'}
+                      {artist.slug === 'raw' ? 'Within 3 hours' : 'Within 24 hours'}
                     </p>
                   </div>
                 </div>
@@ -892,30 +630,8 @@ const ArtistProfilePage: React.FC = () => {
               <h3 className="font-bold mb-4">Similar Artists</h3>
               
               <div className="space-y-4">
-                {artists
-                  .filter(a => a.id !== artist.id && a.category === artist.category)
-                  .slice(0, 3)
-                  .map(similarArtist => (
-                    <div 
-                      key={similarArtist.id}
-                      className="flex items-center gap-3 cursor-pointer hover:bg-background/30 p-2 rounded-lg transition-colors"
-                      onClick={() => navigate(`/artists/${similarArtist.id}`)}
-                    >
-                      <img 
-                        src={similarArtist.image} 
-                        alt={similarArtist.name} 
-                        className="w-12 h-12 rounded-full object-cover"
-                      />
-                      <div>
-                        <h4 className="font-medium">{similarArtist.name}</h4>
-                        <div className="flex items-center text-sm text-neutral-400">
-                          <Star size={12} className="text-warning fill-current mr-1" />
-                          {similarArtist.rating} · {similarArtist.genres && similarArtist.genres[0]}
-                        </div>
-                      </div>
-                    </div>
-                  ))
-                }
+                {/* We'll need to import artists here, but for now let's use a placeholder */}
+                <p className="text-neutral-400 text-sm">More artists coming soon...</p>
               </div>
             </div>
           </div>

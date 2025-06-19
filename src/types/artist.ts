@@ -22,6 +22,7 @@ export interface VideoShowreel {
 
 export interface Artist {
   id: string;
+  slug: string; // Add slug field for URL routing
   name: string;
   image: string;
   backgroundImage?: string;

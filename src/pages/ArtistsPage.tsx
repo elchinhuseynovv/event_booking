@@ -273,7 +273,7 @@ const CharacterSelectCard: React.FC<CharacterSelectCardProps> = ({
 }) => (
   <div 
     className={`character-select-card ${isHovered ? 'selected' : ''}`}
-    onClick={() => navigate(`/artists/${artist.id}`)}
+    onClick={() => navigate(`/artists/${artist.slug}`)}
     onMouseEnter={onHover}
     onMouseLeave={onLeave}
   >

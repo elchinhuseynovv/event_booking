@@ -1,13 +1,12 @@
 import React, { useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { ChevronRight, PlayCircle } from 'lucide-react';
+import { ChevronRight } from 'lucide-react';
 import Button from '../ui/Button';
 import { useWebsiteConfig } from '../../hooks/useWebsiteConfig';
 
 const HeroSection: React.FC = () => {
   const navigate = useNavigate();
   const heroRef = useRef<HTMLDivElement>(null);
-  const titleRef = useRef<HTMLHeadingElement>(null);
   const { config } = useWebsiteConfig();
 
   useEffect(() => {
@@ -21,12 +20,6 @@ const HeroSection: React.FC = () => {
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  useEffect(() => {
-    if (titleRef.current) {
-      titleRef.current.setAttribute('data-text', titleRef.current.textContent || '');
-    }
   }, []);
 
   // Get background video URL from database or fallback
@@ -59,9 +52,9 @@ const HeroSection: React.FC = () => {
       
       <div className="container relative z-10">
         <div className="max-w-4xl">
-          {/* Updated headline with new messaging */}
-          <h1 ref={titleRef} className="mb-6 mt-16 md:mt-0 glitch floating text-white" data-text="We Represent Artists Who Create Culture">
-            We Represent <span className="colorful-glitch-artist" data-text="Artists">Artists</span> Who Create Culture
+          {/* Updated headline with clean text - no effects */}
+          <h1 className="mb-6 mt-16 md:mt-0 text-white">
+            We Represent Artists Who Create Culture
           </h1>
           
           <p className="text-xl text-zinc-300 mb-8 metallic-glass p-4 font-bold tracking-wide">
@@ -77,16 +70,6 @@ const HeroSection: React.FC = () => {
               className="font-bold tracking-wider"
             >
               EXPLORE ARTISTS
-            </Button>
-            
-            <Button 
-              variant="outline" 
-              size="lg" 
-              leftIcon={<PlayCircle />}
-              onClick={() => window.open('#', '_blank')}
-              className="font-bold tracking-wider"
-            >
-              WATCH SHOWREEL
             </Button>
           </div>
           

@@ -34,8 +34,8 @@ const AboutPage: React.FC = () => {
             <div className="absolute -top-8 -left-8 w-64 h-64 bg-primary/20 rounded-full filter blur-3xl"></div>
             <div className="absolute -bottom-8 -right-8 w-64 h-64 bg-secondary/20 rounded-full filter blur-3xl"></div>
             <img 
-              src="https://images.pexels.com/photos/1763075/pexels-photo-1763075.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
-              alt="Artist performing" 
+              src="https://rroyrxpcceyhgixpgzrs.supabase.co/storage/v1/object/sign/sitephotos/about.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV82N2JkYWYxNi03YzRhLTQ3ZmUtYTE1NS1mZjcxOTE2ZTdiMGQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJzaXRlcGhvdG9zL2Fib3V0LmpwZyIsImlhdCI6MTc1MDM1NjA1NSwiZXhwIjoyMTgyMzU2MDU1fQ.PbU7NtLDNrZZtc4gWb6ZhzsW_b6z_PVccGg9SGrENvc" 
+              alt="RAW MEDIA team and artists" 
               className="rounded-2xl w-full relative z-10"
             />
           </div>

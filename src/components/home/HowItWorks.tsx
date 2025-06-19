@@ -1,23 +1,23 @@
 import React from 'react';
-import { Search, Calendar, Music } from 'lucide-react';
+import { MessageSquare, Users, CheckCircle } from 'lucide-react';
 
 const steps = [
   {
-    icon: <Search className="h-12 w-12" />,
-    title: 'Find Your Perfect Artist',
-    description: 'Browse our curated selection of professional DJs and musicians, filter by genre, price, and availability.',
+    icon: <MessageSquare className="h-12 w-12" />,
+    title: 'Tell us what you want',
+    description: 'Share your event type, date, vibe, and budget.',
     color: 'neutral-600',
   },
   {
-    icon: <Calendar className="h-12 w-12" />,
-    title: 'Book Your Date',
-    description: 'Select your event date and time, provide details about your venue, and confirm your booking instantly.',
+    icon: <Users className="h-12 w-12" />,
+    title: 'We recommend artists',
+    description: 'Get a curated shortlist of talent that fits your needs — with pricing, videos, and availability.',
     color: 'neutral-600',
   },
   {
-    icon: <Music className="h-12 w-12" />,
-    title: 'Enjoy The Show',
-    description: 'Sit back and enjoy as your chosen artist delivers an unforgettable performance for you and your guests.',
+    icon: <CheckCircle className="h-12 w-12" />,
+    title: 'We handle booking & logistics',
+    description: 'We confirm the artist, negotiate terms, and take care of everything — contracts, travel, riders.',
     color: 'neutral-600',
   },
 ];
