@@ -305,7 +305,6 @@ const ArtistProfilePage: React.FC = () => {
                               <div className="aspect-video relative group">
                                 <video 
                                   className="w-full h-full object-cover"
-                                  poster={artist.image}
                                   controls
                                   preload="metadata"
                                 >
@@ -401,7 +400,6 @@ const ArtistProfilePage: React.FC = () => {
                           // WRK gets the actual video
                           <video 
                             className="w-full h-full object-cover"
-                            poster={artist.image}
                             controls
                             preload="metadata"
                           >
@@ -435,24 +433,19 @@ const ArtistProfilePage: React.FC = () => {
                     </div>
                   )}
                   
-                  {/* Photo Gallery */}
+                  {/* Photo Gallery - REMOVED CAPTION OVERLAYS */}
                   <h3 className="text-xl font-bold mb-4">
                     {artist.category === 'photographer' ? 'Portfolio' : 'Photos'}
                   </h3>
                   <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-8">
                     {artist.galleryImages && artist.galleryImages.length > 0 ? (
                       artist.galleryImages.map((image, index) => (
-                        <div key={index} className="aspect-square rounded-lg overflow-hidden group relative">
+                        <div key={index} className="aspect-square rounded-lg overflow-hidden">
                           <img 
                             src={image.url} 
                             alt={image.alt} 
                             className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
                           />
-                          {image.caption && (
-                            <div className="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-3">
-                              <p className="text-white text-sm">{image.caption}</p>
-                            </div>
-                          )}
                         </div>
                       ))
                     ) : (
