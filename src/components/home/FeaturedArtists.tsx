@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { ChevronRight, Star } from 'lucide-react';
+import { ChevronRight } from 'lucide-react';
 import Button from '../ui/Button';
 import { featuredArtists } from '../../data/artists';
 
@@ -28,7 +28,7 @@ const FeaturedArtists: React.FC = () => {
           {featuredArtists.map((artist) => (
             <div 
               key={artist.id} 
-              className="card group"
+              className="card group relative"
               onClick={() => navigate(`/artists/${artist.slug}`)}
             >
               <div className="relative overflow-hidden">
@@ -42,42 +42,43 @@ const FeaturedArtists: React.FC = () => {
                     Featured
                   </div>
                 )}
+                
+                {/* Hover overlay with genres, location, and experience */}
+                <div className="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center items-center p-4">
+                  <div className="text-center space-y-3">
+                    {/* Genres */}
+                    <div className="flex flex-wrap gap-1 justify-center">
+                      {(artist.genres || []).slice(0, 2).map((genre, index) => (
+                        <span 
+                          key={index} 
+                          className="text-xs font-medium bg-neutral-700 text-neutral-300 px-2 py-1 rounded-full"
+                        >
+                          {genre}
+                        </span>
+                      ))}
+                    </div>
+                    
+                    {/* Location */}
+                    <div className="text-sm text-neutral-300 font-medium">
+                      📍 {artist.location}
+                    </div>
+                    
+                    {/* Experience */}
+                    <div className="text-sm text-white font-semibold">
+                      {artist.experience} years experience
+                    </div>
+                  </div>
+                </div>
               </div>
               
               <div className="p-3 md:p-6">
-                <div className="flex items-center mb-1 md:mb-2">
-                  <div className="flex text-neutral-400">
-                    {[...Array(5)].map((_, i) => (
-                      <Star 
-                        key={i} 
-                        fill={i < artist.rating ? 'currentColor' : 'none'}
-                        size={12} 
-                        className="md:w-4 md:h-4"
-                      />
-                    ))}
-                  </div>
-                  <span className="text-xs md:text-sm text-neutral-400 ml-1 md:ml-2">
-                    ({artist.reviewCount})
-                  </span>
-                </div>
-                
-                <h3 className="text-sm md:text-xl font-bold mb-1">{artist.name}</h3>
-                
-                <div className="flex flex-wrap gap-1 md:gap-2 mb-2 md:mb-4">
-                  {(artist.genres || []).slice(0, 2).map((genre, index) => (
-                    <span 
-                      key={index} 
-                      className="text-xs font-medium bg-neutral-700 text-neutral-300 px-1.5 md:px-2 py-0.5 md:py-1 rounded-full"
-                    >
-                      {genre}
-                    </span>
-                  ))}
-                </div>
+                <h3 className="text-sm md:text-xl font-bold mb-2">{artist.name}</h3>
                 
                 <div className="flex justify-between items-center">
                   <div>
-                    <p className="text-xs md:text-sm text-neutral-400">{artist.location}</p>
-                    <p className="text-sm md:text-lg font-semibold text-white">{artist.experience} years exp.</p>
+                    <p className="text-xs md:text-sm text-neutral-400">
+                      {artist.category === 'photographer' ? 'Visual Artist' : 'DJ'}
+                    </p>
                   </div>
                   <Button 
                     variant="outline" 
