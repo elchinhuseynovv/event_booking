@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { Calendar, MapPin, Music, Clock, Instagram, Play, Heart, Star, ExternalLink, Headphones, Globe, Video } from 'lucide-react';
+import { Calendar, MapPin, Music, Clock, Instagram, Play, Star, ExternalLink, Headphones, Globe, Video } from 'lucide-react';
 import Button from '../components/ui/Button';
 import ShareButton from '../components/ui/ShareButton';
 import SoundCloudPlayer from '../components/ui/SoundCloudPlayer';
@@ -145,13 +145,6 @@ const ArtistProfilePage: React.FC = () => {
                   onClick={() => navigate(`/booking?artist=${artist.id}`)}
                 >
                   Book Now
-                </Button>
-                <Button 
-                  variant="outline" 
-                  size="lg"
-                  leftIcon={<Heart size={18} />}
-                >
-                  Favorite
                 </Button>
                 <ShareButton artist={artist} />
               </div>

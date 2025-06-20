@@ -56,7 +56,7 @@ const AboutPage: React.FC = () => {
               <div className="text-neutral-300">Represented Artists</div>
             </div>
             <div className="p-6">
-              <div className="text-secondary text-4xl font-bold mb-2">25+</div>
+              <div className="text-secondary text-4xl font-bold mb-2">300+</div>
               <div className="text-neutral-300">Events Completed</div>
             </div>
             <div className="p-6">
