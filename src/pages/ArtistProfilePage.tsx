@@ -45,7 +45,7 @@ const ArtistProfilePage: React.FC = () => {
       };
     }
     
-    if (artist.slug === 'raw') { // Raw
+    if (artist.slug === 'huseyn-gurbanli') { // Huseyn Gurbanlı
       return {
         soundcloud: '',
         instagram: 'https://www.instagram.com/raw_visualstudio',
@@ -74,7 +74,7 @@ const ArtistProfilePage: React.FC = () => {
       };
     }
     
-    if (artist.slug === 'raw') { // Raw
+    if (artist.slug === 'huseyn-gurbanli') { // Huseyn Gurbanlı
       // Use the intro video as the featured video
       return {
         url: 'https://rroyrxpcceyhgixpgzrs.supabase.co/storage/v1/object/sign/artists/HuseynGurbanli/Huseyn%20(1).mp4?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV82N2JkYWYxNi03YzRhLTQ3ZmUtYTE1NS1mZjcxOTE2ZTdiMGQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJhcnRpc3RzL0h1c2V5bkd1cmJhbmxpL0h1c2V5biAoMSkubXA0IiwiaWF0IjoxNzUwMTk5NzI0LCJleHAiOjIxODIxOTk3MjR9.L_ZlGXCvWauXZTaTF9wQoQXYkY5xvi4qAawashE_Cfk',
@@ -189,7 +189,7 @@ const ArtistProfilePage: React.FC = () => {
                     {artist.biography || 'No biography available.'}
                   </p>
                   
-                  {/* Show signature for Raw */}
+                  {/* Show signature for Huseyn Gurbanlı */}
                   {artist.signature && (
                     <>
                       <h3 className="text-xl font-bold mb-3">Signature Style</h3>
@@ -199,7 +199,7 @@ const ArtistProfilePage: React.FC = () => {
                     </>
                   )}
                   
-                  {/* Show mission for Raw */}
+                  {/* Show mission for Huseyn Gurbanlı */}
                   {artist.mission && (
                     <>
                       <h3 className="text-xl font-bold mb-3">Mission</h3>
@@ -516,7 +516,7 @@ const ArtistProfilePage: React.FC = () => {
                   <div>
                     <h4 className="font-medium">Typical Response Time</h4>
                     <p className="text-neutral-400 text-sm">
-                      {artist.slug === 'raw' ? 'Within 3 hours' : 'Within 24 hours'}
+                      {artist.slug === 'huseyn-gurbanli' ? 'Within 3 hours' : 'Within 24 hours'}
                     </p>
                   </div>
                 </div>

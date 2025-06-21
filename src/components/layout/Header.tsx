@@ -54,7 +54,7 @@ const Header: React.FC = () => {
 
   // Text-based logo component as fallback
   const TextLogo = () => (
-    <div className="text-2xl font-bold text-white tracking-wider">
+    <div className="text-xl md:text-2xl font-bold text-white tracking-wider">
       <span className="text-white">RAW</span>
       <span className="ml-1">MEDIA</span>
     </div>
@@ -63,7 +63,7 @@ const Header: React.FC = () => {
   return (
     <header 
       className={`fixed w-full z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-background/90 backdrop-blur-md py-3 shadow-lg' : 'bg-transparent py-5'
+        isScrolled ? 'bg-background/90 backdrop-blur-md py-2 md:py-3 shadow-lg' : 'bg-transparent py-2 md:py-5'
       }`}
     >
       <div className="container flex items-center justify-between">
@@ -76,7 +76,7 @@ const Header: React.FC = () => {
             <img 
               src={logo.url}
               alt={logo.alt_text || "RAW MEDIA Logo"}
-              className="h-20 md:h-24 transition-all duration-300 group-hover:scale-110 group-hover:brightness-125 filter object-contain"
+              className="h-16 md:h-20 lg:h-24 transition-all duration-300 group-hover:scale-110 group-hover:brightness-125 filter object-contain"
               style={{ marginLeft: '0', marginRight: 'auto' }}
               onError={(e) => {
                 console.warn('Logo image failed to load, switching to text logo');
@@ -98,7 +98,7 @@ const Header: React.FC = () => {
             style={{ display: logoLoading || !logo?.url ? 'block' : 'none' }}
           >
             {logoLoading ? (
-              <div className="h-8 w-32 bg-neutral-700 animate-pulse rounded"></div>
+              <div className="h-6 md:h-8 w-24 md:w-32 bg-neutral-700 animate-pulse rounded"></div>
             ) : (
               <TextLogo />
             )}
@@ -151,7 +151,7 @@ const Header: React.FC = () => {
         <div className="absolute inset-0 bg-background"></div>
         
         {/* Menu content */}
-        <div className="relative z-10 flex flex-col h-full p-8 pt-24">
+        <div className="relative z-10 flex flex-col h-full p-8 pt-20">
           <div className="flex-1 space-y-2">
             <MobileNavLink to="/" label="HOME" onClick={(e) => { closeMenu(); handleNavClick(e); }} />
             <MobileNavLink to="/artists" label="ARTISTS" onClick={(e) => { closeMenu(); handleNavClick(e); }} />

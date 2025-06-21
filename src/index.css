@@ -31,19 +31,19 @@
   }
 
   h1 {
-    @apply text-4xl md:text-5xl lg:text-6xl;
+    @apply text-3xl md:text-4xl lg:text-5xl xl:text-6xl;
   }
 
   h2 {
-    @apply text-3xl md:text-4xl;
+    @apply text-2xl md:text-3xl lg:text-4xl;
   }
 
   h3 {
-    @apply text-2xl md:text-3xl;
+    @apply text-xl md:text-2xl lg:text-3xl;
   }
 
   h4 {
-    @apply text-xl md:text-2xl;
+    @apply text-lg md:text-xl lg:text-2xl;
   }
 
   p {
@@ -95,7 +95,7 @@
 
   /* Character Select Screen Styles */
   .character-select-page {
-    @apply pt-24 pb-16 min-h-screen relative;
+    @apply pt-20 md:pt-24 pb-16 min-h-screen relative;
     background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%);
     position: relative;
   }
@@ -126,11 +126,11 @@
   }
 
   .character-select-header {
-    @apply text-center mb-16;
+    @apply text-center mb-12 md:mb-16;
   }
 
   .character-select-title {
-    @apply text-5xl md:text-7xl font-black tracking-wider mb-4;
+    @apply text-4xl md:text-5xl lg:text-7xl font-black tracking-wider mb-4;
     color: #FFFFFF;
     font-family: 'CenturyGothic', 'Orbitron', sans-serif;
     text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
@@ -138,17 +138,17 @@
   }
 
   .character-select-subtitle {
-    @apply text-xl md:text-2xl font-medium tracking-wide;
+    @apply text-lg md:text-xl lg:text-2xl font-medium tracking-wide;
     color: #C0C0C0;
     font-family: 'CenturyGothic', 'Orbitron', sans-serif;
   }
 
   .character-select-controls {
-    @apply mb-12;
+    @apply mb-8 md:mb-12;
   }
 
   .character-select-search {
-    @apply w-full p-4 pl-10 rounded-lg border-2 border-transparent transition-all duration-300;
+    @apply w-full p-3 md:p-4 pl-8 md:pl-10 rounded-lg border-2 border-transparent transition-all duration-300;
     background: rgba(25, 25, 25, 0.9);
     color: #E8E6E3;
     font-family: 'CenturyGothic', 'Orbitron', sans-serif;
@@ -177,14 +177,14 @@
   }
 
   .character-select-filters {
-    @apply rounded-xl p-6 mb-6;
+    @apply rounded-xl p-4 md:p-6 mb-6;
     background: rgba(25, 25, 25, 0.9);
     border: 1px solid rgba(96, 96, 96, 0.3);
     backdrop-filter: blur(10px);
   }
 
   .character-select-filter-tag {
-    @apply px-4 py-2 text-sm rounded-lg transition-all duration-300 border-2;
+    @apply px-3 md:px-4 py-2 text-sm rounded-lg transition-all duration-300 border-2;
     background: rgba(25, 25, 25, 0.9);
     border-color: #606060;
     color: #C0C0C0;
@@ -217,19 +217,19 @@
   }
 
   .character-select-results-count {
-    @apply mb-8 text-center;
+    @apply mb-6 md:mb-8 text-center;
   }
 
   .character-select-sections {
-    @apply space-y-20;
+    @apply space-y-16 md:space-y-20;
   }
 
   .character-select-section {
-    @apply space-y-8;
+    @apply space-y-6 md:space-y-8;
   }
 
   .character-select-section-title {
-    @apply text-4xl md:text-5xl font-black tracking-wider text-center pb-4;
+    @apply text-3xl md:text-4xl lg:text-5xl font-black tracking-wider text-center pb-4;
     color: #FFFFFF;
     font-family: 'CenturyGothic', 'Orbitron', sans-serif;
     letter-spacing: 0.1em;
@@ -238,13 +238,13 @@
   }
 
   .character-select-section-count {
-    @apply text-2xl ml-4;
+    @apply text-xl md:text-2xl ml-4;
     color: #C0C0C0;
   }
 
   .character-select-grid {
-    @apply grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6 md:gap-8;
-    padding: 2rem 0;
+    @apply grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 md:gap-6 lg:gap-8;
+    padding: 1.5rem 0;
   }
 
   .character-select-card {
@@ -258,7 +258,7 @@
   }
 
   .character-select-portrait-container {
-    @apply relative aspect-square rounded-lg overflow-hidden mb-4;
+    @apply relative aspect-square rounded-lg overflow-hidden mb-3 md:mb-4;
     background: rgba(25, 25, 25, 0.9);
     border: 2px solid transparent;
     transition: all 0.3s ease;
@@ -292,7 +292,7 @@
   }
 
   .character-select-overlay {
-    @apply absolute inset-0 flex items-end justify-between p-3 opacity-0 transition-all duration-300;
+    @apply absolute inset-0 flex items-end justify-between p-2 md:p-3 opacity-0 transition-all duration-300;
     background: linear-gradient(to top, rgba(15, 15, 15, 0.95) 0%, transparent 60%);
   }
 
@@ -314,7 +314,7 @@
   }
 
   .character-select-price {
-    @apply text-sm font-bold;
+    @apply text-xs md:text-sm font-bold;
     color: #E8E6E3;
     font-family: 'CenturyGothic', 'Orbitron', sans-serif;
     letter-spacing: 0.05em;
@@ -325,7 +325,7 @@
   }
 
   .character-select-name {
-    @apply text-lg font-bold mb-1 transition-all duration-300;
+    @apply text-sm md:text-lg font-bold mb-1 transition-all duration-300;
     color: #FFFFFF;
     font-family: 'CenturyGothic', 'Orbitron', sans-serif;
     letter-spacing: 0.05em;
@@ -338,7 +338,7 @@
   }
 
   .character-select-location {
-    @apply text-sm;
+    @apply text-xs md:text-sm;
     color: #C0C0C0;
     font-family: 'CenturyGothic', 'Orbitron', sans-serif;
     font-weight: 500;
@@ -346,7 +346,7 @@
   }
 
   .character-select-empty {
-    @apply text-center py-20;
+    @apply text-center py-16 md:py-20;
   }
 
   /* Metallic Hero Section Styles */
