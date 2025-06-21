@@ -9,7 +9,7 @@ import { findArtistBySlugOrId } from '../data/artists';
 const ArtistProfilePage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
-  const [activeTab, setActiveTab] = useState<'about' | 'media'>('media'); // Removed 'reviews' from type
+  const [activeTab, setActiveTab] = useState<'about' | 'media'>('about'); // Changed from 'media' to 'about'
   
   // Find the artist by slug or ID
   const artist = id ? findArtistBySlugOrId(id) : undefined;
@@ -156,7 +156,7 @@ const ArtistProfilePage: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Main Content */}
           <div className="lg:col-span-2">
-            {/* Tabs Navigation - Removed Reviews tab */}
+            {/* Tabs Navigation */}
             <div className="flex border-b border-neutral-800 mb-8">
               <button
                 className={`px-6 py-3 font-medium ${
@@ -180,7 +180,7 @@ const ArtistProfilePage: React.FC = () => {
               </button>
             </div>
             
-            {/* Tab Content - Removed Reviews section */}
+            {/* Tab Content */}
             <div className="mb-8">
               {activeTab === 'about' && (
                 <div>
@@ -209,10 +209,13 @@ const ArtistProfilePage: React.FC = () => {
                     </>
                   )}
                   
-                  <h3 className="text-xl font-bold mb-3">Specializations</h3>
+                  <h3 className="text-xl font-bold mb-4">Specializations</h3>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
                     {artist.genres && artist.genres.map((genre, index) => (
-                      <div key={index} className="bg-background-light p-4 rounded-lg text-center">
+                      <div 
+                        key={index} 
+                        className="bg-neutral-800 border border-neutral-600 rounded-lg p-4 text-center font-medium text-white hover:bg-neutral-700 hover:border-neutral-500 transition-all duration-300"
+                      >
                         {genre}
                       </div>
                     ))}
