@@ -232,13 +232,16 @@ const ArtistProfilePage: React.FC = () => {
                         <li>Same-day delivery for urgent projects</li>
                       </ul>
                       
-                      <h3 className="text-xl font-bold mb-3">Event Types</h3>
-                      <p className="text-neutral-300">
+                      <h3 className="text-xl font-bold mb-4">Event Types</h3>
+                      <p className="text-neutral-300 mb-4">
                         {artist.name} specializes in capturing the raw energy of:
                       </p>
-                      <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mt-4">
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         {['Techno Events', 'Underground Raves', 'Music Festivals', 'Club Nights', 'Artist Portraits', 'Behind the Scenes'].map((event, index) => (
-                          <div key={index} className="bg-background-light p-4 rounded-lg text-center">
+                          <div 
+                            key={index} 
+                            className="bg-neutral-800 border border-neutral-600 rounded-lg p-4 text-center font-medium text-white hover:bg-neutral-700 hover:border-neutral-500 transition-all duration-300"
+                          >
                             {event}
                           </div>
                         ))}
@@ -254,22 +257,28 @@ const ArtistProfilePage: React.FC = () => {
                         <li>Backup equipment for reliability</li>
                       </ul>
                       
-                      <h3 className="text-xl font-bold mb-3">Events</h3>
-                      <p className="text-neutral-300">
+                      <h3 className="text-xl font-bold mb-4">Events</h3>
+                      <p className="text-neutral-300 mb-4">
                         {artist.name} is available for underground and club events including:
                       </p>
-                      <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mt-4">
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         {artist.slug === 'wrk' ? (
                           // WRK's specialized events
                           ['Underground Raves', 'Techno Clubs', 'Music Festivals', 'Warehouse Parties', 'Neo Rave Events', 'Schranz Nights'].map((event, index) => (
-                            <div key={index} className="bg-background-light p-4 rounded-lg text-center">
+                            <div 
+                              key={index} 
+                              className="bg-neutral-800 border border-neutral-600 rounded-lg p-4 text-center font-medium text-white hover:bg-neutral-700 hover:border-neutral-500 transition-all duration-300"
+                            >
                               {event}
                             </div>
                           ))
                         ) : (
                           // Other DJs' general events
                           ['Weddings', 'Corporate Events', 'Nightclubs', 'Festivals', 'Private Parties', 'Birthday Celebrations'].map((event, index) => (
-                            <div key={index} className="bg-background-light p-4 rounded-lg text-center">
+                            <div 
+                              key={index} 
+                              className="bg-neutral-800 border border-neutral-600 rounded-lg p-4 text-center font-medium text-white hover:bg-neutral-700 hover:border-neutral-500 transition-all duration-300"
+                            >
                               {event}
                             </div>
                           ))
