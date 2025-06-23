@@ -37,36 +37,11 @@ const FeaturedArtists: React.FC = () => {
                   alt={artist.name} 
                   className="w-full aspect-square object-cover group-hover:scale-105 transition-transform duration-500"
                 />
-                {artist.featured && (
-                  <div className="absolute top-2 md:top-4 right-2 md:right-4 bg-neutral-600 text-white text-xs font-semibold px-1.5 md:px-2 py-0.5 md:py-1 rounded-full">
-                    Featured
-                  </div>
-                )}
                 
-                {/* Hover overlay with genres, location, and experience */}
+                {/* Hover overlay - removed genres, location, and experience */}
                 <div className="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center items-center p-4">
                   <div className="text-center space-y-3">
-                    {/* Genres */}
-                    <div className="flex flex-wrap gap-1 justify-center">
-                      {(artist.genres || []).slice(0, 2).map((genre, index) => (
-                        <span 
-                          key={index} 
-                          className="text-xs font-medium bg-neutral-700 text-neutral-300 px-2 py-1 rounded-full"
-                        >
-                          {genre}
-                        </span>
-                      ))}
-                    </div>
-                    
-                    {/* Location */}
-                    <div className="text-sm text-neutral-300 font-medium">
-                      📍 {artist.location}
-                    </div>
-                    
-                    {/* Experience */}
-                    <div className="text-sm text-white font-semibold">
-                      {artist.experience} years experience
-                    </div>
+                    {/* Removed all content from hover overlay */}
                   </div>
                 </div>
               </div>
