@@ -105,7 +105,7 @@ export const artists: Artist[] = [
     id: '5',
     slug: 'huseyn-gurbanli', // Updated slug for URL routing
     name: 'Huseyn Gurbanlı', // Updated name
-    image: 'https://rroyrxpcceyhgixpgzrs.supabase.co/storage/v1/object/sign/artists/HuseynGurbanli/huseynpp.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV82N2JkYWYxNi03YzRhLTQ3ZmUtYTE1NS1mZjcxOTE2ZTdiMGQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJhcnRpc3RzL0h1c2V5bkd1cmJhbmxpL2h1c2V5bnBwLnBuZyIsImlhdCI6MTc1MDQyOTk5MiwiZXhwIjoyMTgyNDI5OTkyfQ.Tr2MkO3m8ew97oGjcyXQl-ww4P_HXd361ROZuK6KR6c',
+    image: 'https://rroyrxpcceyhgixpgzrs.supabase.co/storage/v1/object/sign/artists/HuseynGurbanli/huseynprofile.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV82N2JkYWYxNi03YzRhLTQ3ZmUtYTE1NS1mZjcxOTE2ZTdiMGQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJhcnRpc3RzL0h1c2V5bkd1cmJhbmxpL2h1c2V5bnByb2ZpbGUuanBnIiwiaWF0IjoxNzUwNjc3ODIxLCJleHAiOjIxODI2Nzc4MjF9.lGe1lkBjWJTvhO8T0yCWt1fA1VUiKiZAoocbtjaVfyQ',
     backgroundImage: 'https://rroyrxpcceyhgixpgzrs.supabase.co/storage/v1/object/sign/artists/HuseynGurbanli/huseyngurbanlibck.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV82N2JkYWYxNi03YzRhLTQ3ZmUtYTE1NS1mZjcxOTE2ZTdiMGQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJhcnRpc3RzL0h1c2V5bkd1cmJhbmxpL2h1c2V5bmd1cmJhbmxpYmNrLmpwZyIsImlhdCI6MTc1MDA4MjcyMCwiZXhwIjoyMTgyMDgyNzIwfQ.PCZKCD6bkYUi7gc6J85EqOwQazZPVNQ_fn1BnuEf-88',
     category: 'photographer',
     price: 160,
