@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { Calendar, MapPin, Music, Clock, Instagram, Play, Star, ExternalLink, Headphones, Globe, Video } from 'lucide-react';
+import { Calendar, MapPin, Music, Clock, Instagram, Play, Star, ExternalLink, Headphones, Globe } from 'lucide-react';
 import Button from '../components/ui/Button';
 import ShareButton from '../components/ui/ShareButton';
 import SoundCloudPlayer from '../components/ui/SoundCloudPlayer';
@@ -338,14 +338,15 @@ const ArtistProfilePage: React.FC = () => {
                     <>
                       <div className="mb-8">
                         <div className="flex items-center justify-between mb-6">
-                          <h3 className="text-xl font-bold flex items-center">
-                            <Video className="mr-2 text-blue-500" size={24} />
+                          <h3 className="text-xl font-bold">
                             Video Showreel
                           </h3>
                         </div>
                         
                         <div className="space-y-6">
-                          {artist.videoShowreel.map((video, index) => (
+                          {artist.videoShowreel
+                            .filter(video => video.title !== 'Raw Visual Studio - Intro Reel 2025') // Filter out the intro video
+                            .map((video, index) => (
                             <div key={index} className="bg-background-light rounded-xl overflow-hidden">
                               <div className="aspect-video relative group">
                                 <video 
