@@ -8,26 +8,21 @@ const HeroSection: React.FC = () => {
   const navigate = useNavigate();
   const { config } = useWebsiteConfig();
 
-  // Get background video URL from database or fallback
-  const getBackgroundVideoUrl = () => {
-    return config?.background_video || 'https://rroyrxpcceyhgixpgzrs.supabase.co/storage/v1/object/public/uidata/background_video.mp4';
+  // Get background image URL from database or fallback
+  const getBackgroundImageUrl = () => {
+    return config?.background_video || 'https://rroyrxpcceyhgixpgzrs.supabase.co/storage/v1/object/sign/uidata/background.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV82N2JkYWYxNi03YzRhLTQ3ZmUtYTE1NS1mZjcxOTE2ZTdiMGQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJ1aWRhdGEvYmFja2dyb3VuZC5qcGciLCJpYXQiOjE3NTA3Nzk2MTcsImV4cCI6MjE4Mjc3OTYxN30.-nH5usbU7ykOb2_9FHhZQKR0pOvJeWbCGaG7ETiRCkI';
   };
 
   return (
     <section className="relative min-h-screen flex items-center hero-metallic">
-      {/* Background Video with Metallic Overlay */}
+      {/* Background Image with Metallic Overlay */}
       <div className="absolute inset-0 overflow-hidden">
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="metadata"
+        <img
+          src={getBackgroundImageUrl()}
+          alt="RAW MEDIA Background"
           className="absolute w-full h-full object-cover"
-          poster="https://images.pexels.com/photos/1540406/pexels-photo-1540406.jpeg"
-        >
-          <source src={getBackgroundVideoUrl()} type="video/mp4" />
-        </video>
+          loading="eager"
+        />
         {/* Dark metallic overlay */}
         <div className="absolute inset-0 bg-gradient-to-br from-zinc-900/90 via-neutral-800/85 to-stone-900/90" />
       </div>
