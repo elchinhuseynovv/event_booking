@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { Calendar, MapPin, Music, Clock, Instagram, Play, ExternalLink, Headphones, Globe } from 'lucide-react';
+import { Calendar, MapPin, Music, Clock, Instagram, Play, ExternalLink, Headphones, Globe, Camera } from 'lucide-react';
 import Button from '../components/ui/Button';
 import ShareButton from '../components/ui/ShareButton';
 import SoundCloudPlayer from '../components/ui/SoundCloudPlayer';
@@ -554,7 +554,11 @@ const ArtistProfilePage: React.FC = () => {
                   </div>
                 </div>
                 <div className="flex items-start">
-                  <Music size={20} className="text-primary mr-3 mt-1" />
+                  {artist.category === 'photographer' ? (
+                    <Camera size={20} className="text-primary mr-3 mt-1" />
+                  ) : (
+                    <Music size={20} className="text-primary mr-3 mt-1" />
+                  )}
                   <div>
                     <h4 className="font-medium">
                       {artist.category === 'photographer' ? 'Equipment Included' : 'Equipment Included'}
