@@ -3,7 +3,7 @@ import { Calendar, Music, Users, Award, CheckCircle, Headphones, Globe, Shield }
 
 const AboutPage: React.FC = () => {
   return (
-    <div className="pt-24 pb-16">
+    <div className="pt-32 pb-16">
       <div className="container">
         {/* Hero Section */}
         <div className="text-center max-w-3xl mx-auto mb-16">

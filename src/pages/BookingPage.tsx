@@ -122,7 +122,7 @@ const BookingPage: React.FC = () => {
   // If booking is complete, show success message
   if (isBookingComplete) {
     return (
-      <div className="pt-24 pb-16 min-h-screen">
+      <div className="pt-32 pb-16 min-h-screen">
         <div className="container max-w-3xl mx-auto">
           <div className="bg-background-light rounded-xl p-8 text-center">
             <div className="w-20 h-20 bg-neutral-700 rounded-full flex items-center justify-center mx-auto mb-6">
@@ -182,7 +182,7 @@ const BookingPage: React.FC = () => {
   }
   
   return (
-    <div className="pt-24 pb-16 min-h-screen">
+    <div className="pt-32 pb-16 min-h-screen">
       <div className="container">
         <h1 className="text-center mb-2">BOOK YOUR PERFECT ARTIST</h1>
         <p className="text-center text-neutral-400 text-lg mb-12">
