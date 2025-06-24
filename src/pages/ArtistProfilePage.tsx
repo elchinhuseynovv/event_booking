@@ -93,17 +93,57 @@ const ArtistProfilePage: React.FC = () => {
 
   const featuredVideo = getFeaturedVideo();
 
+  // Get cover background for Huseyn (video) or other artists (image)
+  const getCoverBackground = () => {
+    if (artist.slug === 'huseyn') {
+      // Return the new video URL for Huseyn's cover
+      return {
+        type: 'video',
+        url: 'https://rroyrxpcceyhgixpgzrs.supabase.co/storage/v1/object/sign/artists/HuseynGurbanli/Huseyn%20(1).mp4?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV82N2JkYWYxNi03YzRhLTQ3ZmUtYTE1NS1mZjcxOTE2ZTdiMGQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJhcnRpc3RzL0h1c2V5bkd1cmJhbmxpL0h1c2V5biAoMSkubXA0IiwiaWF0IjoxNzUwNzc3OTQ5LCJleHAiOjIxODI3Nzc5NDl9.9VVRDZbHzBmWsByxHBNimqLQ3GCKteWaMxHKx14_Glo'
+      };
+    }
+    
+    // For other artists, use their background image
+    return {
+      type: 'image',
+      url: artist.backgroundImage || artist.image
+    };
+  };
+
+  const coverBackground = getCoverBackground();
+
   return (
     <div className="pt-24 pb-16">
       <div className="container">
         {/* Hero Section */}
         <div className="relative rounded-2xl overflow-hidden mb-8">
           <div className="absolute inset-0">
-            <img 
-              src={artist.backgroundImage || artist.image} 
-              alt={artist.name} 
-              className="w-full h-full object-cover filter brightness-50"
-            />
+            {coverBackground.type === 'video' ? (
+              // Video background for Huseyn
+              <video
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="metadata"
+                className="w-full h-full object-cover filter brightness-50"
+              >
+                <source src={coverBackground.url} type="video/mp4" />
+                {/* Fallback to image if video fails */}
+                <img 
+                  src={artist.image} 
+                  alt={artist.name} 
+                  className="w-full h-full object-cover filter brightness-50"
+                />
+              </video>
+            ) : (
+              // Image background for other artists
+              <img 
+                src={coverBackground.url} 
+                alt={artist.name} 
+                className="w-full h-full object-cover filter brightness-50"
+              />
+            )}
           </div>
           <div className="relative z-10 p-8 md:p-16 flex flex-col md:flex-row items-center md:items-end gap-8">
             <img 

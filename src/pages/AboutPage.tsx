@@ -46,7 +46,7 @@ const AboutPage: React.FC = () => {
           <div className="text-center mb-12">
             <h2 className="mb-4">OUR GROWING IMPACT</h2>
             <p className="text-neutral-300 max-w-3xl mx-auto">
-              BUILDING MEANINGFUL CONNECTIONS ACROSS THE GLOBAL UNDERGROUND SCENE
+              BUILDING MEANINGFUL CONNECTIONS ACROSS THE GLOBAL ELECTRONIC MUSIC SCENERY
             </p>
           </div>
           
@@ -84,7 +84,7 @@ const AboutPage: React.FC = () => {
               {
                 icon: <Music className="h-10 w-10" />,
                 title: "CULTURAL VISION",
-                description: "We represent artists who define the visual and sonic aesthetics of tomorrow's underground culture."
+                description: "We represent artiss who defines the scenery."
               },
               {
                 icon: <CheckCircle className="h-10 w-10" />,
@@ -98,7 +98,7 @@ const AboutPage: React.FC = () => {
               },
               {
                 icon: <Shield className="h-10 w-10" />,
-                title: "UNDERGROUND INTEGRITY",
+                title: "SPIRIT OF ELECTRONIC SCENERY",
                 description: "Preserving the authentic spirit of underground culture while expanding global reach."
               }
             ].map((value, index) => (
