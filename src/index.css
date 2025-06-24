@@ -95,7 +95,7 @@
 
   /* Character Select Screen Styles */
   .character-select-page {
-    @apply pt-20 md:pt-24 pb-16 min-h-screen relative;
+    @apply pt-32 md:pt-36 pb-16 min-h-screen relative;
     background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%);
     position: relative;
   }
