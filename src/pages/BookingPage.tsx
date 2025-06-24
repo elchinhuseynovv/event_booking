@@ -24,6 +24,8 @@ const BookingPage: React.FC = () => {
   const [contactPhone, setContactPhone] = useState('');
   
   const [isBookingComplete, setIsBookingComplete] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
   
   useEffect(() => {
     // Scroll to top when step changes
@@ -56,10 +58,63 @@ const BookingPage: React.FC = () => {
     }
   };
   
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // In a real app, this would submit the booking to a backend
-    setIsBookingComplete(true);
+    setIsSubmitting(true);
+    setSubmitError(null);
+
+    try {
+      const selectedArtistData = artists.find(a => a.id === selectedArtist);
+      
+      if (!selectedArtistData) {
+        throw new Error('Selected artist not found');
+      }
+
+      // Prepare booking data
+      const bookingData = {
+        selectedArtist,
+        artistName: selectedArtistData.name,
+        eventDate,
+        eventTime,
+        eventDuration,
+        eventType,
+        venueName,
+        venueAddress,
+        guestCount,
+        specialRequests,
+        contactName,
+        contactEmail,
+        contactPhone,
+      };
+
+      // Send booking request to Supabase Edge Function
+      const response = await fetch(
+        `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/send-booking-email`,
+        {
+          method: 'POST',
+          headers: {
+            'Authorization': `Bearer ${import.meta.env.VITE_SUPABASE_ANON_KEY}`,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(bookingData),
+        }
+      );
+
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.error || 'Failed to submit booking request');
+      }
+
+      const result = await response.json();
+      console.log('Booking submitted successfully:', result);
+      
+      setIsBookingComplete(true);
+    } catch (error) {
+      console.error('Error submitting booking:', error);
+      setSubmitError(error instanceof Error ? error.message : 'Failed to submit booking request');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const selectedArtistData = artists.find(a => a.id === selectedArtist);
@@ -179,6 +234,15 @@ const BookingPage: React.FC = () => {
             </div>
           </div>
         </div>
+        
+        {/* Error Message */}
+        {submitError && (
+          <div className="max-w-3xl mx-auto mb-6">
+            <div className="bg-red-500/10 border border-red-500/20 rounded-lg p-4">
+              <p className="text-red-400 text-center">{submitError}</p>
+            </div>
+          </div>
+        )}
         
         {/* Booking Form */}
         <form onSubmit={handleSubmit} className="max-w-3xl mx-auto">
@@ -509,6 +573,7 @@ const BookingPage: React.FC = () => {
                   variant="outline"
                   leftIcon={<ChevronLeft size={18} />}
                   onClick={handlePreviousStep}
+                  disabled={isSubmitting}
                 >
                   Previous
                 </Button>
@@ -521,7 +586,7 @@ const BookingPage: React.FC = () => {
                   variant="primary"
                   rightIcon={<ChevronRight size={18} />}
                   onClick={handleNextStep}
-                  disabled={!validateCurrentStep()}
+                  disabled={!validateCurrentStep() || isSubmitting}
                 >
                   Next
                 </Button>
@@ -529,9 +594,9 @@ const BookingPage: React.FC = () => {
                 <Button
                   variant="primary"
                   type="submit"
-                  disabled={!validateCurrentStep()}
+                  disabled={!validateCurrentStep() || isSubmitting}
                 >
-                  Submit Booking
+                  {isSubmitting ? 'Submitting...' : 'Submit Booking'}
                 </Button>
               )}
             </div>

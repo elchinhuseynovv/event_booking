@@ -103,8 +103,8 @@ export const artists: Artist[] = [
   },
   {
     id: '5',
-    slug: 'huseyn-gurbanli', // Updated slug for URL routing
-    name: 'Huseyn Gurbanlı', // Updated name
+    slug: 'huseyn', // Updated slug for URL routing
+    name: 'Huseyn', // Updated name
     image: 'https://rroyrxpcceyhgixpgzrs.supabase.co/storage/v1/object/sign/artists/HuseynGurbanli/huseynprofile.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV82N2JkYWYxNi03YzRhLTQ3ZmUtYTE1NS1mZjcxOTE2ZTdiMGQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJhcnRpc3RzL0h1c2V5bkd1cmJhbmxpL2h1c2V5bnByb2ZpbGUuanBnIiwiaWF0IjoxNzUwNjc3ODIxLCJleHAiOjIxODI2Nzc4MjF9.lGe1lkBjWJTvhO8T0yCWt1fA1VUiKiZAoocbtjaVfyQ',
     backgroundImage: 'https://rroyrxpcceyhgixpgzrs.supabase.co/storage/v1/object/sign/artists/HuseynGurbanli/huseyngurbanlibck.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV82N2JkYWYxNi03YzRhLTQ3ZmUtYTE1NS1mZjcxOTE2ZTdiMGQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJhcnRpc3RzL0h1c2V5bkd1cmJhbmxpL2h1c2V5bmd1cmJhbmxpYmNrLmpwZyIsImlhdCI6MTc1MDA4MjcyMCwiZXhwIjoyMTgyMDgyNzIwfQ.PCZKCD6bkYUi7gc6J85EqOwQazZPVNQ_fn1BnuEf-88',
     category: 'photographer',
@@ -115,39 +115,39 @@ export const artists: Artist[] = [
     featured: true,
     experience: 4,
     bookings: 180,
-    biography: 'Huseyn Gurbanlı - Videographer and Photographer of the Underground. From the flicker of warehouse strobes in Baku to the neon-hazed basements of Warsaw, Huseyn hunts for electricity in the dark. He first lifted a camera to the rave in 2021, determined to bottle the unruly poetry of techno. What began as late-night shooting for friends in Azerbaijan has grown into a roaming personal studio, Raw Visual Studio, where concrete echoes become cinema and stills are frozen rhythms. Now based in Poland, Huseyn has lent his eye to some of Europe\'s flagship techno gatherings, serving as both videographer and on-site photographer for Teletech, Boiler Room, Hive Festival, Laboratorium Festival, Open\'er Festival, Verknipt, and Mayday. Whether it\'s an intimate club stream or a festival stage at dawn, he distills the night\'s energy into images built to last. Alongside his lens work he founded Raw Media, a talent agency curating a growing constellation of electronic artists. The same instinct that finds perfect light in chaos helps him spot voices and noises worth amplifying.',
+    biography: 'Huseyn - Videographer and Photographer of the Underground. From the flicker of warehouse strobes in Baku to the neon-hazed basements of Warsaw, Huseyn hunts for electricity in the dark. He first lifted a camera to the rave in 2021, determined to bottle the unruly poetry of techno. What began as late-night shooting for friends in Azerbaijan has grown into a roaming personal studio, Raw Visual Studio, where concrete echoes become cinema and stills are frozen rhythms. Now based in Poland, Huseyn has lent his eye to some of Europe\'s flagship techno gatherings, serving as both videographer and on-site photographer for Teletech, Boiler Room, Hive Festival, Laboratorium Festival, Open\'er Festival, Verknipt, and Mayday. Whether it\'s an intimate club stream or a festival stage at dawn, he distills the night\'s energy into images built to last. Alongside his lens work he founded Raw Media, a talent agency curating a growing constellation of electronic artists. The same instinct that finds perfect light in chaos helps him spot voices and noises worth amplifying.',
     genres: ['Underground Photography', 'Techno Documentation', 'Festival Coverage', 'Club Photography'],
     signature: 'Atmosphere first, then emotion, then everything else. He shoots handheld and close, letting motion blur and grain kiss the frame while his photographs linger on textures—condensation, vinyl grooves, a single bead of sweat rolling down a cheek.',
     mission: '"I frame raw moments into stories." To Huseyn, rave culture is modern folklore. His mission is to archive it before the lights come up, whether through a fifteen-second teaser, a festival short film, or a single frame that whispers louder than the sub-bass.',
     galleryImages: [
       {
         url: 'https://rroyrxpcceyhgixpgzrs.supabase.co/storage/v1/object/sign/artists/HuseynGurbanli/huseyn01.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV82N2JkYWYxNi03YzRhLTQ3ZmUtYTE1NS1mZjcxOTE2ZTdiMGQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJhcnRpc3RzL0h1c2V5bkd1cmJhbmxpL2h1c2V5bjAxLmpwZyIsImlhdCI6MTc1MDE5ODQ3MywiZXhwIjoyMTgyMTk4NDczfQ.q4xUHAv5x2vBMlIjotTPdpw2iSAnYV6Wmn1hV4FAlSw',
-        alt: 'Huseyn Gurbanlı capturing underground atmosphere',
+        alt: 'Huseyn capturing underground atmosphere',
         caption: 'Behind the lens at underground techno event'
       },
       {
         url: 'https://rroyrxpcceyhgixpgzrs.supabase.co/storage/v1/object/sign/artists/HuseynGurbanli/huseyn02.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV82N2JkYWYxNi03YzRhLTQ3ZmUtYTE1NS1mZjcxOTE2ZTdiMGQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJhcnRpc3RzL0h1c2V5bkd1cmJhbmxpL2h1c2V5bjAyLmpwZyIsImlhdCI6MTc1MDE5ODU1MywiZXhwIjoyMTgyMTk4NTUzfQ.6qrzQXbliR_MYYQSc_U45Rzj8xYL_GaJW0LcTtErxpg',
-        alt: 'Huseyn Gurbanlı documenting festival moments',
+        alt: 'Huseyn documenting festival moments',
         caption: 'Festival documentation in natural light'
       },
       {
         url: 'https://rroyrxpcceyhgixpgzrs.supabase.co/storage/v1/object/sign/artists/HuseynGurbanli/huseyn03.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV82N2JkYWYxNi03YzRhLTQ3ZmUtYTE1NS1mZjcxOTE2ZTdiMGQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJhcnRpc3RzL0h1c2V5bkd1cmJhbmxpL2h1c2V5bjAzLmpwZyIsImlhdCI6MTc1MDE5ODU2NiwiZXhwIjoyMTgyMTk4NTY2fQ.QuJWmFUgkLyLcJ_fQ7qWPiWMOJLZAAgGbAyLO5jPOVw',
-        alt: 'Huseyn Gurbanlı in creative workspace',
+        alt: 'Huseyn in creative workspace',
         caption: 'Creative process in the studio'
       },
       {
         url: 'https://rroyrxpcceyhgixpgzrs.supabase.co/storage/v1/object/sign/artists/HuseynGurbanli/huseyn04.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV82N2JkYWYxNi03YzRhLTQ3ZmUtYTE1NS1mZjcxOTE2ZTdiMGQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJhcnRpc3RzL0h1c2V5bkd1cmJhbmxpL2h1c2V5bjA0LmpwZyIsImlhdCI6MTc1MDE5ODU3NCwiZXhwIjoyMTgyMTk4NTc0fQ.upkQhR2KclsBQ8AB5h0L2wfOs5RwmrmlsSKBbmQpgCI',
-        alt: 'Huseyn Gurbanlı capturing club energy',
+        alt: 'Huseyn capturing club energy',
         caption: 'Club photography in low-light conditions'
       },
       {
         url: 'https://rroyrxpcceyhgixpgzrs.supabase.co/storage/v1/object/sign/artists/HuseynGurbanli/huseyn05.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV82N2JkYWYxNi03YzRhLTQ3ZmUtYTE1NS1mZjcxOTE2ZTdiMGQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJhcnRpc3RzL0h1c2V5bkd1cmJhbmxpL2h1c2V5bjA1LmpwZyIsImlhdCI6MTc1MDE5ODU4MiwiZXhwIjoyMTgyMTk4NTgyfQ.zXFATRJhVgR7IQVy2HuwkFznO36RpxrQMrykwVV3KZs',
-        alt: 'Huseyn Gurbanlı artistic portrait session',
+        alt: 'Huseyn artistic portrait session',
         caption: 'Artist portrait session with dramatic lighting'
       },
       {
-        url: 'https://rroyrxpcceyhgixpgzrs.supabase.co/storage/v1/object/sign/artists/HuseynGurbanli/huseyn06.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV82N2JkYWYxNi03YzRhLTQ3ZmUtYTE1NS1mZjcxOTE2ZTdiMGQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJhcnRpc3RzL0h1c2V5bkd1cmJhbmxpL2h1c2V5bjA2LmpwZyIsImlhdCI6MTc1MDE5ODU4OSwiZXhwIjoyMTgyMTk4NTg5fQ.uG1bZFQT0HgoXGWCZS810ixWLBsNx92SRqAzTrZQmVc',
-        alt: 'Huseyn Gurbanlı behind the scenes work',
+        url: 'https://rroyrxpcceyhgixpgzrs.supabase.co/storage/v1/object/sign/artists/HuseynGurbanli/huseyn06.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV82N2JkYWYxNi03YzRhLTQ3ZmUtYTE1NS1mZjcxOTE2ZTciMGQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJhcnRpc3RzL0h1c2V5bkd1cmJhbmxpL2h1c2V5bjA2LmpwZyIsImlhdCI6MTc1MDE5ODU4OSwiZXhwIjoyMTgyMTk4NTg5fQ.uG1bZFQT0HgoXGWCZS810ixWLBsNx92SRqAzTrZQmVc',
+        alt: 'Huseyn behind the scenes work',
         caption: 'Behind the scenes of visual storytelling'
       }
     ],
