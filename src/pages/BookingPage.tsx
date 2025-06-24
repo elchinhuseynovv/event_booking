@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useSearchParams, useNavigate } from 'react-router-dom';
-import { Calendar, Clock, MapPin, Music, Check, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Calendar, Clock, MapPin, Check, ChevronLeft, ChevronRight } from 'lucide-react';
 import Button from '../components/ui/Button';
 import { artists } from '../data/artists';
 
@@ -251,7 +251,7 @@ const BookingPage: React.FC = () => {
             {currentStep === 1 && (
               <div>
                 <h2 className="text-2xl font-bold mb-6 flex items-center">
-                  <Music className="mr-2 text-neutral-400" /> CHOOSE YOUR ARTIST
+                  CHOOSE YOUR ARTIST
                 </h2>
                 
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mb-8">
@@ -274,7 +274,7 @@ const BookingPage: React.FC = () => {
                         <div>
                           <h4 className="font-medium">{artist.name}</h4>
                           <p className="text-sm text-neutral-400">
-                            {artist.genres?.[0]}, {artist.experience} years exp.
+                            {artist.genres?.[0]}
                           </p>
                         </div>
                       </div>
