@@ -294,7 +294,7 @@ const CharacterSelectCard: React.FC<CharacterSelectCardProps> = ({
             {artist.category === 'dj' ? 'DJ' : 'PHOTOGRAPHER'}
           </div>
           <div className="character-select-price">
-            {artist.experience} YRS
+            {artist.location.toUpperCase()}
           </div>
         </div>
       </div>

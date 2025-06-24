@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { Calendar, MapPin, Music, Clock, Instagram, Play, Star, ExternalLink, Headphones, Globe } from 'lucide-react';
+import { Calendar, MapPin, Music, Clock, Instagram, Play, ExternalLink, Headphones, Globe } from 'lucide-react';
 import Button from '../components/ui/Button';
 import ShareButton from '../components/ui/ShareButton';
 import SoundCloudPlayer from '../components/ui/SoundCloudPlayer';
@@ -167,14 +167,6 @@ const ArtistProfilePage: React.FC = () => {
                 <div className="flex items-center">
                   <MapPin size={16} className="mr-1" />
                   {artist.location}
-                </div>
-                <div className="flex items-center">
-                  <Clock size={16} className="mr-1" />
-                  {artist.experience} Years
-                </div>
-                <div className="flex items-center">
-                  <Star size={16} className="mr-1 text-warning" />
-                  {artist.rating}/5 ({artist.reviewCount})
                 </div>
               </div>
               <div className="flex flex-wrap justify-center md:justify-start gap-3">
